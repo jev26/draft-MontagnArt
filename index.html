@@ -9,12 +9,12 @@
     <style>
       header {
         position: relative;
-        background-image: url("img/about.png"); /* Remplace par le chemin de ton image */
+        background-image: url("img/welcome.png"); /* Remplace par le chemin de ton image */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         color: white;
-        height: 900px; /* Ajuste la hauteur selon ton besoin */
+        height: 600px; /* Ajuste la hauteur selon ton besoin */
         display: flex;
         align-items: top;
         justify-content: space-between;
@@ -78,17 +78,27 @@
           display: inline-block;
           margin-top: 20px;
           text-decoration: underline; /* Souligné par défaut */
-          color: #cf0001; /* Couleur du texte */
-          border: none /* 2px solid #cf0001; /* Bordure du bouton */
+          color: #ffe4d4; /* Couleur du texte */
+          border: none; /* 2px solid #cf0001; /* Bordure du bouton */
           border-radius: 5px;
           transition: all 0.3s ease; /* Effet de transition lors du hover */
       }
-
+      
       /* Changement de couleur lors du survol */
       .contact-btn:hover {
           /*background-color: #f3af87; /* Fond du bouton au survol */
           color: #f3af87; /* Couleur du texte au survol */
           /*text-decoration: none; /* Enlever le souligné au survol */
+      }
+
+      .portfolio-btn {
+          display: inline-block;
+          margin-top: 50%;
+          text-decoration: none; /* Souligné par défaut */
+          color: #ffe4d4; /* Couleur du texte */
+          border: none; /* 2px solid #cf0001; /* Bordure du bouton */
+          text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+          transition: all 0.3s ease; /* Effet de transition lors du hover */
       }
     </style>
     <!-- Lien vers Bootstrap CSS -->
@@ -142,7 +152,7 @@
               est Montagn'Art ainsi que d'autres informations utiles. Je vous
               souhaite une bonne visite !
             </p>
-            <a href="about.html" class="contact-btn">EN SAVOIR PLUS</a>
+            <a href="about.html" class="contact-btn" style="color: #cf0001;">EN SAVOIR PLUS</a>
           </div>
           <!-- Colonne pour l'image -->
           <div class="col-md-6 image-container">
@@ -153,16 +163,19 @@
     </section>
 
     <!-- Section lien portfolio -->
-    <div class="image-block" style="background-image: url('img/photo_1.jpg'); height: 700px;">
+    <section class="container-fluid g-0">
+    <div class="image-block img-fluid" style="background-image: url('img/photo_1.jpg'); height: 500px;">
       <div class="text" style = "text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
-        <a href="portfolio.html" class="contact-btn" style="color: #ffe4d4;">
-            <h5>Découvrez les randonnées passées</h5>
-            <h1 >Portfolio</h1>
-            <svg class="svg-inline--fa fa-long-arrow-right fa-w-14 ps-arrow" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="long-arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
-            <path fill="currentColor" d="M311.03 131.515l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887l-83.928 83.444c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l116.485-116c4.686-4.686 4.686-12.284 0-16.971L328 131.515c-4.686-4.687-12.284-4.687-16.97 0z"></path></svg><!-- <i class="fal fa-long-arrow-right ps-arrow"></i> -->
+        <a href="portfolio.html" class="portfolio-btn">
+            <div class="text-center">  
+              <h5>Découvrez les randonnées passées</h5>
+              <h1 >Portfolio</h1>
+              <i class="fas fa-long-arrow-right"></i>
+            </div>
           </a>           
       </div>
   </div>
+</section>
 
   <!-- Section concepts phares -->
   <section class="container-fluid">
@@ -183,16 +196,22 @@
   </section>
 
   <!-- section pk pas vous -->
-  <div class="image-block" style="background-image: url('img/image_2.jpg'); height: 700px;">
-    <div class="text" style = "text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
+  <section class="container-fluid g-0">
+  <div class="image-block img-fluid" style="background-image: url('img/image_2.jpg'); height: 500px;">
+    <div class="text" style = "color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
             <h2 class='text-center'>Et pourquoi pas vous ?</h2>
             <br>
             <p>
               Découvrez mes prochaines randonnées organisée ou contactez-moi directement pour faire un programme à la carte</p>
             <br>
-            <a href="contact.html" class="contact-btn">ME CONTACTER</a>    
+            <br>
+            <br>
+            <div class="text-center">
+              <a href="contact.html" class="contact-btn">ME CONTACTER</a>   
+            </div> 
     </div>
 </div>
+</section>
 
 <!-- Section prochaines randos -->
 
@@ -214,25 +233,25 @@
           <!-- Images des réels -->
           <div class="col" style="height:300px;">
               <a href="https://www.instagram.com/reel/DDHYJe4I0NA/" target="_blank">
-                  <img src="https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/432397355_764780955577000_5995115417368657651_n.webp?stp=c288.0.864.864a_dst-jpg_e35_s640x640_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=PHHdG4COSm4Q7kNvgGH4g_6&amp;_nc_zt=23&amp;_nc_ht=scontent-ams4-1.cdninstagram.com&amp;_nc_gid=A7VluCiYvT7qPtU8BNHvica&amp;oh=00_AYDEiQeC1rek13NXMDGZwL2ZycmXQT42sxVxoz9-26ySxw&amp;oe=6768EF2C" 
+                  <img src="img-instagram/reel-1.png" 
                   class="img-fluid">
               </a>
           </div>
           <div class="col" style="height:300px;">
                   <a href="https://www.instagram.com/reel/DAJr-tSu1XQ/" target="_blank">
-                      <img src="https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/460879983_2022785118187321_8819134436885167466_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=107&ccb=1-7&_nc_sid=18de74&_nc_ohc=NfnFmki4m6YQ7kNvgGDg37K&_nc_zt=23&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_gid=AS34jNw0_7RSpp8okDPyVtu&oh=00_AYDv66nKzOrpCaVsO9DKWByVDg5cecPEPHamQIA6Jzqxhw&oe=6768F23D" 
+                      <img src="img-instagram/reel-2.png" 
                       class="img-fluid">
                   </a>
           </div>
           <div class="col" style="height:300px;">
                   <a href="https://www.instagram.com/reel/C864YCwISI8/" target="_blank">
-                      <img src="https://scontent-ams2-1.cdninstagram.com/v/t51.29350-15/449606829_975887420933868_5596968640580096867_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=104&ccb=1-7&_nc_sid=18de74&_nc_ohc=EUeKVzTxZzcQ7kNvgHdVHAq&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=A_D0ucLqt40on6Bfpd_8xph&oh=00_AYAvXhMLL1W-gyn7rFxybg0ujjR1G0iuFFHyaVJtAFN2Ww&oe=676905E3" 
+                      <img src="img-instagram/reel-3.png" 
                       class="img-fluid">
                   </a>
           </div>
           <div class="col" style="height:300px;">
                   <a href="https://www.instagram.com/reel/C7zHPAJIs8-/" target="_blank">
-                      <img src="https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/447724440_1364750344193142_4009299141872691510_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=105&ccb=1-7&_nc_sid=18de74&_nc_ohc=Que4v3LMTNIQ7kNvgEmq8sS&_nc_zt=23&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_gid=A1UBLzwgAEQQBSY-n9cOGSX&oh=00_AYAaWNPOhpv5CiDXYV_RCqz_WF5eMHRKgvtegiFgRL8ztw&oe=6769070E" 
+                      <img src="img-instagram/reel-4.png" 
                       class="img-fluid">
                   </a>
           </div>

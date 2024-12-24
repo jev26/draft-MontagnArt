@@ -63,44 +63,64 @@
       }
 
       .container-image {
-          display: flex;
-          justify-content: space-between; /* Sépare le texte et l'image */
-          align-items: center; /* Aligne verticalement le texte et l'image */
-          padding: 20px;
-          background-color: #ffe4d4;
-          color: #cf0001;
+        display: flex;
+        justify-content: space-between; /* Sépare le texte et l'image */
+        align-items: center; /* Aligne verticalement le texte et l'image */
+        padding: 20px;
+        background-color: #ffe4d4;
+        color: #cf0001;
       }
       .text {
-          flex: 1; /* Prend toute la place disponible à gauche */
-          padding-right: 50px;
-          padding-left: 50px;
+        flex: 1; /* Prend toute la place disponible à gauche */
+        padding-right: 50px;
+        padding-left: 50px;
       }
       .image {
-          flex: 1; /* Prend la même largeur que le texte à droite */
-          max-width: 100%; /* S'assure que l'image ne dépasse pas son conteneur */
+        flex: 1; /* Prend la même largeur que le texte à droite */
+        max-width: 100%; /* S'assure que l'image ne dépasse pas son conteneur */
       }
       .image img {
-          width: 65%; /* L'image prendra toute la largeur de son conteneur */
-          height: auto; /* Conserve les proportions de l'image */
+        padding: 5%;
+        width: 100%; /* L'image prendra toute la largeur de son conteneur */
+        height: auto; /* Conserve les proportions de l'image */
       }
 
       /* Style du bouton */
       .contact-btn {
-          display: inline-block;
-          padding: 10px 20px;
-          margin-top: 20px;
-          text-decoration: underline; /* Souligné par défaut */
-          color: #cf0001; /* Couleur du texte */
-          border: none /* 2px solid #cf0001; /* Bordure du bouton */
-          border-radius: 5px;
-          transition: all 0.3s ease; /* Effet de transition lors du hover */
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 20px;
+        text-decoration: underline; /* Souligné par défaut */
+        color: #cf0001; /* Couleur du texte */
+        border: none; /* 2px solid #cf0001; /* Bordure du bouton */
+        border-radius: 5px;
+        transition: all 0.3s ease; /* Effet de transition lors du hover */
       }
 
       /* Changement de couleur lors du survol */
       .contact-btn:hover {
-          /*background-color: #f3af87; /* Fond du bouton au survol */
-          color: #f3af87; /* Couleur du texte au survol */
-          /*text-decoration: none; /* Enlever le souligné au survol */
+        /*background-color: #f3af87; /* Fond du bouton au survol */
+        color: #f3af87; /* Couleur du texte au survol */
+        /*text-decoration: none; /* Enlever le souligné au survol */
+      }
+
+      .text-container {
+        display: flex;
+        flex-direction: column; /* Aligne les paragraphes en colonne */
+        justify-content: center; /* Centrage vertical des paragraphes */
+        padding: 20px;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      .image-container {
+        display: flex;
+        justify-content: center; /* Centrer horizontalement */
+        align-items: center; /* Centrer verticalement */
+      }
+      .image-container img {
+        width: 75%; /* Adapte la taille de l'image à la colonne */
+        height: auto;
+        border-radius: 10px; /* Optionnel : arrondi des coins de l'image */
       }
     </style>
   </head>
@@ -137,46 +157,47 @@
       </div>
     </header>
 
-    <section class="py-5">
-      <div class="container-image">
-        <!-- Partie texte -->
-        <div class="text">
-          BASEE A BEX, SOUVENT EN MONTAGNE
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <h2>Hello, moi c'est Tessy</h2>
-          <br />
-          <br />
-          <p>
-            Depuis mon plus jeune âge, je randonne en montagne et dans la
-            nature. J’ai toujours aimé tout ce qui touche à la nature. Suite à
-            mon service militaire, j’ai eu un déclic. J’ai voulu marcher partout
-            et découvrir mon pays d’origine, la Suisse. J’ai toujours eu un
-            amour profond pour ma partie mais à partir de là, il s’est renforcé.
-            J’ai redécouvert la majestuosité des paysages qui nous entourent. Je
-            suis prise d’émerveillement pour la nature ainsi que tous ces
-            phénomènes. Je souhaite aujourd’hui transmettre cet amour à tout un
-            chacun au travers de randonnées.
+    <section class="container-fluid">
+      <div class="container my-5">
+        <div class="row">
+          <!-- Colonne pour le texte -->
+          <div class="col-md-6 text-container">
+            BASEE A BEX, SOUVENT EN MONTAGNE
             <br />
             <br />
-            C’est dans ce but que j’ai entamé ma formation d’accompagnatrice en
-            montagne au sein d’Et col et pic. Cet apprentissage n’a fait que me
-            renforcer dans l’idée de connaître plus sur notre environnement et
-            de vouloir le transmettre. C’est à partir de là que j’ai créé
-            Montagn'Art !
             <br />
             <br />
-            <!-- Bouton "Contactez-moi" -->
-            <!--<a href="contact.html" class="contact-btn">CONTACTEZ-MOI !</a>-->
-          </p>
-        </div>
-
-        <!-- Partie image -->
-        <div class="image">
-          <img src="img/tessy.jpg" />
+            <br />
+            <h2>Hello, moi c'est Tessy</h2>
+            <br />
+            <br />
+            <p>
+              Depuis mon plus jeune âge, je randonne en montagne et dans la
+              nature. J’ai toujours aimé tout ce qui touche à la nature. Suite à
+              mon service militaire, j’ai eu un déclic. J’ai voulu marcher
+              partout et découvrir mon pays d’origine, la Suisse. J’ai toujours
+              eu un amour profond pour ma partie mais à partir de là, il s’est
+              renforcé. J’ai redécouvert la majestuosité des paysages qui nous
+              entourent. Je suis prise d’émerveillement pour la nature ainsi que
+              tous ces phénomènes. Je souhaite aujourd’hui transmettre cet amour
+              à tout un chacun au travers de randonnées.
+              <br />
+              <br />
+              C’est dans ce but que j’ai entamé ma formation d’accompagnatrice
+              en montagne au sein d’Et col et pic. Cet apprentissage n’a fait
+              que me renforcer dans l’idée de connaître plus sur notre
+              environnement et de vouloir le transmettre. C’est à partir de là
+              que j’ai créé Montagn'Art !
+              <br />
+              <br />
+              <!-- Bouton "Contactez-moi" -->
+              <!--<a href="contact.html" class="contact-btn">CONTACTEZ-MOI !</a>-->
+            </p>
+          </div>
+          <!-- Colonne pour l'image -->
+          <div class="col-md-6 image-container">
+            <img src="img/tessy.jpg" />
+          </div>
         </div>
       </div>
     </section>
@@ -218,30 +239,31 @@
     </section>
 
     <!-- Rando aquarelle - v1 -->
-    <section class="py-5">
-      <div class="container-image">
-        <!-- Partie texte -->
-        <div class="text" , style="align-items: center;">
-          <h2>Le concept de Rando Aquarelle</h2>
-          <br />
-          <br />
-          <p>
-            Je pratique le dessin depuis petite. Je prenaisdes cours de dessin
-            pour m’améliorer etapprendre les différentes techniques.
-            <br />
-            <br />
-            Aujourd’hui, je pratique principalement le crayon, l’aquarelle,
-            l’acrylique et la peinture à l’huile.
-            <br />
-          </p>
-        </div>
-
-        <!-- Partie image -->
-        <div class="image">
-          <img src="img/aquarelle.png" />
-        </div>
-      </div>
-    </section>
+    <section class="container-fluid">
+            <div class="container my-5">
+              <div class="row">
+                <!-- Colonne pour le texte -->
+                <div class="col-md-6 text-container">
+                        <h2>Le concept de Rando Aquarelle</h2>
+                        <br />
+                        <br />
+                        <p>
+                          Je pratique le dessin depuis petite. Je prenaisdes cours de dessin
+                          pour m’améliorer etapprendre les différentes techniques.
+                          <br />
+                          <br />
+                          Aujourd’hui, je pratique principalement le crayon, l’aquarelle,
+                          l’acrylique et la peinture à l’huile.
+                          <br />
+                        </p>
+                </div>
+                <!-- Colonne pour l'image -->
+                <div class="col-md-6 image-container">
+                    <img src="img/aquarelle.png" />
+                </div>
+              </div>
+            </div>
+          </section>
 
     <!-- Rando aquarelle - v2 -->
     <div
@@ -400,34 +422,22 @@
         <!-- Images des réels -->
         <div class="col" style="height:300px;">
           <a href="https://www.instagram.com/reel/DDHYJe4I0NA/" target="_blank">
-            <img
-              src="https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/432397355_764780955577000_5995115417368657651_n.webp?stp=c288.0.864.864a_dst-jpg_e35_s640x640_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=PHHdG4COSm4Q7kNvgGH4g_6&amp;_nc_zt=23&amp;_nc_ht=scontent-ams4-1.cdninstagram.com&amp;_nc_gid=A7VluCiYvT7qPtU8BNHvica&amp;oh=00_AYDEiQeC1rek13NXMDGZwL2ZycmXQT42sxVxoz9-26ySxw&amp;oe=6768EF2C"
-              class="img-fluid"
-            />
+            <img src="img-instagram/reel-1.png" class="img-fluid" />
           </a>
         </div>
         <div class="col" style="height:300px;">
           <a href="https://www.instagram.com/reel/DAJr-tSu1XQ/" target="_blank">
-            <img
-              src="https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/460879983_2022785118187321_8819134436885167466_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=107&ccb=1-7&_nc_sid=18de74&_nc_ohc=NfnFmki4m6YQ7kNvgGDg37K&_nc_zt=23&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_gid=AS34jNw0_7RSpp8okDPyVtu&oh=00_AYDv66nKzOrpCaVsO9DKWByVDg5cecPEPHamQIA6Jzqxhw&oe=6768F23D"
-              class="img-fluid"
-            />
+            <img src="img-instagram/reel-2.png" class="img-fluid" />
           </a>
         </div>
         <div class="col" style="height:300px;">
           <a href="https://www.instagram.com/reel/C864YCwISI8/" target="_blank">
-            <img
-              src="https://scontent-ams2-1.cdninstagram.com/v/t51.29350-15/449606829_975887420933868_5596968640580096867_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=104&ccb=1-7&_nc_sid=18de74&_nc_ohc=EUeKVzTxZzcQ7kNvgHdVHAq&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=A_D0ucLqt40on6Bfpd_8xph&oh=00_AYAvXhMLL1W-gyn7rFxybg0ujjR1G0iuFFHyaVJtAFN2Ww&oe=676905E3"
-              class="img-fluid"
-            />
+            <img src="img-instagram/reel-3.png" class="img-fluid" />
           </a>
         </div>
         <div class="col" style="height:300px;">
           <a href="https://www.instagram.com/reel/C7zHPAJIs8-/" target="_blank">
-            <img
-              src="https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/447724440_1364750344193142_4009299141872691510_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=105&ccb=1-7&_nc_sid=18de74&_nc_ohc=Que4v3LMTNIQ7kNvgEmq8sS&_nc_zt=23&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_gid=A1UBLzwgAEQQBSY-n9cOGSX&oh=00_AYAaWNPOhpv5CiDXYV_RCqz_WF5eMHRKgvtegiFgRL8ztw&oe=6769070E"
-              class="img-fluid"
-            />
+            <img src="img-instagram/reel-4.png" class="img-fluid" />
           </a>
         </div>
       </div>
