@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Montagn'Art</title>
+    <!-- Lien vers Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      header {
+        position: relative;
+        background-image: url("img/image_2.jpg"); /* Remplace par le chemin de ton image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white;
+        height: 600px; /* Ajuste la hauteur selon ton besoin */
+        display: flex;
+        align-items: top;
+        justify-content: space-between;
+        padding: 0 20px;
+      }
+      .header-overlay {
+        /* Filtre sombre sur l'image */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); /* Noir semi-transparent */
+      }
+      header .navbar {
+        position: absolute; /* Fixation en haut */
+        top: 0; /* Place tout en haut */
+        left: 0;
+        right: 0;
+        z-index: 10; /* Priorité par rapport à l'image de fond */
+        padding: 10px 20px; /* Marges internes */
+      }
+      header .navbar-nav a {
+        color: #ffe4d4; /* Couleur par défaut des liens */
+        text-decoration: none; /* Supprime le soulignement */
+        transition: color 0.3s ease; /* Ajoute une transition pour un effet fluide */
+      }
+      header .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #ffe4d4;
+        font-size: 3.5rem;
+        /*font-weight: bold;*/
+        /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);*/
+      }
+      body a {
+            text-decoration: none; /* Supprime le soulignement par défaut */
+            color: inherit; /* Prend la couleur du texte autour */
+        }
+      body a:hover {
+            color: #f3af87; /* Change la couleur lors du survol (exemple : couleur #b67271) */
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Filtre sombre -->
+      <div class="header-overlay"></div>
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark container">
+        <a href="/test/" class="navbar-brand">
+          <img src="img/logo.png" alt="Montagn'Art" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="portfolio.html" class="nav-link">PORTFOLIO</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">A PROPOS</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Overlay Text -->
+      <div class="overlay-text">
+        Randonnons ensemble
+      </div>
+    </header>
+
+    <!-- Section de présentation -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center">Contactez-moi</h2>
+        <p class="text-center">
+          Montagn'Art
+          <br />
+          <a href="mailto:contact@montagn-art.ch">contact@montagn-art.ch</a>
+          <br />
+          +41 76 206 19 97
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <!-- Ligne 1 : Liens et bouton retour -->
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="portfolio.html">PORTFOLIO</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="about.html">A PROPOS</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="contact.html">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 text-end">
+            <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
+          </div>
+        </div>
+        <!-- Ligne 2 : Copyright et réseaux sociaux -->
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <p>&copy; 2024 Montagn'Art. Tous droits réservés.</p>
+          </div>
+          <div class="col-md-6 text-end social-icons">
+            <a href="https://www.instagram.com/montagnart.ch/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com/people/Montagnartch/61553699202260/" target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Lien vers Bootstrap JS et dépendances -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Script pour le retour en haut
+      document
+        .querySelector(".back-to-top")
+        .addEventListener("click", function(e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+  </body>
+</html>

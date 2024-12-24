@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Montagn'Art</title>
+
+    <style>
+      header {
+        position: relative;
+        background-image: url("img/about.png"); /* Remplace par le chemin de ton image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white;
+        height: 900px; /* Ajuste la hauteur selon ton besoin */
+        display: flex;
+        align-items: top;
+        justify-content: space-between;
+        padding: 0 20px;
+      }
+      .header-overlay {
+        /* Filtre sombre sur l'image */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2); /* Noir semi-transparent */
+      }
+      header .navbar {
+        position: absolute; /* Fixation en haut */
+        top: 0; /* Place tout en haut */
+        left: 0;
+        right: 0;
+        z-index: 10; /* Priorité par rapport à l'image de fond */
+        padding: 10px 20px; /* Marges internes */
+      }
+      header .navbar-nav a {
+        color: #ffe4d4; /* Couleur par défaut des liens */
+        text-decoration: none; /* Supprime le soulignement */
+        transition: color 0.3s ease; /* Ajoute une transition pour un effet fluide */
+      }
+      header .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #ffe4d4;
+        font-size: 3.5rem;
+        /*font-weight: bold;*/
+        /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);*/
+      }
+
+      .text-container {
+            display: flex;
+            flex-direction: column; /* Aligne les paragraphes en colonne */
+            justify-content: center; /* Centrage vertical des paragraphes */
+            padding: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center; /* Centrer horizontalement */
+            align-items: center; /* Centrer verticalement */
+        }
+        .image-container img {
+            width: 75%; /* Adapte la taille de l'image à la colonne */
+            height: auto;
+            border-radius: 10px; /* Optionnel : arrondi des coins de l'image */
+        }
+
+      /* Style du bouton */
+      .contact-btn {
+          display: inline-block;
+          margin-top: 20px;
+          text-decoration: underline; /* Souligné par défaut */
+          color: #cf0001; /* Couleur du texte */
+          border: none /* 2px solid #cf0001; /* Bordure du bouton */
+          border-radius: 5px;
+          transition: all 0.3s ease; /* Effet de transition lors du hover */
+      }
+
+      /* Changement de couleur lors du survol */
+      .contact-btn:hover {
+          /*background-color: #f3af87; /* Fond du bouton au survol */
+          color: #f3af87; /* Couleur du texte au survol */
+          /*text-decoration: none; /* Enlever le souligné au survol */
+      }
+    </style>
+    <!-- Lien vers Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark container">
+        <a href="/test/" class="navbar-brand">
+          <img src="img/logo.png" alt="Montagn'Art" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="portfolio.html" class="nav-link">PORTFOLIO</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">A PROPOS</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Section bienvenue -->
+    <section class="container-fluid">
+      <div class="container my-5">
+        <div class="row">
+          <!-- Colonne pour le texte -->
+          <div class="col-md-6 text-container">
+            <p>
+              A PROPOS
+            </p>
+            <br />
+            <br />
+            <h2>Bienvenue dans l'univers de Montagn'Art !</h2>
+            <br />
+            <p>
+              Vous trouverez ici les différentes activités que je propose, qui
+              est Montagn'Art ainsi que d'autres informations utiles. Je vous
+              souhaite une bonne visite !
+            </p>
+            <a href="about.html" class="contact-btn">EN SAVOIR PLUS</a>
+          </div>
+          <!-- Colonne pour l'image -->
+          <div class="col-md-6 image-container">
+            <img src="img/tessy.jpg"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section lien portfolio -->
+    <div class="image-block" style="background-image: url('img/photo_1.jpg'); height: 700px;">
+      <div class="text" style = "text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
+        <a href="portfolio.html" class="contact-btn" style="color: #ffe4d4;">
+            <h5>Découvrez les randonnées passées</h5>
+            <h1 >Portfolio</h1>
+            <svg class="svg-inline--fa fa-long-arrow-right fa-w-14 ps-arrow" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="long-arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+            <path fill="currentColor" d="M311.03 131.515l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887l-83.928 83.444c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l116.485-116c4.686-4.686 4.686-12.284 0-16.971L328 131.515c-4.686-4.687-12.284-4.687-16.97 0z"></path></svg><!-- <i class="fal fa-long-arrow-right ps-arrow"></i> -->
+          </a>           
+      </div>
+  </div>
+
+  <!-- Section concepts phares -->
+  <section class="container-fluid">
+    <div class="container my-5">
+      <div class="row">
+        <h4>Mes concepts phares</h4>
+        <ul>
+          <li>Rando Aquarelle: explication du concept</li>
+          <li>Randonnées pédestres, en raquettes</li>
+          <li>Randonnée à thématique: explication du concept exemples: adaptation des animaux pour l'hiver, à la recherche du bouquetin, fomation des Gastlosen.</li>
+          <li>Trek: randonnée sur 2-3 jours avec nuits en cabane et/ou bivouac</li>
+        </ul>
+        <br>
+        Tout concept peut être personnalisé à la demande (selon niveau, classe d'école, personne à mobilité réduite, ...). 
+        <br>
+        N'hésitez pas à me contacter pour en discuter.
+    </div>
+  </section>
+
+  <!-- section pk pas vous -->
+  <div class="image-block" style="background-image: url('img/image_2.jpg'); height: 700px;">
+    <div class="text" style = "text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
+            <h2 class='text-center'>Et pourquoi pas vous ?</h2>
+            <br>
+            <p>
+              Découvrez mes prochaines randonnées organisée ou contactez-moi directement pour faire un programme à la carte</p>
+            <br>
+            <a href="contact.html" class="contact-btn">ME CONTACTER</a>    
+    </div>
+</div>
+
+<!-- Section prochaines randos -->
+
+<!-- Section Instagram -->
+<section class="container-fluid p-0">
+  <div class="row g-0">
+          <div class="col text-center" style="height:300px;">
+              <!-- Lien vers le compte Instagram -->
+              <br>
+              <i class="fab fa-instagram"></i>
+              <br>
+              <br>
+              SUIVEZ MES <br>
+              AVENTURES <br>
+              <a href="https://www.instagram.com/montagnart.ch/" target="_blank" style="color: #cf0001; text-decoration: none; ">
+                  @montagnart.ch
+              </a>
+          </div>
+          <!-- Images des réels -->
+          <div class="col" style="height:300px;">
+              <a href="https://www.instagram.com/reel/DDHYJe4I0NA/" target="_blank">
+                  <img src="https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/432397355_764780955577000_5995115417368657651_n.webp?stp=c288.0.864.864a_dst-jpg_e35_s640x640_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=PHHdG4COSm4Q7kNvgGH4g_6&amp;_nc_zt=23&amp;_nc_ht=scontent-ams4-1.cdninstagram.com&amp;_nc_gid=A7VluCiYvT7qPtU8BNHvica&amp;oh=00_AYDEiQeC1rek13NXMDGZwL2ZycmXQT42sxVxoz9-26ySxw&amp;oe=6768EF2C" 
+                  class="img-fluid">
+              </a>
+          </div>
+          <div class="col" style="height:300px;">
+                  <a href="https://www.instagram.com/reel/DAJr-tSu1XQ/" target="_blank">
+                      <img src="https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/460879983_2022785118187321_8819134436885167466_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=107&ccb=1-7&_nc_sid=18de74&_nc_ohc=NfnFmki4m6YQ7kNvgGDg37K&_nc_zt=23&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_gid=AS34jNw0_7RSpp8okDPyVtu&oh=00_AYDv66nKzOrpCaVsO9DKWByVDg5cecPEPHamQIA6Jzqxhw&oe=6768F23D" 
+                      class="img-fluid">
+                  </a>
+          </div>
+          <div class="col" style="height:300px;">
+                  <a href="https://www.instagram.com/reel/C864YCwISI8/" target="_blank">
+                      <img src="https://scontent-ams2-1.cdninstagram.com/v/t51.29350-15/449606829_975887420933868_5596968640580096867_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=104&ccb=1-7&_nc_sid=18de74&_nc_ohc=EUeKVzTxZzcQ7kNvgHdVHAq&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=A_D0ucLqt40on6Bfpd_8xph&oh=00_AYAvXhMLL1W-gyn7rFxybg0ujjR1G0iuFFHyaVJtAFN2Ww&oe=676905E3" 
+                      class="img-fluid">
+                  </a>
+          </div>
+          <div class="col" style="height:300px;">
+                  <a href="https://www.instagram.com/reel/C7zHPAJIs8-/" target="_blank">
+                      <img src="https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/447724440_1364750344193142_4009299141872691510_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=105&ccb=1-7&_nc_sid=18de74&_nc_ohc=Que4v3LMTNIQ7kNvgEmq8sS&_nc_zt=23&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_gid=A1UBLzwgAEQQBSY-n9cOGSX&oh=00_AYAaWNPOhpv5CiDXYV_RCqz_WF5eMHRKgvtegiFgRL8ztw&oe=6769070E" 
+                      class="img-fluid">
+                  </a>
+          </div>
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <!-- Ligne 1 : Liens et bouton retour -->
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="portfolio.html">PORTFOLIO</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="about.html">A PROPOS</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="contact.html">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 text-end">
+            <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
+          </div>
+        </div>
+        <!-- Ligne 2 : Copyright et réseaux sociaux -->
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <p>&copy; 2024 Montagn'Art. Tous droits réservés.</p>
+          </div>
+          <div class="col-md-6 text-end social-icons">
+            <a href="https://www.instagram.com/montagnart.ch/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/people/Montagnartch/61553699202260/"
+              target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Lien vers Bootstrap JS et dépendances -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Script pour le retour en haut
+      document
+        .querySelector(".back-to-top")
+        .addEventListener("click", function(e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+  </body>
+</html>
