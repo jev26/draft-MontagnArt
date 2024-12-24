@@ -1,378 +1,489 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Montagn'Art</title>
     <!-- Lien vers Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <style>
-            header {
-              position: relative;
-              background-image: url("img/about.png"); /* Remplace par le chemin de ton image */
-              background-size: cover;
-              background-position: center;
-              background-repeat: no-repeat;
-              color: white;
-              height: 900px; /* Ajuste la hauteur selon ton besoin */
-              display: flex;
-              align-items: top;
-              justify-content: space-between;
-              padding: 0 20px;
-            }
-            .header-overlay {
-              /* Filtre sombre sur l'image */
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              background: rgba(0, 0, 0, 0.2); /* Noir semi-transparent */
-            }
-            header .navbar {
-              position: absolute; /* Fixation en haut */
-              top: 0; /* Place tout en haut */
-              left: 0;
-              right: 0;
-              z-index: 10; /* Priorité par rapport à l'image de fond */
-              padding: 10px 20px; /* Marges internes */
-            }
-            header .navbar-nav a {
-              color: #ffe4d4; /* Couleur par défaut des liens */
-              text-decoration: none; /* Supprime le soulignement */
-              transition: color 0.3s ease; /* Ajoute une transition pour un effet fluide */
-            }
-            header .overlay-text {
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              text-align: center;
-              color: #ffe4d4;
-              font-size: 3.5rem;
-              /*font-weight: bold;*/
-              /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);*/
-            }
+      header {
+        position: relative;
+        background-image: url("img/about.png"); /* Remplace par le chemin de ton image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white;
+        height: 900px; /* Ajuste la hauteur selon ton besoin */
+        display: flex;
+        align-items: top;
+        justify-content: space-between;
+        padding: 0 20px;
+      }
+      .header-overlay {
+        /* Filtre sombre sur l'image */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2); /* Noir semi-transparent */
+      }
+      header .navbar {
+        position: absolute; /* Fixation en haut */
+        top: 0; /* Place tout en haut */
+        left: 0;
+        right: 0;
+        z-index: 10; /* Priorité par rapport à l'image de fond */
+        padding: 10px 20px; /* Marges internes */
+      }
+      header .navbar-nav a {
+        color: #ffe4d4; /* Couleur par défaut des liens */
+        text-decoration: none; /* Supprime le soulignement */
+        transition: color 0.3s ease; /* Ajoute une transition pour un effet fluide */
+      }
+      header .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #ffe4d4;
+        font-size: 3.5rem;
+        /*font-weight: bold;*/
+        /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);*/
+      }
 
-            .container-image {
-                display: flex;
-                justify-content: space-between; /* Sépare le texte et l'image */
-                align-items: center; /* Aligne verticalement le texte et l'image */
-                padding: 20px;
-                background-color: #ffe4d4;
-                color: #cf0001;
-            }
-            .text {
-                flex: 1; /* Prend toute la place disponible à gauche */
-                padding-right: 50px;
-                padding-left: 50px;
-            }
-            .image {
-                flex: 1; /* Prend la même largeur que le texte à droite */
-                max-width: 100%; /* S'assure que l'image ne dépasse pas son conteneur */
-            }
-            .image img {
-                width: 65%; /* L'image prendra toute la largeur de son conteneur */
-                height: auto; /* Conserve les proportions de l'image */
-            }
+      .container-image {
+          display: flex;
+          justify-content: space-between; /* Sépare le texte et l'image */
+          align-items: center; /* Aligne verticalement le texte et l'image */
+          padding: 20px;
+          background-color: #ffe4d4;
+          color: #cf0001;
+      }
+      .text {
+          flex: 1; /* Prend toute la place disponible à gauche */
+          padding-right: 50px;
+          padding-left: 50px;
+      }
+      .image {
+          flex: 1; /* Prend la même largeur que le texte à droite */
+          max-width: 100%; /* S'assure que l'image ne dépasse pas son conteneur */
+      }
+      .image img {
+          width: 65%; /* L'image prendra toute la largeur de son conteneur */
+          height: auto; /* Conserve les proportions de l'image */
+      }
 
-            /* Style du bouton */
-            .contact-btn {
-                display: inline-block;
-                padding: 10px 20px;
-                margin-top: 20px;
-                text-decoration: underline; /* Souligné par défaut */
-                color: #cf0001; /* Couleur du texte */
-                border: none /* 2px solid #cf0001; /* Bordure du bouton */
-                border-radius: 5px;
-                transition: all 0.3s ease; /* Effet de transition lors du hover */
-            }
+      /* Style du bouton */
+      .contact-btn {
+          display: inline-block;
+          padding: 10px 20px;
+          margin-top: 20px;
+          text-decoration: underline; /* Souligné par défaut */
+          color: #cf0001; /* Couleur du texte */
+          border: none /* 2px solid #cf0001; /* Bordure du bouton */
+          border-radius: 5px;
+          transition: all 0.3s ease; /* Effet de transition lors du hover */
+      }
 
-            /* Changement de couleur lors du survol */
-            .contact-btn:hover {
-                /*background-color: #f3af87; /* Fond du bouton au survol */
-                color: #f3af87; /* Couleur du texte au survol */
-                /*text-decoration: none; /* Enlever le souligné au survol */
-            }
-          </style>
-</head>
-<body>
+      /* Changement de couleur lors du survol */
+      .contact-btn:hover {
+          /*background-color: #f3af87; /* Fond du bouton au survol */
+          color: #f3af87; /* Couleur du texte au survol */
+          /*text-decoration: none; /* Enlever le souligné au survol */
+      }
+    </style>
+  </head>
+  <body>
     <!-- Header -->
     <header>
-        <!-- Filtre sombre -->
-        <div class="header-overlay"></div>
+      <!-- Filtre sombre -->
+      <div class="header-overlay"></div>
 
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark container">
-            <a href="/test/" class="navbar-brand">
-                <img src="img/logo.png" alt="Montagn'Art"> 
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="portfolio.html" class="nav-link">PORTFOLIO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about.html" class="nav-link">A PROPOS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link">CONTACT</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <!-- Overlay Text -->
-        <div class="overlay-text">
-            À propos
-            <h6>Qui se cache derrière Montagn'Art ?</h6> 
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark container">
+        <a href="/draft-MontagnArt/" class="navbar-brand">
+          <img src="img/logo.png" alt="Montagn'Art" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="portfolio.html" class="nav-link">PORTFOLIO</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">A PROPOS</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">CONTACT</a>
+            </li>
+          </ul>
         </div>
+      </nav>
+
+      <!-- Overlay Text -->
+      <div class="overlay-text">
+        À propos
+        <h6>Qui se cache derrière Montagn'Art ?</h6>
+      </div>
     </header>
 
     <section class="py-5">
-        <div class="container-image">
-                <!-- Partie texte -->
-                <div class="text">
-                    BASEE A BEX, SOUVENT EN MONTAGNE
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <h2>Hello, moi c'est Tessy</h2>
-                    <br>
-                    <br>
-                    <p>Depuis mon plus jeune âge, je randonne en montagne et dans la nature. J’ai toujours aimé tout ce qui touche à la nature. Suite à mon service militaire, j’ai eu un déclic. J’ai voulu marcher partout et découvrir mon pays d’origine, la Suisse. J’ai toujours eu un amour profond pour ma partie mais à partir de là, il s’est renforcé. J’ai redécouvert la majestuosité des paysages qui nous entourent. Je suis prise d’émerveillement pour la nature ainsi que tous ces phénomènes. Je souhaite aujourd’hui transmettre cet amour à tout un chacun au travers de randonnées.
-                    <br>
-                    <br>
-                    C’est dans ce but que j’ai entamé ma formation d’accompagnatrice en montagne au sein d’Et col et pic. Cet apprentissage n’a fait que me renforcer dans l’idée de connaître plus sur notre environnement et de vouloir le transmettre. C’est à partir de là que j’ai créé Montagn'Art !
-                    <br>
-                    <br>
-                    <!-- Bouton "Contactez-moi" -->
-                    <!--<a href="contact.html" class="contact-btn">CONTACTEZ-MOI !</a>-->
-                </div>
-        
-                <!-- Partie image -->
-                <div class="image">
-                    <img src="img/tessy.jpg">
-                </div>
+      <div class="container-image">
+        <!-- Partie texte -->
+        <div class="text">
+          BASEE A BEX, SOUVENT EN MONTAGNE
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <h2>Hello, moi c'est Tessy</h2>
+          <br />
+          <br />
+          <p>
+            Depuis mon plus jeune âge, je randonne en montagne et dans la
+            nature. J’ai toujours aimé tout ce qui touche à la nature. Suite à
+            mon service militaire, j’ai eu un déclic. J’ai voulu marcher partout
+            et découvrir mon pays d’origine, la Suisse. J’ai toujours eu un
+            amour profond pour ma partie mais à partir de là, il s’est renforcé.
+            J’ai redécouvert la majestuosité des paysages qui nous entourent. Je
+            suis prise d’émerveillement pour la nature ainsi que tous ces
+            phénomènes. Je souhaite aujourd’hui transmettre cet amour à tout un
+            chacun au travers de randonnées.
+            <br />
+            <br />
+            C’est dans ce but que j’ai entamé ma formation d’accompagnatrice en
+            montagne au sein d’Et col et pic. Cet apprentissage n’a fait que me
+            renforcer dans l’idée de connaître plus sur notre environnement et
+            de vouloir le transmettre. C’est à partir de là que j’ai créé
+            Montagn'Art !
+            <br />
+            <br />
+            <!-- Bouton "Contactez-moi" -->
+            <!--<a href="contact.html" class="contact-btn">CONTACTEZ-MOI !</a>-->
+          </p>
         </div>
+
+        <!-- Partie image -->
+        <div class="image">
+          <img src="img/tessy.jpg" />
+        </div>
+      </div>
     </section>
 
     <!-- Section Présentation Montagn'Art -->
     <section class="py-5-2">
-        <div class="container"> <!--style="margin-top: 5%; margin-bottom: 5%;">-->
-            <div class="gap-50" style="width:100%; height:100px;"></div>
-            <h2 class="text-left">Montagn'Art</h2>
-            <p class="text-left">
-                <br>
-                <br>
-                Le nom Montagn’Art regroupe deux de mes passions: la montagne et le dessin. La montagne pour sa majestuosité et le sentiment de liberté qu’elle m’offre quand j’arpente les chemins de randonnée. Elle impressionne par sa grandeur et sa beauté tout en sachant rappeler qu’elle peut rester indomptable.
-                <br>
-                Le dessin me permet de m’évader dans mes pensées et de profiter de l’instant. Il est également le moyen de retranscrire notre ressenti. C’est pour ces raisons que j’aime le pratiquer en montagne.
-                <br>
-                L’art se trouve sous de multiples formes, que ce soit dans les peintures ou dans tout ce qui nous entoure.
-                <br>
-                <br>                                        
-                Le mot Montagnard évoque beaucoup pour moi. Premièrement car il rime avec mon nom de famille qui m’a été transmis par mon grand-père, un fervent montagnard. Deuxièmement, pour moi, les montagnards sont ceux qui arrivent à vivre en harmonie avec la montagne. C’est un mode de vie que j’admire.
-                <br>
-                Tout s’est alors parfaitement accordé pour en faire le nom de mon entreprise.
-            </p>
-            <div class="gap-50" style="width:100%; height:100px;"></div>
-        </div>
+      <div class="container">
+        <!--style="margin-top: 5%; margin-bottom: 5%;">-->
+        <div class="gap-50" style="width:100%; height:100px;"></div>
+        <h2 class="text-left">Montagn'Art</h2>
+        <p class="text-left">
+          <br />
+          <br />
+          Le nom Montagn’Art regroupe deux de mes passions: la montagne et le
+          dessin. La montagne pour sa majestuosité et le sentiment de liberté
+          qu’elle m’offre quand j’arpente les chemins de randonnée. Elle
+          impressionne par sa grandeur et sa beauté tout en sachant rappeler
+          qu’elle peut rester indomptable.
+          <br />
+          Le dessin me permet de m’évader dans mes pensées et de profiter de
+          l’instant. Il est également le moyen de retranscrire notre ressenti.
+          C’est pour ces raisons que j’aime le pratiquer en montagne.
+          <br />
+          L’art se trouve sous de multiples formes, que ce soit dans les
+          peintures ou dans tout ce qui nous entoure.
+          <br />
+          <br />
+          Le mot Montagnard évoque beaucoup pour moi. Premièrement car il rime
+          avec mon nom de famille qui m’a été transmis par mon grand-père, un
+          fervent montagnard. Deuxièmement, pour moi, les montagnards sont ceux
+          qui arrivent à vivre en harmonie avec la montagne. C’est un mode de
+          vie que j’admire.
+          <br />
+          Tout s’est alors parfaitement accordé pour en faire le nom de mon
+          entreprise.
+        </p>
+        <div class="gap-50" style="width:100%; height:100px;"></div>
+      </div>
     </section>
 
     <!-- Rando aquarelle - v1 -->
     <section class="py-5">
-            <div class="container-image">
-                    <!-- Partie texte -->
-                    <div class="text", style="align-items: center;">
-                        <h2>Le concept de Rando Aquarelle</h2>
-                        <br>
-                        <br>
-                        <p>Je pratique le dessin depuis petite. Je prenaisdes cours de dessin pour m’améliorer etapprendre les différentes techniques.
-                        <br>
-                        <br>
-                        Aujourd’hui, je pratique principalement le crayon, l’aquarelle, l’acrylique et la peinture à l’huile.
-                        <br>    
-                    </div>
-            
-                    <!-- Partie image -->
-                    <div class="image">
-                        <img src="img/aquarelle.png">
-                    </div>
-            </div>
-        </section>
+      <div class="container-image">
+        <!-- Partie texte -->
+        <div class="text" , style="align-items: center;">
+          <h2>Le concept de Rando Aquarelle</h2>
+          <br />
+          <br />
+          <p>
+            Je pratique le dessin depuis petite. Je prenaisdes cours de dessin
+            pour m’améliorer etapprendre les différentes techniques.
+            <br />
+            <br />
+            Aujourd’hui, je pratique principalement le crayon, l’aquarelle,
+            l’acrylique et la peinture à l’huile.
+            <br />
+          </p>
+        </div>
+
+        <!-- Partie image -->
+        <div class="image">
+          <img src="img/aquarelle.png" />
+        </div>
+      </div>
+    </section>
 
     <!-- Rando aquarelle - v2 -->
-    <div class="image-block" style="background-image: url('img/photo_1.jpg'); height: 700px;">
-        <div class="text" style = "text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
-                <h2 class='text-center'>Rando Aquarelle</h2>
-                <br>
-                <p>Je pratique le dessin depuis petite. Je prenais des cours de dessin pour m’améliorer et apprendre les différentes techniques.
-                <br>
-                <br>
-                Aujourd’hui, je pratique principalement le crayon, l’aquarelle, l’acrylique et la peinture à l’huile.
-                <br>    
-        </div>
+    <div
+      class="image-block"
+      style="background-image: url('img/photo_1.jpg'); height: 700px;"
+    >
+      <div class="text" style="text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
+        <h2 class="text-center">Rando Aquarelle</h2>
+        <br />
+        <p>
+          Je pratique le dessin depuis petite. Je prenais des cours de dessin
+          pour m’améliorer et apprendre les différentes techniques.
+          <br />
+          <br />
+          Aujourd’hui, je pratique principalement le crayon, l’aquarelle,
+          l’acrylique et la peinture à l’huile.
+          <br />
+        </p>
+      </div>
     </div>
 
     <!-- Carousel -->
     <section class="py-5">
-    <h2 class="text-center">Découvrez mes prochaines randonnées </h2>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                        <div class="row align-items-center">
-                                <div class="col-md py-2 carousel-img">
-                                    <img src="sorties/pub_Val_Bagnes.png">
-                                </div>
-                                <div class="col-md py-2 carousel-text">
-                                    <div class="gap-50" style="width:100%; height:100px;"></div>
-                                    <h5>Randonnée Hivernale dans le Val de Bagnes</h5>
-                                    <br>
-                                    <br>
-                                    <p>Venez vivtre l'hiver au Val de Bagne durant une demi journée avec une accompagnatrice en montagne.</p>
-                                    <p>Vous découvrirez comment la nature fait pour s'adapter à l'hiver. </p>
-                                    <p>D'autres surprises vous attendent également.</p>
-                                    <br>
-                                    <br>
-                                    <p> Dimanche 15 décembre </p>
-                                    <p> De 12h30 à 26h30 </p>
-                                    <p> 50 CHF</p>
-                                    <!--<a href="contact.html" class="contact-btn">Plus d'informations</a>-->
-                                    <a href="contact.html" class="contact-btn">CONTACTEZ-MOI !</a>
-                                    <div class="gap-50" style="width:100%; height:100px;"></div>
-                                </div>
-                            </div>
-                </div>
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                        <div class="row align-items-center">
-                                <div class="col-md py-2 carousel-img">
-                                    <img src="https://via.placeholder.com/1920x500/ff7f7f">
-                                </div>
-                                <div class="col-md py-2 carousel-text">
-                                        <h5>Titre de l'image 2</h5>
-                                        <p>Description de l'image 2. Un texte qui accompagne l'image et qui est dans un encadrement.</p>
-                                        <a href="contact.html" class="contact-btn">CONTACTEZ-MOI !</a>
-                                </div>
-                            </div>
-                </div>
-                <!-- Slide 3 -->
-                <div class="carousel-item active">
-                        <div class="row align-items-center">
-                                <div class="col-md py-2 carousel-img">
-                                        <img src="https://via.placeholder.com/1920x500/7f7fff">
-                                </div>
-                                <div class="col-md py-2 carousel-text">
-                                        <h5>Titre de l'image 3</h5>
-                                        <p>Description de l'image 3. Un texte qui accompagne l'image et qui est dans un encadrement.</p>
-                                        <a href="contact.html" class="contact-btn">CONTACTEZ-MOI !</a>
-                                </div>
-                            </div>
-                </div>
-            </div>
-            <!-- Flèches de navigation -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
+      <h2 class="text-center">Découvrez mes prochaines randonnées</h2>
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
         </div>
-        </section>
-
-     <!-- Section Instagram -->
-     <section class="container-fluid p-0">
-            <div class="row g-0">
-                    <div class="col text-center" style="height:300px;">
-                        <!-- Lien vers le compte Instagram -->
-                        <br>
-                        <i class="fab fa-instagram"></i>
-                        <br>
-                        <br>
-                        SUIVEZ MES <br>
-                        AVENTURES <br>
-                        <a href="https://www.instagram.com/montagnart.ch/" target="_blank" style="color: #cf0001; text-decoration: none; ">
-                            @montagnart.ch
-                        </a>
-                    </div>
-                    <!-- Images des réels -->
-                    <div class="col" style="height:300px;">
-                        <a href="https://www.instagram.com/reel/DDHYJe4I0NA/" target="_blank">
-                            <img src="https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/432397355_764780955577000_5995115417368657651_n.webp?stp=c288.0.864.864a_dst-jpg_e35_s640x640_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=PHHdG4COSm4Q7kNvgGH4g_6&amp;_nc_zt=23&amp;_nc_ht=scontent-ams4-1.cdninstagram.com&amp;_nc_gid=A7VluCiYvT7qPtU8BNHvica&amp;oh=00_AYDEiQeC1rek13NXMDGZwL2ZycmXQT42sxVxoz9-26ySxw&amp;oe=6768EF2C" 
-                            class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="col" style="height:300px;">
-                            <a href="https://www.instagram.com/reel/DAJr-tSu1XQ/" target="_blank">
-                                <img src="https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/460879983_2022785118187321_8819134436885167466_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=107&ccb=1-7&_nc_sid=18de74&_nc_ohc=NfnFmki4m6YQ7kNvgGDg37K&_nc_zt=23&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_gid=AS34jNw0_7RSpp8okDPyVtu&oh=00_AYDv66nKzOrpCaVsO9DKWByVDg5cecPEPHamQIA6Jzqxhw&oe=6768F23D" 
-                                class="img-fluid">
-                            </a>
-                    </div>
-                    <div class="col" style="height:300px;">
-                            <a href="https://www.instagram.com/reel/C864YCwISI8/" target="_blank">
-                                <img src="https://scontent-ams2-1.cdninstagram.com/v/t51.29350-15/449606829_975887420933868_5596968640580096867_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=104&ccb=1-7&_nc_sid=18de74&_nc_ohc=EUeKVzTxZzcQ7kNvgHdVHAq&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=A_D0ucLqt40on6Bfpd_8xph&oh=00_AYAvXhMLL1W-gyn7rFxybg0ujjR1G0iuFFHyaVJtAFN2Ww&oe=676905E3" 
-                                class="img-fluid">
-                            </a>
-                    </div>
-                    <div class="col" style="height:300px;">
-                            <a href="https://www.instagram.com/reel/C7zHPAJIs8-/" target="_blank">
-                                <img src="https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/447724440_1364750344193142_4009299141872691510_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=105&ccb=1-7&_nc_sid=18de74&_nc_ohc=Que4v3LMTNIQ7kNvgEmq8sS&_nc_zt=23&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_gid=A1UBLzwgAEQQBSY-n9cOGSX&oh=00_AYAaWNPOhpv5CiDXYV_RCqz_WF5eMHRKgvtegiFgRL8ztw&oe=6769070E" 
-                                class="img-fluid">
-                            </a>
-                    </div>
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row align-items-center">
+              <div class="col-md py-2 carousel-img">
+                <img src="sorties/pub_Val_Bagnes.png" />
+              </div>
+              <div class="col-md py-2 carousel-text">
+                <div class="gap-50" style="width:100%; height:100px;"></div>
+                <h5>Randonnée Hivernale dans le Val de Bagnes</h5>
+                <br />
+                <br />
+                <p>
+                  Venez vivtre l'hiver au Val de Bagne durant une demi journée
+                  avec une accompagnatrice en montagne.
+                </p>
+                <p>
+                  Vous découvrirez comment la nature fait pour s'adapter à
+                  l'hiver.
+                </p>
+                <p>D'autres surprises vous attendent également.</p>
+                <br />
+                <br />
+                <p>Dimanche 15 décembre</p>
+                <p>De 12h30 à 26h30</p>
+                <p>50 CHF</p>
+                <!--<a href="contact.html" class="contact-btn">Plus d'informations</a>-->
+                <a href="contact.html" class="contact-btn">CONTACTEZ-MOI !</a>
+                <div class="gap-50" style="width:100%; height:100px;"></div>
+              </div>
             </div>
-        </section>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md py-2 carousel-img">
+                <img src="https://via.placeholder.com/1920x500/ff7f7f" />
+              </div>
+              <div class="col-md py-2 carousel-text">
+                <h5>Titre de l'image 2</h5>
+                <p>
+                  Description de l'image 2. Un texte qui accompagne l'image et
+                  qui est dans un encadrement.
+                </p>
+                <a href="contact.html" class="contact-btn">CONTACTEZ-MOI !</a>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-item active">
+            <div class="row align-items-center">
+              <div class="col-md py-2 carousel-img">
+                <img src="https://via.placeholder.com/1920x500/7f7fff" />
+              </div>
+              <div class="col-md py-2 carousel-text">
+                <h5>Titre de l'image 3</h5>
+                <p>
+                  Description de l'image 3. Un texte qui accompagne l'image et
+                  qui est dans un encadrement.
+                </p>
+                <a href="contact.html" class="contact-btn">CONTACTEZ-MOI !</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Flèches de navigation -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </section>
 
-       
+    <!-- Section Instagram -->
+    <section class="container-fluid p-0">
+      <div class="row g-0">
+        <div class="col text-center" style="height:300px;">
+          <!-- Lien vers le compte Instagram -->
+          <br />
+          <i class="fab fa-instagram"></i>
+          <br />
+          <br />
+          SUIVEZ MES <br />
+          AVENTURES <br />
+          <a
+            href="https://www.instagram.com/montagnart.ch/"
+            target="_blank"
+            style="color: #cf0001; text-decoration: none; "
+          >
+            @montagnart.ch
+          </a>
+        </div>
+        <!-- Images des réels -->
+        <div class="col" style="height:300px;">
+          <a href="https://www.instagram.com/reel/DDHYJe4I0NA/" target="_blank">
+            <img
+              src="https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/432397355_764780955577000_5995115417368657651_n.webp?stp=c288.0.864.864a_dst-jpg_e35_s640x640_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=PHHdG4COSm4Q7kNvgGH4g_6&amp;_nc_zt=23&amp;_nc_ht=scontent-ams4-1.cdninstagram.com&amp;_nc_gid=A7VluCiYvT7qPtU8BNHvica&amp;oh=00_AYDEiQeC1rek13NXMDGZwL2ZycmXQT42sxVxoz9-26ySxw&amp;oe=6768EF2C"
+              class="img-fluid"
+            />
+          </a>
+        </div>
+        <div class="col" style="height:300px;">
+          <a href="https://www.instagram.com/reel/DAJr-tSu1XQ/" target="_blank">
+            <img
+              src="https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/460879983_2022785118187321_8819134436885167466_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=107&ccb=1-7&_nc_sid=18de74&_nc_ohc=NfnFmki4m6YQ7kNvgGDg37K&_nc_zt=23&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_gid=AS34jNw0_7RSpp8okDPyVtu&oh=00_AYDv66nKzOrpCaVsO9DKWByVDg5cecPEPHamQIA6Jzqxhw&oe=6768F23D"
+              class="img-fluid"
+            />
+          </a>
+        </div>
+        <div class="col" style="height:300px;">
+          <a href="https://www.instagram.com/reel/C864YCwISI8/" target="_blank">
+            <img
+              src="https://scontent-ams2-1.cdninstagram.com/v/t51.29350-15/449606829_975887420933868_5596968640580096867_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=104&ccb=1-7&_nc_sid=18de74&_nc_ohc=EUeKVzTxZzcQ7kNvgHdVHAq&_nc_zt=23&_nc_ht=scontent-ams2-1.cdninstagram.com&_nc_gid=A_D0ucLqt40on6Bfpd_8xph&oh=00_AYAvXhMLL1W-gyn7rFxybg0ujjR1G0iuFFHyaVJtAFN2Ww&oe=676905E3"
+              class="img-fluid"
+            />
+          </a>
+        </div>
+        <div class="col" style="height:300px;">
+          <a href="https://www.instagram.com/reel/C7zHPAJIs8-/" target="_blank">
+            <img
+              src="https://scontent-ams4-1.cdninstagram.com/v/t51.29350-15/447724440_1364750344193142_4009299141872691510_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=105&ccb=1-7&_nc_sid=18de74&_nc_ohc=Que4v3LMTNIQ7kNvgEmq8sS&_nc_zt=23&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_gid=A1UBLzwgAEQQBSY-n9cOGSX&oh=00_AYAaWNPOhpv5CiDXYV_RCqz_WF5eMHRKgvtegiFgRL8ztw&oe=6769070E"
+              class="img-fluid"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <!-- Ligne 1 : Liens et bouton retour -->
-            <div class="row">
-                <div class="col-md-6">
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a href="portfolio.html">PORTFOLIO</a></li>
-                        <li class="list-inline-item"><a href="about.html">A PROPOS</a></li>
-                        <li class="list-inline-item"><a href="contact.html">CONTACT</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-6 text-end">
-                    <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
-                </div>
-            </div>
-            <!-- Ligne 2 : Copyright et réseaux sociaux -->
-            <div class="row mt-3">
-                <div class="col-md-6">
-                    <p>&copy; 2024 Montagn'Art. Tous droits réservés.</p>
-                </div>
-                <div class="col-md-6 text-end social-icons">
-                    <a href="https://www.instagram.com/montagnart.ch/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/people/Montagnartch/61553699202260/" target="_blank"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
+      <div class="container">
+        <!-- Ligne 1 : Liens et bouton retour -->
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="portfolio.html">PORTFOLIO</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="about.html">A PROPOS</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="contact.html">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 text-end">
+            <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
+          </div>
         </div>
+        <!-- Ligne 2 : Copyright et réseaux sociaux -->
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <p>&copy; 2024 Montagn'Art. Tous droits réservés.</p>
+          </div>
+          <div class="col-md-6 text-end social-icons">
+            <a href="https://www.instagram.com/montagnart.ch/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/people/Montagnartch/61553699202260/"
+              target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- Lien vers Bootstrap JS et dépendances -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Script pour le retour en haut
-        document.querySelector('.back-to-top').addEventListener('click', function (e) {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Script pour le retour en haut
+      document
+        .querySelector(".back-to-top")
+        .addEventListener("click", function(e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
         });
     </script>
-</body>
+  </body>
 </html>
