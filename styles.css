@@ -29,8 +29,6 @@ header .navbar-nav a:hover {
   color: #f3af87; /* Couleur des liens au survol */
 }
 
-
-
 /*Footer*/
 footer {
   background-color: rgb(255, 228, 212);
@@ -78,7 +76,7 @@ footer .social-icons a {
 .carousel-item {
   display: flex;
   align-items: center;
-  /*justify-content: space-between;*/
+  justify-content: space-between;
 }
 .carousel-img img {
   width: 100%;
