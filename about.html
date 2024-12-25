@@ -45,6 +45,10 @@
         z-index: 10; /* Priorité par rapport à l'image de fond */
         padding: 10px 20px; /* Marges internes */
       }
+      header .navbar-brand img {
+        width: 50px;
+        height: auto;
+      }
       header .navbar-nav a {
         color: #ffe4d4; /* Couleur par défaut des liens */
         text-decoration: none; /* Supprime le soulignement */
@@ -60,6 +64,19 @@
         font-size: 3.5rem;
         /*font-weight: bold;*/
         /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);*/
+      }
+
+      .navbar-toggler {
+        border: none;
+      }
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22'/%3E%3C/svg%3E");
+      }
+      .dropdown-menu-end {
+        right: 0; /* Aligne le menu déroulant à droite */
       }
 
       .container-image {
@@ -132,9 +149,25 @@
 
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark container">
+        <!-- Logo -->
         <a href="/draft-MontagnArt/" class="navbar-brand">
           <img src="img/logo.png" alt="Montagn'Art" />
         </a>
+
+        <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu de navigation -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
@@ -240,50 +273,56 @@
 
     <!-- Rando aquarelle - v1 -->
     <section class="container-fluid">
-            <div class="container my-5">
-              <div class="row">
-                <!-- Colonne pour le texte -->
-                <div class="col-md-6 text-container">
-                        <h2>Le concept de Rando Aquarelle</h2>
-                        <br />
-                        <br />
-                        <p>
-                          Je pratique le dessin depuis petite. Je prenais des cours de dessin
-                          pour m’améliorer et apprendre les différentes techniques.
-                          <br />
-                          <br />
-                          Aujourd’hui, je pratique principalement le crayon, l’aquarelle,
-                          l’acrylique et la peinture à l’huile.
-                          <br />
-                        </p>
-                </div>
-                <!-- Colonne pour l'image -->
-                <div class="col-md-6 image-container">
-                    <img src="img/aquarelle.png" />
-                </div>
-              </div>
-            </div>
-          </section>
+      <div class="container my-5">
+        <div class="row">
+          <!-- Colonne pour le texte -->
+          <div class="col-md-6 text-container">
+            <h2>Le concept de Rando Aquarelle</h2>
+            <br />
+            <br />
+            <p>
+              Je pratique le dessin depuis petite. Je prenais des cours de
+              dessin pour m’améliorer et apprendre les différentes techniques.
+              <br />
+              <br />
+              Aujourd’hui, je pratique principalement le crayon, l’aquarelle,
+              l’acrylique et la peinture à l’huile.
+              <br />
+            </p>
+          </div>
+          <!-- Colonne pour l'image -->
+          <div class="col-md-6 image-container">
+            <img src="img/aquarelle.png" />
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Rando aquarelle - v2 -->
-    <div
-      class="image-block"
-      style="background-image: url('img/photo_1.jpg'); height: 700px;"
-    >
-      <div class="text" style="text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
-        <h2 class="text-center">Rando Aquarelle</h2>
-        <br />
-        <p>
-          Je pratique le dessin depuis petite. Je prenais des cours de dessin
-          pour m’améliorer et apprendre les différentes techniques.
+    <section class="container-fluid g-0">
+      <div
+        class="image-block img-fluid"
+        style="background-image: url('img/photo_1.jpg'); height: 500px;"
+      >
+        <div
+          class="text"
+          style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);"
+        >
           <br />
+          <h2 class="text-center">Rando Aquarelle</h2>
           <br />
-          Aujourd’hui, je pratique principalement le crayon, l’aquarelle,
-          l’acrylique et la peinture à l’huile.
-          <br />
-        </p>
+          <p>
+            Je pratique le dessin depuis petite. Je prenais des cours de dessin
+            pour m’améliorer et apprendre les différentes techniques.
+            <br />
+            <br />
+            Aujourd’hui, je pratique principalement le crayon, l’aquarelle,
+            l’acrylique et la peinture à l’huile.
+            <br />
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- Carousel -->
     <section class="py-5">
@@ -403,43 +442,42 @@
     <!-- Section Instagram -->
     <section class="container-fluid p-0">
       <div class="row g-0">
-              <div class="col-12 col-lg-4 text-center" style="height:300px;">
-                  <!-- Lien vers le compte Instagram -->
-                  <br>
-                  <i class="fab fa-instagram"></i>
-                  <br>
-                  <br>
-                  SUIVEZ MES <br>
-                  AVENTURES <br>
-                  <a href="https://www.instagram.com/montagnart.ch/" target="_blank" style="color: #cf0001; text-decoration: none; ">
-                      @montagnart.ch
-                  </a>
-              </div>
-              <!-- Images des réels -->
-              <div class="col-6 col-lg-2" style="height:300px;">
-                  <a href="https://www.instagram.com/reel/DDHYJe4I0NA/" target="_blank">
-                      <img src="img-instagram/reel-1.png" 
-                      class="img-fluid">
-                  </a>
-              </div>
-              <div class="col-6 col-lg-2" style="height:300px;">
-                      <a href="https://www.instagram.com/reel/DAJr-tSu1XQ/" target="_blank">
-                          <img src="img-instagram/reel-2.png" 
-                          class="img-fluid">
-                      </a>
-              </div>
-              <div class="col-6 col-lg-2" style="height:300px;">
-                      <a href="https://www.instagram.com/reel/C864YCwISI8/" target="_blank">
-                          <img src="img-instagram/reel-3.png" 
-                          class="img-fluid">
-                      </a>
-              </div>
-              <div class="col-6 col-lg-2" style="height:300px;">
-                      <a href="https://www.instagram.com/reel/C7zHPAJIs8-/" target="_blank">
-                          <img src="img-instagram/reel-4.png" 
-                          class="img-fluid">
-                      </a>
-              </div>
+        <div class="col-12 col-lg-4 text-center" style="height:300px;">
+          <!-- Lien vers le compte Instagram -->
+          <br />
+          <i class="fab fa-instagram"></i>
+          <br />
+          <br />
+          SUIVEZ MES AVENTURES <br />
+          <a
+            href="https://www.instagram.com/montagnart.ch/"
+            target="_blank"
+            style="color: #cf0001; text-decoration: none; "
+          >
+            @montagnart.ch
+          </a>
+        </div>
+        <!-- Images des réels -->
+        <div class="col-6 col-lg-2" style="height:300px;">
+          <a href="https://www.instagram.com/reel/DDHYJe4I0NA/" target="_blank">
+            <img src="img-instagram/reel-1.png" class="img-fluid" />
+          </a>
+        </div>
+        <div class="col-6 col-lg-2" style="height:300px;">
+          <a href="https://www.instagram.com/reel/DAJr-tSu1XQ/" target="_blank">
+            <img src="img-instagram/reel-2.png" class="img-fluid" />
+          </a>
+        </div>
+        <div class="col-6 col-lg-2" style="height:300px;">
+          <a href="https://www.instagram.com/reel/C864YCwISI8/" target="_blank">
+            <img src="img-instagram/reel-3.png" class="img-fluid" />
+          </a>
+        </div>
+        <div class="col-6 col-lg-2" style="height:300px;">
+          <a href="https://www.instagram.com/reel/C7zHPAJIs8-/" target="_blank">
+            <img src="img-instagram/reel-4.png" class="img-fluid" />
+          </a>
+        </div>
       </div>
     </section>
 
@@ -447,8 +485,8 @@
     <footer>
       <div class="container">
         <!-- Ligne 1 : Liens et bouton retour -->
-        <div class="row">
-          <div class="col-md-6">
+        <div class="row text-center text-md-start">
+          <div class="col-12 col-md-6 mb-md-0">
             <ul class="list-inline">
               <li class="list-inline-item">
                 <a href="portfolio.html">PORTFOLIO</a>
@@ -461,16 +499,16 @@
               </li>
             </ul>
           </div>
-          <div class="col-md-6 text-end">
+          <div class="col-12 col-md-6 text-md-end">
             <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
           </div>
         </div>
         <!-- Ligne 2 : Copyright et réseaux sociaux -->
-        <div class="row mt-3">
-          <div class="col-md-6">
+        <div class="row text-center text-md-start mt-3">
+          <div class="col-12 col-md-6 mb-3 mb-md-0">
             <p>&copy; 2024 Montagn'Art. Tous droits réservés.</p>
           </div>
-          <div class="col-md-6 text-end social-icons">
+          <div class="col-12 col-md-6 text-md-end social-icons">
             <a href="https://www.instagram.com/montagnart.ch/" target="_blank"
               ><i class="fab fa-instagram"></i
             ></a>

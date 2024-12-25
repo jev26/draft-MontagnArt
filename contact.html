@@ -61,6 +61,20 @@
         /*font-weight: bold;*/
         /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);*/
       }
+
+      .navbar-toggler {
+        border: none;
+      }
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22'/%3E%3C/svg%3E");
+      }
+      .dropdown-menu-end {
+        right: 0; /* Aligne le menu déroulant à droite */
+      }
+
       body a {
         text-decoration: none; /* Supprime le soulignement par défaut */
         color: inherit; /* Prend la couleur du texte autour */
@@ -81,6 +95,20 @@
         <a href="/draft-MontagnArt/" class="navbar-brand">
           <img src="img/logo.png" alt="Montagn'Art" />
         </a>
+
+        <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
@@ -120,8 +148,8 @@
     <footer>
       <div class="container">
         <!-- Ligne 1 : Liens et bouton retour -->
-        <div class="row">
-          <div class="col-md-6">
+        <div class="row text-center text-md-start">
+          <div class="col-12 col-md-6 mb-md-0">
             <ul class="list-inline">
               <li class="list-inline-item">
                 <a href="portfolio.html">PORTFOLIO</a>
@@ -134,16 +162,16 @@
               </li>
             </ul>
           </div>
-          <div class="col-md-6 text-end">
+          <div class="col-12 col-md-6 text-md-end">
             <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
           </div>
         </div>
         <!-- Ligne 2 : Copyright et réseaux sociaux -->
-        <div class="row mt-3">
-          <div class="col-md-6">
+        <div class="row text-center text-md-start mt-3">
+          <div class="col-12 col-md-6 mb-3 mb-md-0">
             <p>&copy; 2024 Montagn'Art. Tous droits réservés.</p>
           </div>
-          <div class="col-md-6 text-end social-icons">
+          <div class="col-12 col-md-6 text-md-end social-icons">
             <a href="https://www.instagram.com/montagnart.ch/" target="_blank"
               ><i class="fab fa-instagram"></i
             ></a>
