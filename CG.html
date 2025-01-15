@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      header {
+        background-color: #ffe4d4;
+        color: #cf0001;
+      }
+      header .navbar-nav a {
+        color: #cf0001; /* Couleur par défaut des liens */
+        text-decoration: none; /* Supprime le soulignement */
+        transition: color 0.3s ease; /* Ajoute une transition pour un effet fluide */
+      }
+      header .navbar-nav a:hover {
+        color: #f3af87; /* Couleur des liens au survol */
+      }
+      .navbar-toggler {
+        border: none;
+      }
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%cf0001' stroke-width='2' d='M4 7h22M4 15h22'/%3E%3C/svg%3E");
+      }
+    </style>
+    <title>Montagn'Art</title>
+    <!-- Lien vers Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark container">
+        <a href="/draft-MontagnArt/" class="navbar-brand">
+          <img src="img/montagnart-logo-couleur.png" alt="Montagn'Art" />
+        </a>
+
+        <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="rando.html" class="nav-link">RANDONNEES</a>
+            </li>
+            <li class="nav-item">
+              <a href="portfolio.html" class="nav-link">GALERIE</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">A PROPOS</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Section de présentation -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center">Conditions Générales</h2>
+        <div class="gap-50" style="width:100%; height:60px;"></div>
+        <h4>1. Conclusion du contrat</h4>
+        <p>
+          1.1 Le contrat est conclu quand le client aura rendu sa fiche
+          d’inscription à une randonnée ou un trekking (durée d’une demi-journée
+          à plusieurs jours) proposé par Montagn’Art et qu’il aura reçu une
+          réponse favorable. Il peut aussi s’agir d’un accord oral.
+        </p>
+        <h4>2. Confirmation de participation</h4>
+        <p>
+          Pour les randonnées dès 1 jours, le client confirme sa participation
+          en virant le montant demandé sur le compte suivant:
+        </p>
+        <p>
+          IBAN: CH1100767000U 5636 1624
+          <br />
+          Tessy Veillard
+          <br />
+          Avenue de la Gare 46, 1880 Bex
+        </p>
+        <p>
+          Le solde du montant total est viré au plus tard 7 jours avant le
+          départ des trek de plus de 1 jour et 24h avant une randonnée d’un jour
+          ou moins, ou au départ, selon les informations de la randonnée.
+        </p>
+        <p>
+          L’inscription implique que le participant a pris connaissance des
+          présentes conditions générales.
+        </p>
+        <h4>3. Tarifs</h4>
+        <p>
+          Le tarif forfaitaire (en CJF) est convenu entre le/la client(e) et
+          Montagn’Art avant l’activité. Il comprend toutes les prestations
+          citées dans l’offre, le contrat ou le programme et exclus celles qui
+          ne sont pas indiquées expressément.
+        </p>
+        <p>
+          Des services supplémentaires ou modifications de prix (tels que frais
+          de transports, augmentation des tarifs hôteliers, des remontées
+          mécaniques, fluctuation du cours de change, etc.) peuvent également
+          engendrer une modification du prix forfait indiqué que le client
+          indique être disposé à payer en plus si nécessaire.
+        </p>
+        <p>
+          Pour référence, le tarif recommandé par l’ASAM pour une prestation de
+          randonnée est de 500 CHF par jour et 380 CHF par demi-journée ou
+          soirée (maximum 4 heures).
+        </p>
+        <h4>4. Annulation</h4>
+        <p>
+          4.1 Si Montagn’Art doit renoncer à l’activité pour des raisons
+          relevant de son fait (nombre insuffisant de participants, maladie,
+          accident, etc), aucune des parties ne sera tenue de verser de
+          rémunération ou d’indemnisation à l’autre. L’acompte versé par le
+          client lui sera rendu.
+        </p>
+        <p>
+          4.2 Toute annulation doit être envoyée à Montagn’Art par e-mail ou
+          courrier postal. Si le client annule le mandat, pour quelque raison
+          que ce soit, l’honoraire est dû selon le barème suivant:
+        </p>
+        <p>
+          <strong>Pour les activités d’une journée maximum:</strong>
+          <ul>
+              <li> annulation jusqu’à 24h avant le départ: 50% du prix forfaitaire.</li>
+              <li> annulation en dessous de 24h avant l’heure de départ: 100% du prix
+          forfaitaire.</li>
+        </ul>
+        </p>
+        <p>
+                <strong>Pour les activités dès 2 jours:</strong>
+                <ul>
+                    <li> annulées au delà de 90 jours avant le
+          départ: 50 CHF par personne inscrite </li>
+          <li> annulées entre 60 à 90 jours
+          avant le départ: 30% du prix total</li>
+          <li>  annulées entre 30 à 59 jours avant
+          le départ: 50% du prix total</li>
+          <li>  annulées moins de 30 jours avant le
+          départ: 100% du prix total.</li>
+        </ul>
+        </p>
+        <p>
+          Les personnes qui ne se présentent pas au lieu de rendez-vous ou trop
+          tard, ou celles qui doivent interrompre la randonnée pour diverses
+          raisons, ne pourront prétendre à aucun remboursement.
+        </p>
+        <p>
+          4.3 Il appartient à Montagn’Art de juger si la randonnée peut avoir
+          lieu en fonction des conditions météorologiques. En cas de conditions
+          défavorables, Montagn’Art peut:
+        </p>
+        <p>
+                <ul>
+                        <li>
+          proposer une randonnée alternative (dans un secteur moins exposé ou
+          dans une région où les conditions météo sont plus clémentes).</li>
+          <li>  proposer
+          de reporter à une date ultérieure, en convenance avec le client, dans
+          un délai de 12 mois.</li>
+        </ul>
+        </p>
+        <p>
+          4.4 Si le client n’accepte aucune de ces alternatives, l’acompte est
+          conservé par Montagn’Art.
+        </p>
+        <h4>5. Arrêt et interruption</h4>
+        <p>L’intégralité des honoraires reste due,</p>
+        <p>
+                <ul>
+                        <li>
+          si pour des raisons météorologique, de santé ou de fatigue du/des
+          client(s), l’activité doit être écourtée. </li>
+          <li> si le client décide
+          d’interrompre l’activité avant son terme, pour quelque raison que ce
+          soit.</li>
+          <li> si Montagn’Art doit porter assistance à d’autres randonneurs
+          (car il y est tenu et habilité) et compromettre ainsi la poursuite de
+          l’activité prévue.</li>
+          <li> si la durée totale de la randonnée doit être
+          prolongée pour des raisons de sécurité (arrêt en cabane pour cause
+          d’intempérie, fatigue du/des client(s)), un montant forfaitaire de 500
+          CHF par jour + participation aux frais, divisé par le nombre de
+          client(s), est dû à Montagn’Art.</li>
+        </ul>
+        </p>
+        <h4>6. Comportement des clients</h4>
+        <p>
+          Le client se trouve sous la responsabilité de Montagn’Art durant toute
+          la durée de l’activité. De ce fait, il se conforme scrupuleusement aux
+          instructions de l’accompagnateur et ne s’éloigne du groupe qu’avec son
+          accord préalable. S’il choisit de quitter le groupe de son plein gré,
+          il le fait sous son entière responsabilité.
+        </p>
+        <h4>7. Santé</h4>
+        <p>
+          7.1 Le client est tenu de s’informer du niveau de difficulté de la
+          randonnée. Il est son propre juge quant à sa capacité d’y participer.
+          En cas de doute, il doit en faire part à Montagn’Art afin d’évaluer
+          conjointement son aptitude à participer.
+        </p>
+        <p>
+          7.2 Le client est en outre tenu de communiquer au préalable toute
+          particularité sanitaire d’ordre physique et psychique (opérations,
+          allergie, vertige, diabète, phobies, asthme, souffle au coeur, etc.).
+          Montagn’Art décline toute responsabilité en cas de problème survenant
+          pendant ou après l’activité lié à une défaillance non révélée. Le
+          client est responsable d’emporter les médicaments et équipements
+          spécifiques à ses pathologies. Selon les cas, une autorisation
+          médicale peut être demandée.
+        </p>
+        <h4>8. Equipement</h4>
+        <p>
+          Montagn’Art fournit au client une liste exhaustive de l’équipement à
+          emporter. Il est de la responsabilité du client de s’y conformer et
+          d’informer Montagn’Art au préalable si tu matériel lui ferait défaut.
+          Montagn’Art étudiera avec lui la possibilité de lui prêter ou louer le
+          matériel manquant à un prix convenu. </p>
+          <p>Montagn’Art réserve le droit de
+          contrôler l'équipement du client avant le départ. Si celuici montrait
+          de graves défauts ou manquement, Montagn’Art se réserve le droit de
+          refuser la participation d’un client manifestement mal équipé.
+        </p>
+        <h4>9. Responsabilité de Montagn’Art</h4>
+        <p>
+          Montagn’Art décline toute responsabilité en cas de prestation non ou
+          mal exécutée par les prestataires de services tiers (hôtels,
+          restaurants, cabanes, transports, etc.).
+        </p>
+        <p>
+          Montagn’Art n’est aucunement responsable des défauts dus à des
+          prestataires de services externes, de la mauvaise santé ou condition
+          physique des participants, des incidents, accidents, dommages
+          corporels ou matériel survenant pendant l’activité et pendant les
+          trajets pour se rendre ou quitter la région d’excursion.
+        </p>
+        <p>
+          Montagn’Art ne peut être tenu pour responsable des conséquences d’un
+          éventuel retard imprévisible sur le programme prévu et des frais
+          supplémentaires pouvant en découler.
+        </p>
+        <h4>9. Assurance</h4>
+        <p>
+          Il incombe au client de contracter les assurances suivantes
+          (recommandées):
+        </p>
+        <p>
+                <ul>
+                        <li>
+          Assurance maladie et accident</li>
+          <li>  Couverture en cas de recherche,
+          sauvetage et rapatriement (si pas déjà couvert par l’assurance
+          maladie/accident). Montagn’Art se réserve le droit d’appeler des
+          secours au nom du client s’il le juge nécessaire pour la sécurité ou
+          sa santé, même si le client n’est pas assuré.</li>
+          <li>  Assurance Responsabilité
+          Civile incluant les accidents en montagne Montagn’Art vous recommande
+          fortement d’être membre REGA.</li>
+        </ul>
+        </p>
+        <p>
+          De son côté Montagn’Art est au bénéfice d’une assurance Responsabilité
+          Civile professionnelle collective, d’une assurance Protection
+          Juridique.
+        </p>
+        <p>Bex, le 11.01.2025</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <!-- Ligne 1 : Liens et bouton retour -->
+        <div class="row text-center text-md-start">
+          <div class="col-12 col-md-6 mb-md-0">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="rando.html">RANDONNEES</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="portfolio.html">GALERIE</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="about.html">A PROPOS</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="contact.html">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6 text-md-end">
+            <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
+          </div>
+        </div>
+        <!-- Ligne 2 : Copyright et réseaux sociaux -->
+        <div class="row text-center text-md-start mt-3">
+          <div class="col-12 col-md-6 mb-3 mb-md-0">
+                <p>&copy; 2025 Montagn'Art · Tous droits réservés · <a href="CG.html">Conditions Générales</a></p>
+          </div>
+          <div class="col-12 col-md-6 text-md-end social-icons">
+            <a href="https://www.instagram.com/montagnart.ch/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/people/Montagnartch/61553699202260/"
+              target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Lien vers Bootstrap JS et dépendances -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Script pour le retour en haut
+      document
+        .querySelector(".back-to-top")
+        .addEventListener("click", function(e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+  </body>
+</html>
