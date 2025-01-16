@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/draft-MontagnArt/styles.css" />
+    <style>
+      header {
+        background-color: #ffe4d4;
+        color: #cf0001;
+      }
+      header .navbar-nav a {
+        color: #cf0001; /* Couleur par défaut des liens */
+        text-decoration: none; /* Supprime le soulignement */
+        transition: color 0.3s ease; /* Ajoute une transition pour un effet fluide */
+      }
+      header .navbar-nav a:hover {
+        color: #f3af87; /* Couleur des liens au survol */
+      }
+      .navbar-toggler {
+        border: none;
+      }
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%cf0001' stroke-width='2' d='M4 7h22M4 15h22'/%3E%3C/svg%3E");
+      }
+    </style>
+    <title>Montagn'Art</title>
+    <!-- Lien vers Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark container">
+        <a href="/draft-MontagnArt/" class="navbar-brand">
+          <img
+            src="/draft-MontagnArt/img/montagnart-logo-couleur.png"
+            alt="Montagn'Art"
+          />
+        </a>
+
+        <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="rando.html" class="nav-link">RANDONNEES</a>
+            </li>
+            <li class="nav-item">
+              <a href="/draft-MontagnArt/portfolio.html" class="nav-link"
+                >GALERIE</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="/draft-MontagnArt/about.html" class="nav-link"
+                >A PROPOS</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="/draft-MontagnArt/contact.html" class="nav-link"
+                >CONTACT</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Section de présentation -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center">Trek dans l'Oberland Bernois</h2>
+        <h5 class="text-center">Juin 2024</h5>
+        <p class="text-center">
+          J’ai organisé ce trek de 4 jours pour 2 amis qui voulaient découvrir
+          l’Oberland Bernois. Depuis Grindelwald, nous avons pris de la hauteur
+          pour découvrir le somptueux panorama sur les 3 bernoises. Nous avons
+          passé les nuits dans différents refuges de montagnes dont la superbe
+          cabane de Bäregg.
+        </p>
+      </div>
+    </section>
+
+    <section class="container-fluid">
+      <div class="row px-5 py-2">
+        <div class="col-12 col-md-4" style="flex-direction: column;">
+          <img class="image-block img-responsive" src="First_1.jpg" />
+          <!--<div
+            class="image-block"
+            style="background-image: url('Val_Bagnes_1.jpg'); height: 100%;"
+          ></div>-->
+        </div>
+        <div
+          class="col-12 col-md-4"
+          style="height: 500px; flex-direction: column;"
+        >
+          <!--<img class="image-block" src="Val_Bagnes_2.jpg" />-->
+          <div
+            class="image-block"
+            style="background-image: url('First_2.jpg'); height: 100%;"
+          ></div>
+        </div>
+        <div
+          class="col-12 col-md-4"
+          style="height: 500px; flex-direction: column;"
+        >
+          <div
+            class="image-block"
+            style="background-image: url('First_3.jpg'); height: 100%;"
+          ></div>
+        </div>
+      </div>
+
+      <div class="row px-5 py-2">
+        <div
+          class="col-12 col-md-4"
+          style="height: 500px; flex-direction: column;"
+        >
+          <div
+            class="image-block"
+            style="background-image: url('First_4.jpg'); height: 100%;"
+          ></div>
+        </div>
+        <div
+          class="col-12 col-md-4"
+          style="height: 500px; flex-direction: column;"
+        >
+          <div
+            class="image-block"
+            style="background-image: url('First_5.jpg'); height: 100%;"
+          ></div>
+        </div>
+        <div
+          class="col-12 col-md-4"
+          style="height: 500px; flex-direction: column;"
+        >
+          <div
+            class="image-block"
+            style="background-image: url('First_6.jpg'); height: 100%;"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <!-- Ligne 1 : Liens et bouton retour -->
+        <div class="row text-center text-md-start">
+          <div class="col-12 col-md-6 mb-md-0">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="rando.html">RANDONNEES</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/draft-MontagnArt/portfolio.html">GALERIE</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/draft-MontagnArt/about.html">A PROPOS</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/draft-MontagnArt/contact.html">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6 text-md-end">
+            <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
+          </div>
+        </div>
+        <!-- Ligne 2 : Copyright et réseaux sociaux -->
+        <div class="row text-center text-md-start mt-3">
+          <div class="col-12 col-md-6 mb-3 mb-md-0">
+            <p>
+              &copy; 2025 Montagn'Art · Tous droits réservés ·
+              <a href="/draft-MontagnArt/CG.html">Conditions Générales</a>
+            </p>
+          </div>
+          <div class="col-12 col-md-6 text-md-end social-icons">
+            <a href="https://www.instagram.com/montagnart.ch/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/people/Montagnartch/61553699202260/"
+              target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Lien vers Bootstrap JS et dépendances -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Script pour le retour en haut
+      document
+        .querySelector(".back-to-top")
+        .addEventListener("click", function(e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+  </body>
+</html>
