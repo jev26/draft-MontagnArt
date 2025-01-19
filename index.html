@@ -113,13 +113,24 @@
 
       .portfolio-btn {
           display: inline-block;
-          margin-top: 50%;
+          margin-top: 30%;
           text-decoration: none; /* Souligné par défaut */
           color: #ffe4d4; /* Couleur du texte */
           border: none; /* 2px solid #cf0001; /* Bordure du bouton */
           text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
           transition: all 0.3s ease; /* Effet de transition lors du hover */
       }
+
+      btn .btn-red {
+    --bs-btn-color: #cf0001;
+    --bs-btn-border-color: #cf0001;
+    --bs-btn-hover-color: #ffe4d4;
+    --bs-btn-hover-bg: #cf0001;
+    --bs-btn-hover-border-color: #cf0001;
+    --bs-btn-active-bg: #cf0001;
+    --bs-btn-active-border-color: #cf0001;
+    --bs-btn-disabled-bg: #cf0001;
+}
     </style>
 
     <!-- Lien vers Bootstrap CSS -->
@@ -305,9 +316,8 @@ propose différentes activités.</p>
     <p class="text-center"> Les inscriptions sont obligatoires et ferment 48h avant la sortie.</p>
     <div class="gap-50" style="width:100%; height:10px;"></div>
     <p class="text-center">
-      <a class="btn btn-outline-primary center" href="contact.html" role="button">  S'inscrire</a>
-      <!--Pour avoir plus d'informations et vous inscrire:
-      <a href="contact.html" class="contact-btn">CONTACTEZ-MOI !</a>-->
+      <a class="btn btn-red" href="contact.html" role="button" 
+      style="--bs-btn-border-color: #cf0001; --bs-btn-hover-bg: #cf0001; --bs-btn-hover-color: #ffe4d4;">  S'inscrire</a>
     </p>
     <p class="text-center">
       Toutes les randonnées se feront en raquettes si l'enneigenemnt le
@@ -386,7 +396,7 @@ propose différentes activités.</p>
         <div class="carousel-item">
           <div class="row align-items-center">
             <div class="col-md py-2 carousel-img">
-              <img src="sorties/pub_Val_Bagnes.png" />
+              <img src="sorties/hiver_25/MontagnArt-Rando pleine lune.JPG" />
             </div>
             <div class="col-md py-2 carousel-text">
               <h5>SORTIE PLEINE LUNE</h5>
@@ -449,7 +459,7 @@ propose différentes activités.</p>
         <div class="carousel-item">
           <div class="row align-items-center">
             <div class="col-md py-2 carousel-img">
-              <img src="sorties/hiver_25/tavillon.jpg" />
+              <img src="sorties/hiver_25/MontagnArt-de l'épicéa au tavillon.JPG" />
             </div>
             <div class="col-md py-2 carousel-text">
               <h5>DE L'EPICEA AU TAVILLON</h5>
@@ -502,9 +512,7 @@ propose différentes activités.</p>
 
    <!-- Section lien portfolio -->
    <section class="container-fluid g-0">
-      <div class="image-block img-fluid" style="background-image: url('img/MontagnArt_Les Muverans.jpg'); height: 500px;">
-        <div class="gap-50" style="width:100%; height:100px;"></div>
-  
+      <div class="image-block img-fluid" style="background-image: url('img/MontagnArt_Les Muverans.jpg'); height: 450px;">
         <div class="text" style = "text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
           <a href="portfolio.html" class="portfolio-btn">
               <div class="text-center">  
@@ -519,46 +527,44 @@ propose différentes activités.</p>
 
 <!-- Section Instagram -->
 <section class="container-fluid p-0">
-  <div class="row g-0">
-          <div class="col text-center" style="height:300px;">
-              <!-- Lien vers le compte Instagram -->
-              <br>
-              <i class="fab fa-instagram"></i>
-              <br>
-              <br>
-              SUIVEZ MES <br>
-              AVENTURES <br>
-              <a href="https://www.instagram.com/montagnart.ch/" target="_blank" style="color: #cf0001; text-decoration: none; ">
-                  @montagnart.ch
-              </a>
-          </div>
-          <!-- Images des réels -->
-          <div class="col" style="height:300px;">
-              <a href="https://www.instagram.com/reel/DDHYJe4I0NA/" target="_blank">
-                  <img src="img-instagram/reel-1.png" 
-                  class="img-fluid">
-              </a>
-          </div>
-          <div class="col" style="height:300px;">
-                  <a href="https://www.instagram.com/reel/DAJr-tSu1XQ/" target="_blank">
-                      <img src="img-instagram/reel-2.png" 
-                      class="img-fluid">
-                  </a>
-          </div>
-          <div class="col" style="height:300px;">
-                  <a href="https://www.instagram.com/reel/C864YCwISI8/" target="_blank">
-                      <img src="img-instagram/reel-3.png" 
-                      class="img-fluid">
-                  </a>
-          </div>
-          <div class="col" style="height:300px;">
-                  <a href="https://www.instagram.com/reel/C7zHPAJIs8-/" target="_blank">
-                      <img src="img-instagram/reel-4.png" 
-                      class="img-fluid">
-                  </a>
-          </div>
-  </div>
-</section>
+    <div class="row g-0">
+      <div class="col-12 col-lg-4 text-center" style="height:300px;">
+        <!-- Lien vers le compte Instagram -->
+        <div class="gap-50" style="width:100%; height:20%;"></div>
+        <i class="fab fa-instagram"></i>
+        <div class="gap-50" style="width:100%; height:20px;"></div>
+        SUIVEZ MES AVENTURES <br />
+        <a
+          href="https://www.instagram.com/montagnart.ch/"
+          target="_blank"
+          style="color: #cf0001; text-decoration: none; "
+        >
+          @montagnart.ch
+        </a>
+      </div>
+      <!-- Images des réels -->
+      <div class="col-6 col-lg-2" >
+        <a href="https://www.instagram.com/reel/DDHYJe4I0NA/" target="_blank">
+          <img src="img-instagram/reel-1.png" class="img-fluid" />
+        </a>
+      </div>
+      <div class="col-6 col-lg-2" >
+        <a href="https://www.instagram.com/reel/DAJr-tSu1XQ/" target="_blank">
+          <img src="img-instagram/reel-2.png" class="img-fluid" />
+        </a>
+      </div>
+      <div class="col-6 col-lg-2" >
+        <a href="https://www.instagram.com/reel/C864YCwISI8/" target="_blank">
+          <img src="img-instagram/reel-3.png" class="img-fluid" />
+        </a>
+      </div>
+      <div class="col-6 col-lg-2" >
+        <a href="https://www.instagram.com/reel/C7zHPAJIs8-/" target="_blank">
+          <img src="img-instagram/reel-4.png" class="img-fluid" />
+        </a>
+      </div>
+    </div>
+  </section>
 
     <!-- Footer -->
     <footer>
@@ -588,7 +594,7 @@ propose différentes activités.</p>
           <!-- Ligne 2 : Copyright et réseaux sociaux -->
           <div class="row text-center text-md-start mt-3">
             <div class="col-12 col-md-6 mb-3 mb-md-0">
-              <p>&copy; 2025 Montagn'Art · Tous droits réservés · <a href="CG.html">Conditions Générales</a></p>
+              <p style="font-size: 80%;">&copy; 2025 Montagn'Art · Tous droits réservés · <a href="CG.html">Conditions Générales</a></p>
             </div>
             <div class="col-12 col-md-6 text-md-end social-icons">
               <a href="https://www.instagram.com/montagnart.ch/" target="_blank"
@@ -601,6 +607,8 @@ propose différentes activités.</p>
               ></a>
             </div>
           </div>
+
+          <div class="gap-50" style="width:100%; height:50px;"></div>
         </div>
       </footer>
 
