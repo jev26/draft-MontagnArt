@@ -131,6 +131,15 @@
     --bs-btn-active-border-color: #cf0001;
     --bs-btn-disabled-bg: #cf0001;
 }
+
+    #welcome a {
+  color: #cf0001;
+  transition: color 0.3s ease; /* Animation pour un effet fluide */
+}
+#welcome a:hover {
+  color: #f3af87; /* Change la couleur au survol */
+  text-decoration: none; /* Assure que le soulignement reste désactivé */
+}
     </style>
 
     <!-- Lien vers Bootstrap CSS -->
@@ -195,7 +204,7 @@
     </header>
 
     <!-- Section bienvenue -->
-    <section class="container-fluid">
+    <div class="container-fluid" id='welcome'>
       <div class="container my-5">
         <div class="row">
           <!-- Colonne pour le texte -->
@@ -209,7 +218,7 @@ entreprises. </p>
             <p> En plus des activités proposées, il est possible de vous concocter une sortie sur mesure selon
 vos envies ou besoin. </p>
           <p> Je vous souhaite une bonne visite ! </p>
-            <a href="about.html" class="contact-btn" style="color: #cf0001;">EN SAVOIR PLUS SUR MONTAGN'ART</a>
+            <a href="about.html" class="contact-btn">EN SAVOIR PLUS SUR MONTAGN'ART</a>
           </div>
           <!-- Colonne pour l'image -->
           <div class="col-md-6 image-container">
@@ -218,7 +227,7 @@ vos envies ou besoin. </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- section pk pas vous -->
   <section class="container-fluid g-0">
