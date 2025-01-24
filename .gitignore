@@ -1,3 +1,4 @@
 *.DS_Store
 draft.html
 img/not_used/*
+*.vscode/
