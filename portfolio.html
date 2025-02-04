@@ -19,7 +19,14 @@
         background-color: #ffe4d4;
         color: #cf0001;
       }
-      
+      header .navbar {
+        /*position: absolute; /* Fixation en haut */
+        top: 0; /* Place tout en haut */
+        left: 0;
+        right: 0;
+        z-index: 10; /* Priorité par rapport à l'image de fond */
+        padding: 10px 20px; /* Marges internes */
+      }
       header .navbar-nav a {
         color: #cf0001; /* Couleur par défaut des liens */
         text-decoration: none; /* Supprime le soulignement */
