@@ -29,10 +29,14 @@
         color: #f3af87; /* Couleur des liens au survol */
       }
       .navbar-toggler {
-        border: none;
+        border: none !important;
+      }
+      .navbar-toggler:focus {
+        box-shadow: none !important;
       }
       .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%cf0001' stroke-width='2' d='M4 7h22M4 15h22'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(207,0,1,1)' stroke-width='2' d='M4 7h22M4 15h22'/%3E%3C/svg%3E") !important;
+        color: #cf0001;
       }
     </style>
     <title>Montagn'Art</title>

@@ -19,6 +19,14 @@
         background-color: #ffe4d4;
         color: #cf0001;
       }
+      header .navbar {
+        /*position: absolute; /* Fixation en haut */
+        top: 0; /* Place tout en haut */
+        left: 0;
+        right: 0;
+        z-index: 10; /* Priorité par rapport à l'image de fond */
+        padding: 10px 20px; /* Marges internes */
+      }
       header .navbar-nav a {
         color: #cf0001; /* Couleur par défaut des liens */
         text-decoration: none; /* Supprime le soulignement */
@@ -28,10 +36,14 @@
         color: #f3af87; /* Couleur des liens au survol */
       }
       .navbar-toggler {
-        border: none;
+        border: none !important;
+      }
+      .navbar-toggler:focus {
+        box-shadow: none !important;
       }
       .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%cf0001' stroke-width='2' d='M4 7h22M4 15h22'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(207,0,1,1)' stroke-width='2' d='M4 7h22M4 15h22'/%3E%3C/svg%3E") !important;
+        color: #cf0001;
       }
     </style>
     <title>Montagn'Art</title>
@@ -55,7 +67,7 @@
   <body>
     <!-- Header -->
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark container">
+      <nav class="navbar navbar-expand-lg container">
         <a href="/" class="navbar-brand">
           <img src="img/montagnart-logo-couleur.png" alt="Montagn'Art" />
         </a>
@@ -69,7 +81,9 @@
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          color="#cf0001"
         >
+        <!--style="border: none;"-->
           <span class="navbar-toggler-icon"></span>
         </button>
 
