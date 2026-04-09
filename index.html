@@ -152,7 +152,62 @@
   text-decoration: none; /* Assure que le soulignement reste désactivé */
 }
 
-    </style>
+.image-block {
+  position: relative;
+  color: #ffe4d4; /* texte en blanc */
+  overflow: hidden;
+}
+
+.image-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2); /* overlay sombre */
+  z-index: 1;
+}
+
+/* Pour que le contenu soit au-dessus de l’overlay */
+.image-block > * {
+  position: relative;
+  z-index: 2;
+}
+
+.bg-concept-1 {
+  background-image: url('img-concepts/Site_fond_randonnee_nature.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-concept-2 {
+  background-image: url('img-concepts/Site_fond_randonnee_artistique.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-concept-3 {
+  background-image: url('img-concepts/Site_fond_randonnee_thematique01.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-concept-4 {
+  background-image: url('img-concepts/Site_fond_randonnee_trek.png');
+  background-size: cover;
+  background-position: center;
+}
+ 
+.bg-concept-5 {
+  background-image: url('img-concepts/Site_fond_atelier_creatif.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-concept-6 {
+  background-image: url('img-concepts/Site_fond_randonnee_sur_mesure.png');
+  background-size: cover;
+  background-position: center;
+}
+ </style>
 
     <!-- Lien vers Bootstrap CSS -->
     <link
@@ -449,17 +504,18 @@
           <!--<div class="image-block img-fluid" style="background-image: url('img/MontagnArt_Grand Combin_Mont Velan.jpg'); background-repeat:no-repeat; background-position: center; height: 500px;">
         -->
 
-          <div class="col-12 col-md-6 col-lg-4 image-block img-fluid" style="border: solid #ffe4d4 10px; background-color: white; background-image: url('img-concepts/'); background-repeat:no-repeat; background-position: center;">
-            <div class="gap-50" style="width:100%; height:20px;"></div>
+        <div class="col-12 col-md-6 col-lg-4 image-block img-fluid bg-concept-1" style="border: solid #ffe4d4 10px;">
+            <div class="container text-center">
+              <div class="gap-50" style="width:100%; height:20px;"></div>
               <h4>Randonnée Nature et Découverte</h4>
          <p> Apprenez en plus sur la nature tout en prenant le temps d'apprécier la beauté de ce qui nous entoure. </p>
           <div class="gap-50" style="width:100%; height:10px;"></div>
           <div class="text-center">
           <a
-          class="btn btn-red"
+          class="btn btn-white"
           href="rando.html#Nature_Decouverte"
           role="button"
-          style="--bs-btn-border-color: #cf0001; --bs-btn-hover-bg: #cf0001; --bs-btn-hover-color: #ffe4d4;
+          style="color: #ffe4d4; --bs-btn-border-color: #ffe4d4; --bs-btn-hover-bg: #f3af87; --bs-btn-hover-color: #ffe4d4;
           margin-right:30px;"
         >
           Plus d'info</a
@@ -467,22 +523,24 @@
         <div class="gap-50" style="width:100%; height:20px;"></div>
         </div>
           </div>
+          </div>
 
 <!-- -->
 
-          <div class="col-12 col-md-6 col-lg-4" style="border: solid #ffe4d4 10px; background-color: white; ">
-            <div class="container" style="background-color: white; ">
+          <!--<div class="col-12 col-md-6 col-lg-4" style="border: solid #ffe4d4 10px; background-color: white; ">-->
+          <div class="col-12 col-md-6 col-lg-4 image-block img-fluid bg-concept-2" style="border: solid #ffe4d4 10px; background-color: white;">
+            <div class="container text-center">
               <div class="gap-50" style="width:100%; height:20px;"></div>
               <h4>Randonnée Artistique</h4>
 <p>Alliez marche et expression créative (aquarelle, croquis ou dessin). </p>
 <div class="gap-50" style="width:100%; height:10px;"></div>
 <div class="text-center">
   <a
-  class="btn btn-red"
+  class="btn btn-white"
   href="rando.html#Artistiques"
   role="button"
-  style="--bs-btn-border-color: #cf0001; --bs-btn-hover-bg: #cf0001; --bs-btn-hover-color: #ffe4d4;
-  margin-right:30px;"
+  style="color: #ffe4d4; --bs-btn-border-color: #ffe4d4; --bs-btn-hover-bg: #f3af87; --bs-btn-hover-color: #ffe4d4;
+          margin-right:30px;"
 >
   Plus d'info</a
 >
@@ -493,8 +551,8 @@
 
 <!-- -->
 
-          <div class="col-12 col-md-6 col-lg-4" style="border: solid #ffe4d4 10px; background-color: white; ">
-  <div class="container" style="background-color: white; ">
+          <div class="col-12 col-md-6 col-lg-4 image-block img-fluid bg-concept-3" style="border: solid #ffe4d4 10px; background-color: white;">
+            <div class="container text-center">
     <div class="gap-50" style="width:100%; height:20px;"></div>
     <h4>Randonnée Thématique</h4>
 <p>Pour les curieux qui veulent découvrir le patrimoine vivant et découvrir des savoir-faire ancestraux qui font la richesse de la Suisse. </p>
@@ -504,8 +562,8 @@
   class="btn btn-red"
   href="rando.html#Thematique"
   role="button"
-  style="--bs-btn-border-color: #cf0001; --bs-btn-hover-bg: #cf0001; --bs-btn-hover-color: #ffe4d4;
-  margin-right:30px;"
+  style="color: #ffe4d4; --bs-btn-border-color: #ffe4d4; --bs-btn-hover-bg: #f3af87; --bs-btn-hover-color: #ffe4d4;
+          margin-right:30px;"
 >
   Plus d'info</a
 >
@@ -516,8 +574,8 @@
 
 <!-- -->
 
-          <div class="col-12 col-md-6 col-lg-4" style="border: solid #ffe4d4 10px; background-color: white; ">
-  <div class="container" style="background-color: white;">
+           <div class="col-12 col-md-6 col-lg-4 image-block img-fluid bg-concept-4" style="border: solid #ffe4d4 10px; background-color: white;">
+            <div class="container text-center">
     <div class="gap-50" style="width:100%; height:20px;"></div>
     <h4>Randonnée de Plusieurs Jours <!--: Immersion Totale en Montagne--></h4>
     <p>Vivez une véritable aventure en pleine nature, une immersion complète dans l’univers montagnard.</p>
@@ -526,7 +584,7 @@
           class="btn btn-red"
           href="rando.html#Trek"
           role="button"
-          style="--bs-btn-border-color: #cf0001; --bs-btn-hover-bg: #cf0001; --bs-btn-hover-color: #ffe4d4;
+          style="color: #ffe4d4; --bs-btn-border-color: #ffe4d4; --bs-btn-hover-bg: #f3af87; --bs-btn-hover-color: #ffe4d4;
           margin-right:30px;"
         >
           Plus d'info</a
@@ -538,8 +596,8 @@
 
     
 
-    <div class="col-12 col-md-6 col-lg-4" style="border: solid #ffe4d4 10px; background-color: white; ">
-  <div class="container" style="background-color: white;">
+    <div class="col-12 col-md-6 col-lg-4 image-block img-fluid bg-concept-5" style="border: solid #ffe4d4 10px; background-color: white;">
+            <div class="container text-center">
     <div class="gap-50" style="width:100%; height:20px;"></div>
     <h4>Atelier Créatif</h4>
     <p>Créez des constructions pour favoriser la biodiversité autour de vous. </p>
@@ -548,8 +606,8 @@
           class="btn btn-red"
           href="rando.html#Creatif"
           role="button"
-          style="--bs-btn-border-color: #cf0001; --bs-btn-hover-bg: #cf0001; --bs-btn-hover-color: #ffe4d4;
-          margin-right:30px;""
+          style="color: #ffe4d4; --bs-btn-border-color: #ffe4d4; --bs-btn-hover-bg: #f3af87; --bs-btn-hover-color: #ffe4d4;
+          margin-right:30px;"
         >
           Plus d'info</a
         >
@@ -560,8 +618,8 @@
 
     
 
-    <div class="col-12 col-md-6 col-lg-4" style="border: solid #ffe4d4 10px; background-color: white; ">
-      <div class="container" style="background-color: white;">
+    <div class="col-12 col-md-6 col-lg-4 image-block img-fluid bg-concept-6" style="border: solid #ffe4d4 10px; background-color: white;">
+            <div class="container text-center">
         <div class="gap-50" style="width:100%; height:20px;"></div>
         <h4>Randonnée à la Carte </h4>
         <p>Des formules adaptées pour vous.</p>
@@ -570,8 +628,8 @@
               class="btn btn-red"
               href="rando.html#Carte"
               role="button"
-              style="--bs-btn-border-color: #cf0001; --bs-btn-hover-bg: #cf0001; --bs-btn-hover-color: #ffe4d4;
-              margin-right:30px;"
+              style="color: #ffe4d4; --bs-btn-border-color: #ffe4d4; --bs-btn-hover-bg: #f3af87; --bs-btn-hover-color: #ffe4d4;
+          margin-right:30px;"
             >
               Plus d'info</a
             >
