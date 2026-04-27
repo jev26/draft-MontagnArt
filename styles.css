@@ -33,15 +33,6 @@ body {
   color: var(--color-primary);
 }
 
-/*body .py-5 {
-  background-color: var(--color-bg-main);
-  color: var(--color-primary);
-}
-
-body .py-5-2 {
-  background-color: var(--color-bg-secondary);
-}*/
-
 img {
   max-width: 100%;
   display: block;
