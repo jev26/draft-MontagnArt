@@ -1,280 +1,177 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CHY79CGXQ2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-CHY79CGXQ2');
-</script>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHY79CGXQ2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Montagn'Art</title>
+    gtag('config', 'G-CHY79CGXQ2');
+  </script>
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="/img/montagnart-favicon-site.png"
-    />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Montagn'Art</title>
 
-    <!-- Lien vers Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <style>
-      header {
-        position: relative;
-        background-image: url("img/MontagnArt_Contact.png"); 
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        color: white;
-        height: 500px; /* Ajuste la hauteur selon ton besoin */
-        display: flex;
-        align-items: top;
-        justify-content: space-between;
-        padding: 0 20px;
-      }
-      .header-overlay {
-        /* Filtre sombre sur l'image */
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.3); /* Noir semi-transparent */
-      }
-      header .navbar {
-        position: absolute; /* Fixation en haut */
-        top: 0; /* Place tout en haut */
-        left: 0;
-        right: 0;
-        z-index: 10; /* Priorité par rapport à l'image de fond */
-        padding: 10px 20px; /* Marges internes */
-      }
-      header .navbar-nav a {
-        color: #ffe4d4; /* Couleur par défaut des liens */
-        text-decoration: none; /* Supprime le soulignement */
-        transition: color 0.3s ease; /* Ajoute une transition pour un effet fluide */
-      }
-      header .overlay-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        color: #ffe4d4;
-        font-size: 3.5rem;
-        /*font-weight: bold;*/
-        /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);*/
-      }
+  <link rel="icon" type="image/png" href="/img/montagnart-favicon-site.png" />
 
-      .navbar-toggler {
-        border: none;
-      }
-      .navbar-toggler:focus {
-        box-shadow: none;
-      }
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22'/%3E%3C/svg%3E");
-      }
-      .dropdown-menu {
-        right: 0; /* Aligne le menu déroulant à droite */
-      }
+  <!-- Lien vers Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style></style>
+</head>
 
-      body a {
-        text-decoration: none; /* Supprime le soulignement par défaut */
-        color: inherit; /* Prend la couleur du texte autour */
-      }
-      body a:hover {
-        color: #f3af87; /* Change la couleur lors du survol (exemple : couleur #b67271) */
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <!-- Filtre sombre -->
-      <!---<div class="header-overlay"></div>-->
+<body>
+  <!-- Header -->
+  <header class="header-img header-contact">
 
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg container">
-        <a href="/" class="navbar-brand">
-          <img src="img/montagnart-logo-blanc.png" alt="Montagn'Art" />
-        </a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-img navbar-expand-lg container">
+      <a href="/" class="navbar-brand">
+        <img src="img/montagnart-logo-blanc.png" alt="Montagn'Art" />
+      </a>
 
-        <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
-        <button
-          class="navbar-toggler ms-auto"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="rando.html" class="nav-link">RANDONNEES</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="rando.html" class="nav-link">RANDONNEES</a>
+          </li>
+          <li class="nav-item">
+            <a href="trek.html" class="nav-link">TREKS</a>
+          </li>
+          <li class="nav-item">
+            <a href="portfolio.html" class="nav-link">GALERIE</a>
+          </li>
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link">CREATIONS</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">A PROPOS</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Overlay Text -->
+    <!--<div class="overlay-text">
+        Randonnons ensemble
+      </div>-->
+  </header>
+
+  <!-- Section contact -->
+  <section class="section-main py-5">
+    <div class="container">
+      <div class="row align-items-center"  style="min-height: 250px;">
+
+        <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+          <img src="img/montagnart-logo-couleur.png" alt="Montagn'Art logo" style="width: 50%;" />
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="container text-center">
+            <h2 class="mt-4">Contactez-moi</h2>
+            <h5>Tessy Veillard - Montagn'Art</h5>
+            <a href="mailto:contact@montagn-art.ch">contact@montagn-art.ch</a>
+            <p>
+              +41 76 206 19 97
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+          <img src="img/asamswl.jpg" alt="ASAM-SWL logo" style="width: 50%;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- section newletter -->
+  <section class="section-main container-fluid g-0">
+    <div class="image-block img-fluid"
+      style="background-image: url('img/Montagn-art_Inscription_newsletter.png'); background-repeat:no-repeat; background-position: center; height: 300px;">
+      <div class="text mt-3 text-center" style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
+        <h2 class="mb-4"> Restes au courant des prochaines randonnées </h2>
+        <a class="btn-white" href="https://forms.gle/AYrozKR3rfF5oqaZ9">
+          S'inscrire à la Newsletter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <!-- Ligne 1 : Liens et bouton retour -->
+      <div class="row text-center text-md-start">
+        <div class="col-12 col-md-6 mb-md-0">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="rando.html">RANDONNEES</a>
             </li>
-            <li class="nav-item">
-              <a href="trek.html" class="nav-link">TREKS</a>
+            <li class="list-inline-item">
+              <a href="trek.html">TREKS</a>
             </li>
-            <li class="nav-item">
-              <a href="portfolio.html" class="nav-link">GALERIE</a>
+            <li class="list-inline-item">
+              <a href="portfolio.html">GALERIE</a>
             </li>
-            <li class="nav-item">
-              <a href="shop.html" class="nav-link">CREATIONS</a>
+            <li class="list-inline-item">
+              <a href="shop.html">CREATIONS</a>
             </li>
-            <li class="nav-item">
-              <a href="about.html" class="nav-link">A PROPOS</a>
+            <li class="list-inline-item">
+              <a href="about.html">A PROPOS</a>
             </li>
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link">CONTACT</a>
+            <li class="list-inline-item">
+              <a href="contact.html">CONTACT</a>
             </li>
           </ul>
         </div>
-      </nav>
-
-      <!-- Overlay Text -->
-      <!--<div class="overlay-text">
-        Randonnons ensemble
-      </div>-->
-    </header>
-
-    <!-- Section de présentation -->
-    <section class="py-5">
-        <div class="row">
-          <div class="col-12 col-md-4">
-            <div class="container text-center">
-            <img src="img/montagnart-logo-couleur.png" alt="Montagn'Art" style="width: 50%;"/>
-          </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
         </div>
-          <div class="col-12 col-md-4">
-            <div class="container">
-              <div class="gap-50" style="width:100%; height:40px;"></div>
-        <h2 class="text-center">Contactez-moi</h2>
-        <p class="text-center">
-          Tessy Veillard - Montagn'Art
-          <br />
-          <a href="mailto:contact@montagn-art.ch">contact@montagn-art.ch</a>
-          <br />
-          +41 76 206 19 97
-        </p>
       </div>
-    </div>
-    <div class="col-12 col-md-4">
-      <div class="container text-center">
-      <img src="img/asamswl.jpg" alt="ASAM-SWL" style="width: 50%;">
-    </div>
-  </div>
+      <!-- Ligne 2 : Copyright et réseaux sociaux -->
+      <div class="row text-center text-md-start mt-3">
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <p style="font-size: 80%;">
+            &copy; 2025 Montagn'Art · Tous droits réservés ·
+            <a href="CG.html">Conditions Générales</a>
+          </p>
+        </div>
+        <div class="col-12 col-md-6 text-md-end social-icons">
+          <a href="https://www.instagram.com/montagnart.ch/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/people/Montagnartch/61553699202260/" target="_blank"><i
+              class="fab fa-facebook"></i></a>
+        </div>
       </div>
-    </section>
 
-
-    <!-- section newletter -->
-  <section class="container-fluid g-0">
-      <div class="image-block img-fluid" style="background-image: url('img/Montagn-art_Inscription_newsletter.png'); background-repeat:no-repeat; background-position: center; height: 300px;">
-        <div class="text" style = "color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
-            <div class="gap-50" style="width:100%; height:40px;"></div>     
-          <h2 class='text-center'>  Restes au courant des prochaines randonnées </h2>
-                  <div class="gap-50" style="width:100%; height:20px;"></div>
-                <!--<div class="text-center">
-                  <a href="contact.html" class="contact-btn" style="">ME CONTACTER</a>   
-                </div> -->
-                <p class="text-center">
-                    <a
-                      class="btn btn-red"
-                      href="https://forms.gle/AYrozKR3rfF5oqaZ9"
-                      role="button"
-                      style="color: #ffe4d4; --bs-btn-border-color: #ffe4d4; --bs-btn-hover-bg: #6c5247; --bs-btn-hover-color: #ffe4d4;"
-                    >
-                      S'inscrire à la Newsletter</a
-                    >
-                  </p>
-        </div>
+      <div class="gap-50" style="width:100%; height:50px;"></div>
     </div>
-    </section>
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <!-- Ligne 1 : Liens et bouton retour -->
-        <div class="row text-center text-md-start">
-          <div class="col-12 col-md-6 mb-md-0">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="rando.html">RANDONNEES</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="trek.html">TREKS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="portfolio.html">GALERIE</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="shop.html">CREATIONS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="about.html">A PROPOS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="contact.html">CONTACT</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-12 col-md-6 text-md-end">
-            <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
-          </div>
-        </div>
-        <!-- Ligne 2 : Copyright et réseaux sociaux -->
-        <div class="row text-center text-md-start mt-3">
-          <div class="col-12 col-md-6 mb-3 mb-md-0">
-            <p style="font-size: 80%;">
-              &copy; 2025 Montagn'Art · Tous droits réservés ·
-              <a href="CG.html">Conditions Générales</a>
-            </p>
-          </div>
-          <div class="col-12 col-md-6 text-md-end social-icons">
-            <a href="https://www.instagram.com/montagnart.ch/" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a
-              href="https://www.facebook.com/people/Montagnartch/61553699202260/"
-              target="_blank"
-              ><i class="fab fa-facebook"></i
-            ></a>
-          </div>
-        </div>
+  <!-- Lien vers Bootstrap JS et dépendances -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Script pour le retour en haut
+    document
+      .querySelector(".back-to-top")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+  </script>
+</body>
 
-        <div class="gap-50" style="width:100%; height:50px;"></div>
-      </div>
-    </footer>
-
-    <!-- Lien vers Bootstrap JS et dépendances -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Script pour le retour en haut
-      document
-        .querySelector(".back-to-top")
-        .addEventListener("click", function(e) {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    </script>
-  </body>
 </html>

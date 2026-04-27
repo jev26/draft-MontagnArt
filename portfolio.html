@@ -1,517 +1,429 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CHY79CGXQ2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-CHY79CGXQ2');
-</script>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHY79CGXQ2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      header {
-        background-color: #ffe4d4;
-        color: #cf0001;
-      }
-      header .navbar {
-        /*position: absolute; /* Fixation en haut */
-        top: 0; /* Place tout en haut */
-        left: 0;
-        right: 0;
-        z-index: 10; /* Priorité par rapport à l'image de fond */
-        padding: 10px 20px; /* Marges internes */
-      }
-      header .navbar-nav a {
-        color: #cf0001; /* Couleur par défaut des liens */
-        text-decoration: none; /* Supprime le soulignement */
-        transition: color 0.3s ease; /* Ajoute une transition pour un effet fluide */
-      }
-      header .navbar-nav a:hover {
-        color: #f3af87; /* Couleur des liens au survol */
-      }
-      .navbar-toggler {
-        border: none !important;
-      }
-      .navbar-toggler:focus {
-        box-shadow: none !important;
-      }
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(207,0,1,1)' stroke-width='2' d='M4 7h22M4 15h22'/%3E%3C/svg%3E") !important;
-        color: #cf0001;
-      }
-    </style>
-    <title>Montagn'Art</title>
+    gtag('config', 'G-CHY79CGXQ2');
+  </script>
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="/img/montagnart-favicon-site.png"
-    />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Randonnées et treks en Suisse avec Montagn'Art">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
 
-    <!-- Lien vers Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark container">
-        <a href="/" class="navbar-brand">
-          <img src="img/montagnart-logo-couleur.png" alt="Montagn'Art" />
+    .gallery-item {
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+@media (max-width: 768px) {
+  .gallery-item {
+    height: 300px;
+  }
+}
+
+    .gallery-item .image-block {
+      height: 100%;
+    }
+
+    .gallery-item .text {
+      position: absolute;
+      top: 66%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+
+      color: #ffe4d4;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .image-block {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .image-block {
+  transform: scale(1.05);
+}
+
+.filter-btn.active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.gallery-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-item h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.gallery-item h5 {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+  </style>
+  <title>Montagn'Art</title>
+
+  <link rel="icon" type="image/png" href="/img/montagnart-favicon-site.png" />
+
+  <!-- Lien vers Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-default navbar-expand-lg container">
+      <a href="/" class="navbar-brand">
+        <img src="img/montagnart-logo-couleur.png" alt="Montagn'Art" />
+      </a>
+
+      <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="rando.html" class="nav-link">RANDONNEES</a>
+          </li>
+          <li class="nav-item">
+            <a href="trek.html" class="nav-link">TREKS</a>
+          </li>
+          <li class="nav-item">
+            <a href="portfolio.html" class="nav-link">GALERIE</a>
+          </li>
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link">CREATIONS</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">A PROPOS</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Section de présentation -->
+  <section class="section-main py-5">
+    <div class="container">
+      <h2 class="text-center">Découvrez mes dernières aventures</h2>
+      <h5 class="text-center mt-3">
+        Une de ces randonnées vous donne envie ? N'hésitez pas à me contacter pour organiser ensemble une sortie sur
+        mesure !
+      </h5>
+    </div>
+  </section>
+
+  <!-- 3 articles -->
+  <section class="section-main container-fluid p-0">
+
+    <div class="container text-center mb-4">
+  <button class="btn-red btn-outline-dark filter-btn active" data-filter="all">Tout</button>
+  <button class="btn-red btn-outline-dark filter-btn" data-filter="rando">Randonnées</button>
+  <button class="btn-red btn-outline-dark filter-btn" data-filter="trek">Treks</button>
+  <button class="btn-red btn-outline-dark filter-btn" data-filter="aquarelle">Aquarelle</button>
+</div>
+
+    <div class="row g-0">
+
+      <article class="col-12 col-md-4 gallery-item" data-category="rando faune">
+        <a href="sorties/Rut_Chamois/rut-chamois.html" aria-label="Voir la randonnée Rut du Chamois">
+          <div class="image-block"
+            style="background-image: url('sorties/Rut_Chamois/MontagnArt_Rando_Rut_chamois04.jpg');">
+            <div class="text text-center">
+              <h2>Rut du Chamois</h2>
+              <h5>Dimanche 16 novembre 2025</h5>
+            </div>
+          </div>
         </a>
+      </article>
 
-        <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
-        <button
-          class="navbar-toggler ms-auto"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <article class="col-12 col-md-4 gallery-item" data-category="rando aquarelle">
+        <a href="sorties/Aquarelle_automnale/aquarelle-automnale.html"
+          aria-label="Voir la randonnée Aquarelle automnale">
+          <div class="image-block"
+            style="background-image: url('sorties/Aquarelle_automnale/MontagnArt_aquarelle_automnale_entete.jpg');">
+            <div class="text text-center">
+              <h2>Aquarelle automnale</h2>
+              <h5>Samedi 18 octobre 2025</h5>
+            </div>
+          </div>
+        </a>
+      </article>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="rando.html" class="nav-link">RANDONNEES</a>
+      <article class="col-12 col-md-4 gallery-item" data-category="rando faune">
+        <a href="sorties/Brame_cerf/brame-cerf.html" aria-label="Voir la randonnée Brame du cerf">
+          <div class="image-block"
+            style="background-image: url('sorties/Brame_cerf/MontagnArt_brame_cerf_entete2.jpg');">
+            <div class="text text-center">
+              <h2>Brame du cerf</h2>
+              <h5>Dimanche 5 octobre 2025</h5>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article class="col-12 col-md-4 gallery-item" data-category="rando">
+        <a href="sorties/Automne_Hauts_Champery/automne-hauts-champery.html"
+          aria-label="Voir la randonnée L’automne sur les Hauts de Champéry">
+          <div class="image-block"
+            style="background-image: url('sorties/Automne_Hauts_Champery/Couverture_MontagnArt_Champery.jpg');">
+            <div class="text text-center">
+              <h2>L’automne sur les Hauts de Champéry</h2>
+              <h5>Dimanche 14 septembre 2025</h5>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article class="col-12 col-md-4 gallery-item" data-category="rando aquarelle">
+        <a href="sorties/Aquarelle_Moleson/aquarelle-moleson.html"
+          aria-label="Voir la randonnée Aquarelle au pied du Moléson">
+          <div class="image-block"
+            style="background-image: url('sorties/Aquarelle_Moleson/MontagnArt-Aquarelle-Moleson01.jpg');">
+            <div class="text text-center">
+              <h2>Aquarelle au pied du Moléson</h2>
+              <h5>Dimanche 24 août 2025</h5>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article class="col-12 col-md-4 gallery-item" data-category="trek">
+        <a href="sorties/Trek_4vallees/Trek_4vallees.html" aria-label="Voir le trek Traversée des 4 vallées">
+          <div class="image-block" style="background-image: url('sorties/Trek_4vallees/MontagnArt-trek-4vallee.jpg');">
+            <div class="text text-center">
+              <h2>Traversée des 4 vallées</h2>
+              <h5>du 29 au 31 août 2025</h5>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article class="col-12 col-md-4 gallery-item" data-category="rando">
+        <a href="sorties/Nant/Nant.html" aria-label="Voir la randonnée Un petit Vallon plein de trésors">
+          <div class="image-block" style="background-image: url('sorties/Nant/MontagnArt-Randonnée-Pont-Nant01.jpg');">
+            <div class="text text-center">
+              <h2>Un petit Vallon plein de trésors</h2>
+              <h5>Samedi 12 juillet 2025</h5>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article class="col-12 col-md-4 gallery-item" data-category="trek">
+        <a href="sorties/Trek_Appenzell/Trek_Appenzell.html" aria-label="Voir le Trek en Appenzell">
+          <div class="image-block"
+            style="background-image: url('sorties/Trek_Appenzell/Screenshot\ 2025-07-31\ at\ 23.11.55.png');">
+            <div class="text text-center">
+              <h2>Trek en Appenzell</h2>
+              <h5>du 29 au 31 mai 2025</h5>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article class="col-12 col-md-4 gallery-item" data-category="rando aquarelle">
+        <a href="sorties/Haut_Montreux_pinceau/Montreux_pinceau.html"
+          aria-label="Voir la Randonnée Haut de Montreux au pinceau">
+          <div class="image-block"
+            style="background-image: url('sorties/Haut_Montreux_pinceau/MontagnArt-Haut-de-Montreux-Pinceau05.jpg');">
+            <div class="text text-center">
+              <h2>Haut de Montreux au pinceau</h2>
+              <h5>Samedi 3 mai 2025</h5>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article class="col-12 col-md-4 gallery-item" data-category="rando">
+        <a href="sorties/tavillon/tavillon.html" aria-label="Voir la Randonnée de l’épicéa au tavillon">
+          <div class="image-block" style="background-image: url('sorties/tavillon/tavillon.jpg');">
+            <div class="text text-center">
+              <h2>Randonnée de l’épicéa au tavillon</h2>
+              <h5>30 mars 2025</h5>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article class="col-12 col-md-4 gallery-item" data-category="camp">
+        <a href="sorties/camp_scolaire_25/camp_scolaire_25.html" aria-label="Voir le Camp Scolaire 2025">
+          <div class="image-block" style="background-image: url('sorties/camp_scolaire_25/camp_scolaire.jpg');">
+            <div class="text text-center">
+              <h2>Camp Scolaire 2025</h2>
+              <h5>12 au 14 février 2025</h5>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article class="col-12 col-md-4 gallery-item" data-category="rando">
+        <a href="sorties/Val_Bagnes/Val_Bagnes.html" aria-label="Voir la Randonnée Hivernale dans le Val de Bagnes">
+          <div class="image-block" style="background-image: url('sorties/Val_Bagnes/Val_Bagnes.jpg');">
+            <div class="text text-center">
+              <h2>Randonnée Hivernale dans le Val de Bagnes</h2>
+              <h5>Dimanches 15 décembre 2024 & 2 février 2025</h5>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article class="col-12 col-md-4 gallery-item" data-category="trek">
+        <a href="sorties/First/First.html" aria-label="Voir le Trek dans l'Oberland Bernois">
+          <div class="image-block" style="background-image: url('sorties/First/First.png');">
+            <div class="text text-center">
+              <h2>Trek dans l'Oberland Bernois</h2>
+              <h5>Juin 2024</h5>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article class="col-12 col-md-4 gallery-item" data-category="rando">
+        <a href="sorties/Gastlosen/Gastlosen.html" aria-label="Voir la Randonnée au pied des Gastlosen">
+          <div class="image-block" style="background-image: url('sorties/Gastlosen/Gastlossen.png');">
+            <div class="text text-center">
+              <h2>Randonnée au pied des Gastlosen</h2>
+              <h5>Mars 2024</h5>
+            </div>
+          </div>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <!-- Ligne 1 : Liens et bouton retour -->
+      <div class="row text-center text-md-start">
+        <div class="col-12 col-md-6 mb-md-0">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="rando.html">RANDONNEES</a>
             </li>
-            <li class="nav-item">
-              <a href="trek.html" class="nav-link">TREKS</a>
+            <li class="list-inline-item">
+              <a href="trek.html">TREKS</a>
             </li>
-            <li class="nav-item">
-              <a href="portfolio.html" class="nav-link">GALERIE</a>
+            <li class="list-inline-item">
+              <a href="portfolio.html">GALERIE</a>
             </li>
-            <li class="nav-item">
-              <a href="shop.html" class="nav-link">CREATIONS</a>
+            <li class="list-inline-item">
+              <a href="shop.html">CREATIONS</a>
             </li>
-            <li class="nav-item">
-              <a href="about.html" class="nav-link">A PROPOS</a>
+            <li class="list-inline-item">
+              <a href="about.html">A PROPOS</a>
             </li>
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link">CONTACT</a>
+            <li class="list-inline-item">
+              <a href="contact.html">CONTACT</a>
             </li>
           </ul>
         </div>
-      </nav>
-    </header>
-
-    <!-- Section de présentation -->
-    <section class="py-5">
-      <div class="container">
-        <h2 class="text-center">Découvrez mes dernières aventures</h2>
-        <p class="text-center">
-          Une de ces randonnées vous donne envie ? N'hésitez pas à me contacter pour organiser ensemble une sortie sur mesure !
-        </p>
-      </div>
-    </section>
-
-    <!-- 3 articles -->
-    <section class="container-fluid p-0">
-      <div class="row g-0">
-
-        <div
-          class="col-12 col-md-4"
-          style="height: 500px; flex-direction: column;"
-        >
-          <a href="sorties/Rut_Chamois/rut-chamois.html">
-            <div
-              class="image-block"
-              style="background-image: url('sorties/Rut_Chamois/MontagnArt_Rando_Rut_chamois04.jpg'); height: 100%;"
-            >
-              <div
-                class="text"
-                style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-              >
-                <!--style="color: white">-->
-                <h2 class="text-center">
-                  Rut du Chamois
-                </h2>
-                <h5 class="text-center">Dimanche 16 novembre 2025                </h5>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div
-          class="col-12 col-md-4"
-          style="height: 500px; flex-direction: column;"
-        >
-          <a href="sorties/Aquarelle_automnale/aquarelle-automnale.html">
-            <div
-              class="image-block"
-              style="background-image: url('sorties/Aquarelle_automnale/MontagnArt_aquarelle_automnale_entete.jpg'); height: 100%;"
-            >
-              <div
-                class="text"
-                style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-              >
-                <!--style="color: white">-->
-                <h2 class="text-center">
-                  Aquarelle automnale
-                </h2>
-                <h5 class="text-center">Samedi 18 octobre 2025                </h5>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div
-          class="col-12 col-md-4"
-          style="height: 500px; flex-direction: column;"
-        >
-          <a href="sorties/Brame_cerf/brame-cerf.html">
-            <div
-              class="image-block"
-              style="background-image: url('sorties/Brame_cerf/MontagnArt_brame_cerf_entete.jpg'); height: 100%;"
-            >
-              <div
-                class="text"
-                style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-              >
-                <!--style="color: white">-->
-                <h2 class="text-center">
-                  Brame du cerf
-                </h2>
-                <h5 class="text-center">Dimanche 5 octobre 2025</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div
-          class="col-12 col-md-4"
-          style="height: 500px; flex-direction: column;"
-        >
-          <a href="sorties/Automne_Hauts_Champery/automne-hauts-champery.html">
-            <div
-              class="image-block"
-              style="background-image: url('sorties/Automne_Hauts_Champery/Couverture_MontagnArt_Champery.jpg'); height: 100%;"
-            >
-              <div
-                class="text"
-                style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-              >
-                <!--style="color: white">-->
-                <h2 class="text-center">
-                  L’automne sur les Hauts de Champéry
-                </h2>
-                <h5 class="text-center">Dimanche 14 septembre 2025</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div
-          class="col-12 col-md-4"
-          style="height: 500px; flex-direction: column;"
-        >
-          <a href="sorties/Aquarelle_Moleson/aquarelle-moleson.html">
-            <div
-              class="image-block"
-              style="background-image: url('sorties/Aquarelle_Moleson/MontagnArt-Aquarelle-Moleson01.jpg'); height: 100%;"
-            >
-              <div
-                class="text"
-                style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-              >
-                <!--style="color: white">-->
-                <h2 class="text-center">
-                  Aquarelle au pied du Moléson
-                </h2>
-                <h5 class="text-center">Dimanche 24 août 2025</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div
-          class="col-12 col-md-4"
-          style="height: 500px; flex-direction: column;"
-        >
-          <a href="sorties/Trek_4vallees/Trek_4vallees.html">
-            <div
-              class="image-block"
-              style="background-image: url('sorties/Trek_4vallees/MontagnArt-trek-4vallee.jpg'); height: 100%;"
-            >
-              <div
-                class="text"
-                style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-              >
-                <!--style="color: white">-->
-                <h2 class="text-center">
-                  Traversée des 4 vallées
-                </h2>
-                <h5 class="text-center">du 29 au 31 août 2025</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div
-          class="col-12 col-md-4"
-          style="height: 500px; flex-direction: column;"
-        >
-          <a href="sorties/Nant/Nant.html">
-            <div
-              class="image-block"
-              style="background-image: url('sorties/Nant/MontagnArt-Randonnée-Pont-Nant01.jpg'); height: 100%;"
-            >
-              <div
-                class="text"
-                style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-              >
-                <!--style="color: white">-->
-                <h2 class="text-center">
-                  Un petit Vallon plein de trésors
-                </h2>
-                <h5 class="text-center">Samedi 12 juillet 2025</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-
-         <div
-          class="col-12 col-md-4"
-          style="height: 500px; flex-direction: column;"
-        >
-          <a href="sorties/Trek_Appenzell/Trek_Appenzell.html">
-            <div
-              class="image-block"
-              style="background-image: url('sorties/Trek_Appenzell/Screenshot\ 2025-07-31\ at\ 23.11.55.png'); height: 100%;"
-            >
-              <div
-                class="text"
-                style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-              >
-                <!--style="color: white">-->
-                <h2 class="text-center">
-                  Trek en Appenzell
-                </h2>
-                <h5 class="text-center">du 29 au 31 mai 2025</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div
-          class="col-12 col-md-4"
-          style="height: 500px; flex-direction: column;"
-        >
-          <a href="sorties/Haut_Montreux_pinceau/Montreux_pinceau.html">
-            <div
-              class="image-block"
-              style="background-image: url('sorties/Haut_Montreux_pinceau/MontagnArt-Haut-de-Montreux-Pinceau05.jpg'); height: 100%;"
-            >
-              <div
-                class="text"
-                style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-              >
-                <!--style="color: white">-->
-                <h2 class="text-center">
-                  Haut de Montreux au pinceau
-                </h2>
-                <h5 class="text-center">Samedi 3 mai 2025</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div
-          class="col-12 col-md-4"
-          style="height: 500px; flex-direction: column;"
-        >
-          <a href="sorties/tavillon/tavillon.html">
-            <div
-              class="image-block"
-              style="background-image: url('sorties/tavillon/tavillon.jpg'); height: 100%;"
-            >
-              <div
-                class="text"
-                style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-              >
-                <!--style="color: white">-->
-                <h2 class="text-center">
-                  Randonnée de l’épicéa au tavillon
-                </h2>
-                <h5 class="text-center">30 mars 2025</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div
-          class="col-12 col-md-4"
-          style="height: 500px; flex-direction: column;"
-        >
-          <a href="sorties/camp_scolaire_25/camp_scolaire_25.html">
-            <div
-              class="image-block"
-              style="background-image: url('sorties/camp_scolaire_25/camp_scolaire.jpg'); height: 100%;"
-            >
-              <div
-                class="text"
-                style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-              >
-                <!--style="color: white">-->
-                <h2 class="text-center">
-                  Camp Scolaire 2025
-                </h2>
-                <h5 class="text-center">12 au 14 février 2025</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-    
-        <div
-          class="col-12 col-md-4"
-          style="height: 500px; flex-direction: column;"
-        >
-          <a href="sorties/Val_Bagnes/Val_Bagnes.html">
-            <div
-              class="image-block"
-              style="background-image: url('sorties/Val_Bagnes/Val_Bagnes.jpg'); height: 100%;"
-            >
-              <div
-                class="text"
-                style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-              >
-                <!--style="color: white">-->
-                <h2 class="text-center">
-                  Randonnée Hivernale dans le Val de Bagnes
-                </h2>
-                <h5 class="text-center">Dimanches 15 décembre 2024 & 2 févrer 2025</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div
-          class="col-12 col-md-4"
-          style="height: 500px; flex-direction: column;"
-        >
-          <a href="sorties/First/First.html">
-            <div
-              class="image-block"
-              style="background-image: url('sorties/First/First.png'); height: 100%;"
-            >
-              <div
-                class="text"
-                style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-              >
-                <h2 class="text-center">
-                  Trek dans l'Oberland Bernois
-                </h2>
-                <h5 class="text-center">Juin 2024</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-
-        <div
-          class="col-12 col-md-4"
-          style="height: 500px; flex-direction: column;"
-        >
-          <a href="sorties/Gastlosen/Gastlosen.html">
-            <div
-              class="image-block"
-              style="background-image: url('sorties/Gastlosen/Gastlossen.png'); height: 100%;"
-            >
-              <div
-                class="text"
-                style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-              >
-                <h2 class="text-center">
-                  Randonnée au pied des Gastlosen
-                </h2>
-                <h5 class="text-center">Mars 2024</h5>
-              </div>
-            </div>
-          </a>
+        <div class="col-12 col-md-6 text-md-end">
+          <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
         </div>
       </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <!-- Ligne 1 : Liens et bouton retour -->
-        <div class="row text-center text-md-start">
-          <div class="col-12 col-md-6 mb-md-0">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="rando.html">RANDONNEES</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="trek.html">TREKS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="portfolio.html">GALERIE</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="shop.html">CREATIONS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="about.html">A PROPOS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="contact.html">CONTACT</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-12 col-md-6 text-md-end">
-            <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
-          </div>
+      <!-- Ligne 2 : Copyright et réseaux sociaux -->
+      <div class="row text-center text-md-start mt-3">
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <p style="font-size: 80%;">
+            &copy; 2025 Montagn'Art · Tous droits réservés ·
+            <a href="CG.html">Conditions Générales</a>
+          </p>
         </div>
-        <!-- Ligne 2 : Copyright et réseaux sociaux -->
-        <div class="row text-center text-md-start mt-3">
-          <div class="col-12 col-md-6 mb-3 mb-md-0">
-            <p style="font-size: 80%;">
-              &copy; 2025 Montagn'Art · Tous droits réservés ·
-              <a href="CG.html">Conditions Générales</a>
-            </p>
-          </div>
-          <div class="col-12 col-md-6 text-md-end social-icons">
-            <a href="https://www.instagram.com/montagnart.ch/" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a
-              href="https://www.facebook.com/people/Montagnartch/61553699202260/"
-              target="_blank"
-              ><i class="fab fa-facebook"></i
-            ></a>
-          </div>
+        <div class="col-12 col-md-6 text-md-end social-icons">
+          <a href="https://www.instagram.com/montagnart.ch/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/people/Montagnartch/61553699202260/" target="_blank"><i
+              class="fab fa-facebook"></i></a>
         </div>
-
-        <div class="gap-50" style="width:100%; height:50px;"></div>
       </div>
-    </footer>
 
-    <!-- Lien vers Bootstrap JS et dépendances -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Script pour le retour en haut
-      document
-        .querySelector(".back-to-top")
-        .addEventListener("click", function(e) {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    </script>
-  </body>
+      <div class="gap-50" style="width:100%; height:50px;"></div>
+    </div>
+  </footer>
+
+  <!-- Lien vers Bootstrap JS et dépendances -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Script pour le retour en haut
+    document
+      .querySelector(".back-to-top")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+  </script>
+
+  <!-- Script pour filtres -->
+   <script>
+const buttons = document.querySelectorAll(".filter-btn");
+const items = document.querySelectorAll(".gallery-item");
+
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    // active button
+    buttons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.getAttribute("data-filter");
+
+    items.forEach(item => {
+      const category = item.getAttribute("data-category");
+
+      if (filter === "all" || category.includes(filter)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+
+  });
+});
+</script>
+
+<!-- Script pour apparition douce -->
+ <script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+});
+
+document.querySelectorAll(".gallery-item").forEach(el => {
+  observer.observe(el);
+});
+</script>
+</body>
+
 </html>

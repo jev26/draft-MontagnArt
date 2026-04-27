@@ -1,529 +1,647 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CHY79CGXQ2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-CHY79CGXQ2');
-</script>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHY79CGXQ2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Montagn'Art</title>
+    gtag('config', 'G-CHY79CGXQ2');
+  </script>
 
-    <link
-    rel="icon"
-    type="image/png"
-    href="/img/montagnart-favicon-site.png"
-  />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Montagn'Art</title>
 
-    <link rel='shortcut icon' type='image/png' href='/img/montagnart-favicon-site.png' />
+  <link rel="icon" type="image/png" href="/img/montagnart-favicon-site.png" />
 
-    <!-- Lien vers Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <style>
-      header {
-        position: relative;
-        background-image: url("img/MontagnArt_Apropos.png"); /* Remplace par le chemin de ton image */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        color: white;
-        height: 500px; /* Ajuste la hauteur selon ton besoin */
-        display: flex;
-        align-items: top;
-        justify-content: space-between;
-        padding: 0 20px;
-      }
-      .header-overlay {
-        /* Filtre sombre sur l'image */
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.2); /* Noir semi-transparent */
-      }
-      header .navbar {
-        position: absolute; /* Fixation en haut */
-        top: 0; /* Place tout en haut */
-        left: 0;
-        right: 0;
-        z-index: 10; /* Priorité par rapport à l'image de fond */
-        padding: 10px 20px; /* Marges internes */
-      }
-      header .navbar-brand img {
-        width: 50px;
-        height: auto;
-      }
-      header .navbar-nav a {
-        color: #ffe4d4; /* Couleur par défaut des liens */
-        text-decoration: none; /* Supprime le soulignement */
-        transition: color 0.3s ease; /* Ajoute une transition pour un effet fluide */
-      }
-      header .overlay-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        color: #ffe4d4;
-        font-size: 3.5rem;
-        /*font-weight: bold;*/
-        /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);*/
-      }
+  <link rel='shortcut icon' type='image/png' href='/img/montagnart-favicon-site.png' />
 
-      .navbar-toggler {
-        border: none;
-      }
-      .navbar-toggler:focus {
-        box-shadow: none;
-      }
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22'/%3E%3C/svg%3E");
-      }
-      .dropdown-menu-end {
-        right: 0; /* Aligne le menu déroulant à droite */
-      }
+  <!-- Lien vers Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
 
-      .container-image {
-        /*display: flex;*/
-        justify-content: space-between; /* Sépare le texte et l'image */
-        align-items: center; /* Aligne verticalement le texte et l'image */
-        padding: 20px;
-        background-color: #ffe4d4;
-        color: #cf0001;
-      }
-      .text {
-        /*flex: 1; /* Prend toute la place disponible à gauche */
-        padding-right: 50px;
-        padding-left: 50px;
-      }
-      .image {
-        /*flex: 1; /* Prend la même largeur que le texte à droite */
-        max-width: 100%; /* S'assure que l'image ne dépasse pas son conteneur */
-      }
-      .image img {
-        padding: 5%;
-        /*width: 100%; /* L'image prendra toute la largeur de son conteneur */
-        height: auto; /* Conserve les proportions de l'image */
-      }
+    .section-main {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
 
-      /* Style du bouton */
-      .contact-btn {
-        display: inline-block;
-        padding: 10px 20px;
-        margin-top: 20px;
-        text-decoration: underline; /* Souligné par défaut */
-        color: #cf0001; /* Couleur du texte */
-        border: none; /* 2px solid #cf0001; /* Bordure du bouton */
-        border-radius: 5px;
-        transition: all 0.3s ease; /* Effet de transition lors du hover */
-      }
+.header-about {
+  background-image: url("img/MontagnArt_Apropos.png");
+  background-position: center;
+  height: 70vh;
+  background-size: cover;
+  position: relative;
+} 
 
-      /* Changement de couleur lors du survol */
-      .contact-btn:hover {
-        /*background-color: #f3af87; /* Fond du bouton au survol */
-        color: #f3af87; /* Couleur du texte au survol */
-        /*text-decoration: none; /* Enlever le souligné au survol */
-      }
+.header-about::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+}
 
-      .text-container {
-        display: flex;
-        flex-direction: column; /* Aligne les paragraphes en colonne */
-        justify-content: center; /* Centrage vertical des paragraphes */
-        padding: 20px;
-        font-size: 1rem;
-        line-height: 1.6;
-      }
-      .image-container {
-        display: flex;
-        justify-content: center; /* Centrer horizontalement */
-        align-items: center; /* Centrer verticalement */
-      }
-      .image-container img {
-        width: 75%; /* Adapte la taille de l'image à la colonne */
-        height: auto;
-        border-radius: 10px; /* Optionnel : arrondi des coins de l'image */
-      }
 
-      #FAQ a {
+
+.text-container p {
+  margin-bottom: 1.2rem;
+}
+
+.image-block {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.image-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.1); /* plus contrasté */
+}
+
+.image-block .container {
+  position: relative;
+  z-index: 2;
+}
+
+    #FAQ a:hover {
+      color: #f3af87;
+      /* Change la couleur au survol */
+      text-decoration: none;
+      /* Assure que le soulignement reste désactivé */
+    }
+
+    .img-fluid {
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.img-fluid:hover {
+  transform: scale(1.05);
+}
+
+
+
+.image-block.center-content {
+  display: flex;
+  align-items: center;
+}
+
+.image-block .container {
+  max-width: 700px;
+}
+
+
+
+
+
+/* container */
+.custom-accordion .accordion-item {
+  border: none;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* bouton fermé */
+.custom-accordion .accordion-button {
+  background-color: #ffe4d4;
   color: #cf0001;
-  transition: color 0.3s ease; /* Animation pour un effet fluide */
+  font-weight: 500;
+  box-shadow: none;
 }
-#FAQ a:hover {
-  color: #f3af87; /* Change la couleur au survol */
-  text-decoration: none; /* Assure que le soulignement reste désactivé */
+
+/* bouton ouvert */
+.custom-accordion .accordion-button:not(.collapsed) {
+  background-color: #cf0001;
+  color: white;
 }
-    </style>
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <!-- Filtre sombre -->
-      <div class="header-overlay"></div>
 
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark container">
-        <!-- Logo -->
-        <a href="/" class="navbar-brand">
-          <img src="img/montagnart-logo-blanc.png" alt="Montagn'Art" style="width: 75px;"/>
-        </a>
+/* flèche */
+.custom-accordion .accordion-button::after {
+  filter: invert(20%);
+}
 
-        <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
-        <button
-          class="navbar-toggler ms-auto"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+/* contenu */
+.custom-accordion .accordion-body {
+  background-color: #fff7f2;
+  color: #333;
+  line-height: 1.6;
+}
 
-        <!-- Menu de navigation -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="rando.html" class="nav-link">RANDONNEES</a>
-            </li>
-            <li class="nav-item">
-              <a href="trek.html" class="nav-link">TREKS</a>
-            </li>
-            <li class="nav-item">
-              <a href="portfolio.html" class="nav-link">GALERIE</a>
-            </li>
-            <li class="nav-item">
-              <a href="shop.html" class="nav-link">CREATIONS</a>
-            </li>
-            <li class="nav-item">
-              <a href="about.html" class="nav-link">A PROPOS</a>
-            </li>
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link">CONTACT</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+/* hover */
+.custom-accordion .accordion-button:hover {
+  background-color: #f3af87;
+  color: white;
+}
+  </style>
+</head>
 
-      <!-- Overlay Text -->
-      <!--<div class="overlay-text">
+<body>
+  <!-- Header -->
+  <header class="header-img header-about ">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-img navbar-expand-lg navbar-dark container">
+      <!-- Logo -->
+      <a href="/" class="navbar-brand">
+        <img src="img/montagnart-logo-blanc.png" alt="Montagn'Art" style="width: 75px;" />
+      </a>
+
+      <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu de navigation -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="rando.html" class="nav-link">RANDONNEES</a>
+          </li>
+          <li class="nav-item">
+            <a href="trek.html" class="nav-link">TREKS</a>
+          </li>
+          <li class="nav-item">
+            <a href="portfolio.html" class="nav-link">GALERIE</a>
+          </li>
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link">CREATIONS</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">A PROPOS</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Overlay Text -->
+    <!--<div class="overlay-text">
         À propos
         <h6>Qui se cache derrière Montagn'Art ?</h6>
       </div>-->
-    </header>
+  </header>
 
-    <!-- Section Présentation -->
-    <section class="container-fluid">
-      <div class="container my-5">
-        <div class="row">
-          <!-- Colonne pour le texte -->
-          <div class="col-md-6 text-container">
-            <p style="font-size: 80%;">BASEE EN GRUYERE</p>
-            <div class="gap-50" style="width:100%; height:30px;"></div>
-            <h2>Hello, moi c'est Tessy !</h2>
-            <div class="gap-50" style="width:100%; height:30px;"></div>
-            <p>
-              Accompagnatrice en montagne, j’ai fondé Montagn’Art dans le but de
-              transmettre ma passion pour la montagne. Depuis mon plus jeune âge, je randonne en montagne et
-              dans la nature. J’ai toujours aimé tout ce qui touche à la nature.
-              Ma seconde passion est le dessin. Ce passe-temps libérateur m’a
-              permis de développer ma créativité. C’est en relation avec cet
-              intérêt pour l’art qu’en 2015, j’ai obtenu mon CFC de
-              dessinatrice-constructrice en microtechnique. Puis en 2023, j’ai
-              commencé une formation d’accompagnatrice en montagne chez Et Col
-              Et Pic. Grâce à cette formation, j’ai découvert la majestuosité
-              des paysages qui nous entourent sous un nouvel angle. Mon
-              émerveillement pour la nature ainsi que tous ces phénomènes,
-              m’amènent aujourd’hui à transmettre cet amour à tout un chacun au
-              travers d’activités proches de la nature.
-            </p>
-          </div>
-          <!-- Colonne pour l'image -->
-          <div class="col-md-6 image-container">
-            <img src="img/tessy.jpg" />
+  <!-- Section Présentation -->
+  <section class="section-main">
+    <div class="container">
+      <div class="row">
+        <!-- TEXTE -->
+        <div class="col-md-6 text-container">
+          <p class="mb-5" style="font-size: 80%;">BASEE EN GRUYERE</p>
+          <h2 class="mb-5">Hello, moi c'est Tessy !</h2>
+          <p>
+            Accompagnatrice en montagne, j’ai fondé Montagn’Art dans le but de
+            transmettre ma passion pour la montagne. Depuis mon plus jeune âge, je randonne en montagne et
+            dans la nature. J’ai toujours aimé tout ce qui touche à la nature.
+            Ma seconde passion est le dessin. Ce passe-temps libérateur m’a
+            permis de développer ma créativité. C’est en relation avec cet
+            intérêt pour l’art qu’en 2015, j’ai obtenu mon CFC de
+            dessinatrice-constructrice en microtechnique. Puis en 2023, j’ai
+            commencé une formation d’accompagnatrice en montagne chez Et Col
+            Et Pic. Grâce à cette formation, j’ai découvert la majestuosité
+            des paysages qui nous entourent sous un nouvel angle. Mon
+            émerveillement pour la nature ainsi que tous ces phénomènes,
+            m’amènent aujourd’hui à transmettre cet amour à tout un chacun au
+            travers d’activités proches de la nature.
+          </p>
+        </div>
+        <!-- IMAGE -->
+        <div class="col-md-6 image-container">
+          <img src="img/tessy.jpg" alt="Portrait de Tessy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Art -->
+  <section class="section-main">
+    <div class="image-block center-content" style="background-image: url('img/MontagnArt_Qu est ce.jpg'); height: 500px;">
+      <div class="container text-center text-md-start" style="color: #ffe4d4;">
+          <h2>Mon affinité avec l'Art</h2>
+          <p class="mt-5">
+          Je pratique le dessin depuis petite. Je prenais des cours de dessin pour m’améliorer et apprendre les
+          différentes techniques. Aujourd’hui, je pratique principalement le crayon, l’aquarelle, l’acrylique et la
+          peinture à l’huile.</p>
+          <p class="mt-5">
+          Au travers des Randonnées Artistiques, je veux vous offrir un moment pour vous. Pour que vous puissiez libérer
+          votre esprit et laisser libre court à votre créativité. Peindre un paysage vivant permet de le découvrir
+          autrement et d'apercevoir des éléments, des détails auxquels on n’aurait pas prêté attention. Toutes les
+          personnes de tous niveaux sont les bienvenues à ces randonnées.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Présentation Montagn'Art -->
+  <section class="container-fluid section-main py-5">
+    <div class="container">
+      <div class="row">
+        <!-- TEXTE -->
+        <div class="col-md-8 text-container">
+          <h2 class="text-left mb-3">Montagn'Art</h2>
+          <p class="mb-3">
+          Le nom Montagn’Art regroupe deux de mes passions: la montagne et
+          le dessin. La montagne pour sa majestuosité et le sentiment de
+          liberté qu’elle m’offre. En arpentant les chemins de randonnée et
+          en observant les animaux qui y vivent, je m’émerveille à chaque
+          fois devant les spectacles qu’offrent la nature. Elle impressionne
+          par sa grandeur et sa beauté tout en sachant rappeler qu’elle peut
+          rester indomptable.</p>
+          <p class="mb-3">
+          Le dessin me permet de m’évader dans mes pensées et de profiter de
+          l’instant. Il est également le moyen de retranscrire notre
+          ressenti. C’est pour ces raisons que j’aime le pratiquer en
+          montagne. Il permet de capter l’atmosphère d’un moment unique.
+          L’art se trouve sous de multiples formes que ce soit dans des
+          peintures, dans la formation des Alpes, les plantes ou la beauté
+          de la faune sauvage.</p>
+          <p>
+          Tout s’est alors parfaitement accordé pour en faire le nom de mon
+          entreprise.
+          </p>
+        </div>
+        <!-- IMAGE -->
+        <div class="col-md-4 image-container">
+          <img src="img/montagnart-logo-couleur.png" />
+        </div>
+      </div>
+      <!--<img src="img/montagne-contour.png" />-->
+    </div>
+  </section>
+
+
+
+  <!--<section class="section-main py-5" id="FAQ">
+  <div class="container">
+    <h2 class="mb-5">FAQ</h2>
+
+    <div class="accordion custom-accordion" id="faqAccordion">
+
+      <!-- Question 1 --
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+            Qu’est-ce qu’un accompagnateur en montagne ?
+          </button>
+        </h2>
+        <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            L’accompagnateur-trice en montagne organise et conduit des randonnées
+        pédestres ou en raquettes à neige, pour les particuliers et les
+        groupes. Il transmet des émotions et fait découvrir la nature
+        autrement sous forme de randonnée, d’animation ou de trek de plusieurs
+        jours.
+        <br/>
+        L'Association Suisse des Accompagnateurs et Accompagnatrices en
+        Montagne (ASAM) a comme mission de défendre et promouvoir notre métier.
+        <br/> <br/>
+        <a href="https://www.asam-swl.ch/fr/" target="_blank">
+              → En savoir plus
+            </a>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Section Art -->
-    <section class="py-5-2">
-      <div
-        class="image-block img-fluid"
-        style="background-image: url('img/MontagnArt_Qu est ce.jpg'); height: 550px;"
-      >
-        <div style="background-color: rgba(0,0,0,0.2); height: 550px;">
-          <div class="container" style="color: #ffe4d4; align-items: center;">
-            <div class="gap-50" style="width:100%; height:70px;"></div>
-            
-            <h2 class="text-left">Mon affinité avec l'Art</h2>
-            <p class="text-left">
-              <div class="gap-50" style="width:100%; height:50px;"></div>
-              Je pratique le dessin depuis petite. Je prenais des cours de dessin pour m’améliorer et apprendre les différentes techniques. Aujourd’hui, je pratique principalement le crayon, l’aquarelle, l’acrylique et la peinture à l’huile.
-              <div class="gap-50" style="width:100%; height:50px;"></div>
-              Au travers des Randonnées Artistiques, je veux vous offrir un moment pour vous. Pour que vous puissiez libérer votre esprit et laisser libre court à votre créativité. Peindre un paysage vivant permet de le découvrir autrement et d'apercevoir des éléments, des détails auxquels on n’aurait pas prêté attention. Toutes les personnes de tous niveaux sont les bienvenues à ces randonnées.
-            </p>
+      <!-- Question 2 --
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+            Pourquoi prendre un accompagnateur en montagne ?
+          </button>
+        </h2>
+        <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Un accompagnateur en montagne va apporter un plus à votre randonnée
+        que vous effectuez traditionnellement. Il ne va pas seulement vous
+        emmener au point voulu mais aussi vous immerger dans l’environnement.
+        Vous aurez l’occasion d’acquérir de nouvelles connaissances et d’avoir
+        une autre vision sur la nature qui nous entoure. Une randonnée avec un
+        accompagnateur amène également tout un cadre sécuritaire et convivial.
+        Le professionnel de la montagne connaît son environnement et ses
+        enjeux. Il vous guidera avec bienveillance dans son univers.
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Section Présentation Montagn'Art -->
-    <section class="container-fluid">
-        <div class="container my-5">
-          <div class="row">
-            <!-- Colonne pour le texte -->
-            <div class="col-md-6 text-container">
-                <h2 class="text-left">Montagn'Art</h2>
-                <div class="gap-50" style="width:100%; height:30px;"></div>
-                Le nom Montagn’Art regroupe deux de mes passions: la montagne et
-                le dessin. La montagne pour sa majestuosité et le sentiment de
-                liberté qu’elle m’offre. En arpentant les chemins de randonnée et
-                en observant les animaux qui y vivent, je m’émerveille à chaque
-                fois devant les spectacles qu’offrent la nature. Elle impressionne
-                par sa grandeur et sa beauté tout en sachant rappeler qu’elle peut
-                rester indomptable.
-                <div class="gap-50" style="width:100%; height:20px;"></div>
-                Le dessin me permet de m’évader dans mes pensées et de profiter de
-                l’instant. Il est également le moyen de retranscrire notre
-                ressenti. C’est pour ces raisons que j’aime le pratiquer en
-                montagne. Il permet de capter l’atmosphère d’un moment unique.
-                L’art se trouve sous de multiples formes que ce soit dans des
-                peintures, dans la formation des Alpes, les plantes ou la beauté
-                de la faune sauvage.
-                <div class="gap-50" style="width:100%; height:20px;"></div>
-                Tout s’est alors parfaitement accordé pour en faire le nom de mon
-                entreprise.
-              </p>
-            </div>
-            <!-- Colonne pour l'image -->
-            <div class="col-md-6 image-container">
-              <img src="img/montagnart-logo-couleur.png" />
-            </div>
+      <!-- Question 3 --
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+            Où ai-je fait ma formation ?
+          </button>
+        </h2>
+        <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            J’ai choisi de faire ma formation chez Et Col Et Pic car ils mettent
+        en avant l’apprentissage sur le terrain et les formateurs sont
+        bienveillants. Et Col Et Pic est une école de formation suisse au
+        métier d’accompagnateur et d’accompagnatrice en montagne.
+            <br><br>
+            <a href="https://etcoletpic.ch/" target="_blank">
+              → En savoir plus
+            </a>
           </div>
-          <!--<img src="img/montagne-contour.png" />-->
-        </div>
-      </section>
-
-    <section class="py-5" id="FAQ">
-      <div class="container">
-        <h2 class="text-left">FAQ</h2>
-        <div class="gap-50" style="width:100%; height:40px;"></div>
-
-        <h4 class="text-left">Qu’est ce qu’un accompagnateur en montagne ?</h4>
-        <br />
-        <p class="text-left">
-          L’accompagnateur-trice en montagne organise et conduit des randonnées
-          pédestres ou en raquettes à neige, pour les particuliers et les
-          groupes. Il transmet des émotions et fait découvrir la nature
-          autrement sous forme de randonnée, d’animation ou de trek de plusieurs
-          jours.
-        </p>
-        <a href="https://www.asam-swl.ch/fr/" class="nav-link">
-          <i class="fas fa-long-arrow-right"></i>
-          L'Association Suisse des Accompagnateurs et Accompagnatrices en
-          Montagne (ASAM) a comme mission de défendre et promouvoir notre métier.</a
-        >
-        <br />
-        <h4 class="text-left">
-          Pourquoi prendre un accompagnateur en montagne ?
-        </h4>
-        <br />
-        <p class="text-left">
-          Un accompagnateur en montagne va apporter un plus à votre randonnée
-          que vous effectuez traditionnellement. Il ne va pas seulement vous
-          emmener au point voulu mais aussi vous immerger dans l’environnement.
-          Vous aurez l’occasion d’acquérir de nouvelles connaissances et d’avoir
-          une autre vision sur la nature qui nous entoure. Une randonnée avec un
-          accompagnateur amène également tout un cadre sécuritaire et convivial.
-          Le professionnel de la montagne connaît son environnement et ses
-          enjeux. Il vous guidera avec bienveillance dans son univers.
-        </p>
-        <h4 class="text-left">Où ai-je fait ma formation ?</h4>
-        <br />
-        <p class="text-left">
-          J’ai choisi de faire ma formation chez Et Col Et Pic car ils mettent
-          en avant l’apprentissage sur le terrain et les formateurs sont
-          bienveillants. Et Col Et Pic est une école de formation suisse au
-          métier d’accompagnateur et d’accompagnatrice en montagne.
-        </p>
-        <a href="https://etcoletpic.ch/" class="nav-link">
-          <i class="fas fa-long-arrow-right"></i>
-          Plus d'information sur Et Col
-          Et Pic - Formation suisse d'accompagnateur en montagne</a
-        >
-        <br />
-        <h4 class="text-left">A quoi correspondent les Niveaux mentionnés dans les randonnées?</h4>
-        <br />
-        <p class="text-left">
-          Les niveaux de difficulté des randonnées vous permettent de mieux comprendre à quoi vous attendre avant de vous lancer. Ils sont conçus pour vous guider dans le choix de la randonnée qui correspond à vos capacités physiques et à vos attentes en termes de défi. Voici à quoi correspondent chaque niveau :
-        </p>          
-        <h5 class="text-left"> Niveau 1 : Randonnée facile </h5> 
-        <ul>
-          <li><strong>Description : </strong>Destinée aux personnes qui n'ont pas l'habitude de marcher en montagne. Ce niveau convient aux familles, aux enfants et aux personnes qui cherchent une expérience de montagne douce.</li>
-          <li><strong>Difficulté : </strong>Facile</li>
-          <li><strong>Temps de marche : </strong>Moins de 2 à 3 heures.</li>
-          <li><strong>Dénivelé positif  : </strong>Moins de 400 mètres.</li>
-        </ul>          
-
-        <h5 class="text-left"> Niveau 2 : Randonnée modérée </h5> 
-        <ul>
-          <li><strong>Description : </strong>Pour les personnes ayant déjà une certaine expérience de la randonnée. Ce niveau demande un peu plus d'effort mais reste accessible à des randonneurs occasionnels.  </li>
-          <li><strong>Difficulté : </strong>Modéré</li>
-          <li><strong>Temps de marche : </strong>Entre 3 et 5 heures.</li>
-          <li><strong>Dénivelé positif  : </strong>Entre 400 et 700 mètres.</li>
-        </ul> 
-        
-<h5 class="text-left"> Niveau 3 : Randonnée exigeante </h5> 
-<ul>
-  <li><strong>Description : </strong>Ce niveau s’adresse aux randonneurs en bonne condition physique et avec un peu d’expérience en montagne. La randonnée peut inclure des passages plus techniques et plus de dénivelé.  </li>
-  <li><strong>Difficulté : </strong>Assez difficile, terrain accidenté, parfois rocailleux.</li>
-  <li><strong>Temps de marche : </strong>Entre 5 et 7 heures.</li>
-  <li><strong>Dénivelé positif  : </strong>Entre 700 et 1000 mètres.</li>
-</ul> 
-         
-<h5 class="text-left"> Niveau 4 : Randonnée soutenue </h5> 
-<ul>
-  <li><strong>Description : </strong>Ce niveau est destiné aux randonneurs en bonne forme physique qui ont déjà une certaine expérience de la montagne. Il inclut des parcours plus longs, avec des dénivelés importants et des terrains parfois exigeants, mais sans nécessiter de compétences techniques particulières.  </li>
-  <li><strong>Difficulté : </strong>Difficile, terrain varié, parfois escarpé ou rocheux, avec des pentes raides.</li>
-  <li><strong>Temps de marche : </strong>Entre 6 et 8 heures.</li>
-  <li><strong>Dénivelé positif  : </strong>Dès 1000 mètres.</li>
-</ul> 
-         
-<h5 class="text-left"> Niveau 5 : Randonnée très avancée </h5> 
-<ul>
-  <li><strong>Description : </strong>Ce niveau s'adresse aux randonneurs expérimentés qui recherchent des défis importants. Il s'agit de longues randonnées, sur des sentiers moins balisés, avec des dénivelés importants et un effort soutenu. Ce niveau reste de la randonnée pure, sans escalade technique, mais les conditions peuvent être plus rigoureuses (altitude, météo, etc.).  </li>
-  <li><strong>Difficulté : </strong>Très difficile, avec des montées et descentes soutenues, souvent sur des terrains accidentés, voire un peu exposés (rochers, névés, sentiers étroits).  </li>
-  <li><strong>Temps de marche : </strong>8 heures ou plus par jour.</li>
-  <li><strong>Dénivelé positif  : </strong>Jusqu’à 1500 mètres ou un peu plus.</li>
-</ul> 
-
-        <!--<div class="gap-50" style="width:100%; height:100px;"></div>-->
-      </div>
-    </section>
-
-    <!-- Section Instagram -->
-    <section class="container-fluid p-0">
-      <div class="row g-0">
-        <div class="col-12 col-lg-4 text-center">
-          <!-- Lien vers le compte Instagram -->
-          <div class="gap-50" style="width:100%; height:50px; "></div>
-          <i class="fab fa-instagram"></i>
-          <div class="gap-50" style="width:100%; height:30px;"></div>
-          SUIVEZ MES AVENTURES <br />
-          <a
-            href="https://www.instagram.com/montagnart.ch/"
-            target="_blank"
-            style="color: #cf0001; text-decoration: none; "
-          >
-            @montagnart.ch
-          </a>
-          <div class="gap-50" style="width:100%; height:50px;"></div>
-        </div>
-        <!-- Images des réels -->
-        <div class="col-6 col-lg-2" >
-          <a href="https://www.instagram.com/reel/DDHYJe4I0NA/" target="_blank">
-            <img src="img-instagram/reel-1.png" class="img-fluid" />
-          </a>
-        </div>
-        <div class="col-6 col-lg-2" >
-          <a href="https://www.instagram.com/reel/DAJr-tSu1XQ/" target="_blank">
-            <img src="img-instagram/reel-2.png" class="img-fluid" />
-          </a>
-        </div>
-        <div class="col-6 col-lg-2" >
-          <a href="https://www.instagram.com/reel/C864YCwISI8/" target="_blank">
-            <img src="img-instagram/reel-3.png" class="img-fluid" />
-          </a>
-        </div>
-        <div class="col-6 col-lg-2" >
-          <a href="https://www.instagram.com/reel/C7zHPAJIs8-/" target="_blank">
-            <img src="img-instagram/reel-4.png" class="img-fluid" />
-          </a>
         </div>
       </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <!-- Ligne 1 : Liens et bouton retour -->
-        <div class="row text-center text-md-start">
-          <div class="col-12 col-md-6 mb-md-0">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="rando.html">RANDONNEES</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="trek.html">TREKS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="portfolio.html">GALERIE</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="shop.html">CREATIONS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="about.html">A PROPOS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="contact.html">CONTACT</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-12 col-md-6 text-md-end">
-            <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
+      <!-- Question 4 --
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
+            À quoi correspondent les niveaux de randonnée ?
+          </button>
+        </h2>
+        <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+
+            <strong>Niveau 1 :</strong> facile (moins de 3h, < 400m)<br>
+            <strong>Niveau 2 :</strong> modéré (3–5h, 400–700m)<br>
+            <strong>Niveau 3 :</strong> exigeant (5–7h, 700–1000m)<br>
+            <strong>Niveau 4 :</strong> soutenu (6–8h, >1000m)<br>
+            <strong>Niveau 5 :</strong> très avancé (8h+, jusqu’à 1500m)
+
+
+
+
+             Les niveaux de difficulté des randonnées vous permettent de mieux comprendre à quoi vous attendre avant de vous
+        lancer. Ils sont conçus pour vous guider dans le choix de la randonnée qui correspond à vos capacités physiques
+        et à vos attentes en termes de défi. Voici à quoi correspondent chaque niveau :
+      
+      <h5 class="text-left"> Niveau 1 : Randonnée facile </h5>
+      <ul>
+        <li><strong>Description : </strong>Destinée aux personnes qui n'ont pas l'habitude de marcher en montagne. Ce
+          niveau convient aux familles, aux enfants et aux personnes qui cherchent une expérience de montagne douce.
+        </li>
+        <li><strong>Difficulté : </strong>Facile</li>
+        <li><strong>Temps de marche : </strong>Moins de 2 à 3 heures.</li>
+        <li><strong>Dénivelé positif : </strong>Moins de 400 mètres.</li>
+      </ul>
+
+      <h5 class="text-left"> Niveau 2 : Randonnée modérée </h5>
+      <ul>
+        <li><strong>Description : </strong>Pour les personnes ayant déjà une certaine expérience de la randonnée. Ce
+          niveau demande un peu plus d'effort mais reste accessible à des randonneurs occasionnels. </li>
+        <li><strong>Difficulté : </strong>Modéré</li>
+        <li><strong>Temps de marche : </strong>Entre 3 et 5 heures.</li>
+        <li><strong>Dénivelé positif : </strong>Entre 400 et 700 mètres.</li>
+      </ul>
+
+      <h5 class="text-left"> Niveau 3 : Randonnée exigeante </h5>
+      <ul>
+        <li><strong>Description : </strong>Ce niveau s’adresse aux randonneurs en bonne condition physique et avec un
+          peu d’expérience en montagne. La randonnée peut inclure des passages plus techniques et plus de dénivelé.
+        </li>
+        <li><strong>Difficulté : </strong>Assez difficile, terrain accidenté, parfois rocailleux.</li>
+        <li><strong>Temps de marche : </strong>Entre 5 et 7 heures.</li>
+        <li><strong>Dénivelé positif : </strong>Entre 700 et 1000 mètres.</li>
+      </ul>
+
+      <h5 class="text-left"> Niveau 4 : Randonnée soutenue </h5>
+      <ul>
+        <li><strong>Description : </strong>Ce niveau est destiné aux randonneurs en bonne forme physique qui ont déjà
+          une certaine expérience de la montagne. Il inclut des parcours plus longs, avec des dénivelés importants et
+          des terrains parfois exigeants, mais sans nécessiter de compétences techniques particulières. </li>
+        <li><strong>Difficulté : </strong>Difficile, terrain varié, parfois escarpé ou rocheux, avec des pentes raides.
+        </li>
+        <li><strong>Temps de marche : </strong>Entre 6 et 8 heures.</li>
+        <li><strong>Dénivelé positif : </strong>Dès 1000 mètres.</li>
+      </ul>
+
+      <h5 class="text-left"> Niveau 5 : Randonnée très avancée </h5>
+      <ul>
+        <li><strong>Description : </strong>Ce niveau s'adresse aux randonneurs expérimentés qui recherchent des défis
+          importants. Il s'agit de longues randonnées, sur des sentiers moins balisés, avec des dénivelés importants et
+          un effort soutenu. Ce niveau reste de la randonnée pure, sans escalade technique, mais les conditions peuvent
+          être plus rigoureuses (altitude, météo, etc.). </li>
+        <li><strong>Difficulté : </strong>Très difficile, avec des montées et descentes soutenues, souvent sur des
+          terrains accidentés, voire un peu exposés (rochers, névés, sentiers étroits). </li>
+        <li><strong>Temps de marche : </strong>8 heures ou plus par jour.</li>
+        <li><strong>Dénivelé positif : </strong>Jusqu’à 1500 mètres ou un peu plus.</li>
+      </ul>
+
           </div>
         </div>
-        <!-- Ligne 2 : Copyright et réseaux sociaux -->
-        <div class="row text-center text-md-start mt-3">
-          <div class="col-12 col-md-6 mb-3 mb-md-0">
-            <p style="font-size: 80%;">
-              &copy; 2025 Montagn'Art · Tous droits réservés ·
-              <a href="CG.html">Conditions Générales</a>
-            </p>
-          </div>
-          <div class="col-12 col-md-6 text-md-end social-icons">
-            <a href="https://www.instagram.com/montagnart.ch/" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a
-              href="https://www.facebook.com/people/Montagnartch/61553699202260/"
-              target="_blank"
-              ><i class="fab fa-facebook"></i
-            ></a>
-          </div>
-        </div>
+      </div>
 
+    </div>
+  </div>
+</section>-->
+
+<!-- Section FAQ -->
+  <section class="section-main py-5" id="FAQ">
+    <div class="container">
+      <h2 class="text-left mb-5">FAQ</h2>
+
+      <h4 class="text-left mb-2">Qu’est-ce qu’un accompagnateur en montagne ?</h4>
+      <p class="text-left">
+        L’accompagnateur-trice en montagne organise et conduit des randonnées
+        pédestres ou en raquettes à neige, pour les particuliers et les
+        groupes. Il transmet des émotions et fait découvrir la nature
+        autrement sous forme de randonnée, d’animation ou de trek de plusieurs
+        jours.
+      </p>
+      <a href="https://www.asam-swl.ch/fr/" class="nav-link mb-4">
+        <i class="fas fa-long-arrow-right"></i>
+        L'Association Suisse des Accompagnateurs et Accompagnatrices en
+        Montagne (ASAM) a comme mission de défendre et promouvoir notre métier.</a>
+
+      <h4 class="text-left mb-2">
+        Pourquoi prendre un accompagnateur en montagne ?
+      </h4>
+      <p class="text-left mb-4">
+        Un accompagnateur en montagne va apporter un plus à votre randonnée
+        que vous effectuez traditionnellement. Il ne va pas seulement vous
+        emmener au point voulu mais aussi vous immerger dans l’environnement.
+        Vous aurez l’occasion d’acquérir de nouvelles connaissances et d’avoir
+        une autre vision sur la nature qui nous entoure. Une randonnée avec un
+        accompagnateur amène également tout un cadre sécuritaire et convivial.
+        Le professionnel de la montagne connaît son environnement et ses
+        enjeux. Il vous guidera avec bienveillance dans son univers.
+      </p>
+
+      <h4 class="text-left mb-2">Où ai-je fait ma formation ?</h4>
+      <p class="text-left mb-2">
+        J’ai choisi de faire ma formation chez Et Col Et Pic car ils mettent
+        en avant l’apprentissage sur le terrain et les formateurs sont
+        bienveillants. Et Col Et Pic est une école de formation suisse au
+        métier d’accompagnateur et d’accompagnatrice en montagne.
+      </p>
+      <a href="https://etcoletpic.ch/" class="nav-link mb-4">
+        <i class="fas fa-long-arrow-right"></i>
+        Plus d'information sur Et Col
+        Et Pic - Formation suisse d'accompagnateur en montagne</a>
+      
+      <h4 class="text-left mb-2">A quoi correspondent les Niveaux mentionnés dans les randonnées?</h4>
+      <p class="text-left">
+        Les niveaux de difficulté des randonnées vous permettent de mieux comprendre à quoi vous attendre avant de vous
+        lancer. Ils sont conçus pour vous guider dans le choix de la randonnée qui correspond à vos capacités physiques
+        et à vos attentes en termes de défi. Voici à quoi correspondent chaque niveau :
+      </p>
+      <h5 class="text-left"> Niveau 1 : Randonnée facile </h5>
+      <ul>
+        <li><strong>Description : </strong>Destinée aux personnes qui n'ont pas l'habitude de marcher en montagne. Ce
+          niveau convient aux familles, aux enfants et aux personnes qui cherchent une expérience de montagne douce.
+        </li>
+        <li><strong>Difficulté : </strong>Facile</li>
+        <li><strong>Temps de marche : </strong>Moins de 2 à 3 heures.</li>
+        <li><strong>Dénivelé positif : </strong>Moins de 400 mètres.</li>
+      </ul>
+
+      <h5 class="text-left"> Niveau 2 : Randonnée modérée </h5>
+      <ul>
+        <li><strong>Description : </strong>Pour les personnes ayant déjà une certaine expérience de la randonnée. Ce
+          niveau demande un peu plus d'effort mais reste accessible à des randonneurs occasionnels. </li>
+        <li><strong>Difficulté : </strong>Modéré</li>
+        <li><strong>Temps de marche : </strong>Entre 3 et 5 heures.</li>
+        <li><strong>Dénivelé positif : </strong>Entre 400 et 700 mètres.</li>
+      </ul>
+
+      <h5 class="text-left"> Niveau 3 : Randonnée exigeante </h5>
+      <ul>
+        <li><strong>Description : </strong>Ce niveau s’adresse aux randonneurs en bonne condition physique et avec un
+          peu d’expérience en montagne. La randonnée peut inclure des passages plus techniques et plus de dénivelé.
+        </li>
+        <li><strong>Difficulté : </strong>Assez difficile, terrain accidenté, parfois rocailleux.</li>
+        <li><strong>Temps de marche : </strong>Entre 5 et 7 heures.</li>
+        <li><strong>Dénivelé positif : </strong>Entre 700 et 1000 mètres.</li>
+      </ul>
+
+      <h5 class="text-left"> Niveau 4 : Randonnée soutenue </h5>
+      <ul>
+        <li><strong>Description : </strong>Ce niveau est destiné aux randonneurs en bonne forme physique qui ont déjà
+          une certaine expérience de la montagne. Il inclut des parcours plus longs, avec des dénivelés importants et
+          des terrains parfois exigeants, mais sans nécessiter de compétences techniques particulières. </li>
+        <li><strong>Difficulté : </strong>Difficile, terrain varié, parfois escarpé ou rocheux, avec des pentes raides.
+        </li>
+        <li><strong>Temps de marche : </strong>Entre 6 et 8 heures.</li>
+        <li><strong>Dénivelé positif : </strong>Dès 1000 mètres.</li>
+      </ul>
+
+      <h5 class="text-left"> Niveau 5 : Randonnée très avancée </h5>
+      <ul>
+        <li><strong>Description : </strong>Ce niveau s'adresse aux randonneurs expérimentés qui recherchent des défis
+          importants. Il s'agit de longues randonnées, sur des sentiers moins balisés, avec des dénivelés importants et
+          un effort soutenu. Ce niveau reste de la randonnée pure, sans escalade technique, mais les conditions peuvent
+          être plus rigoureuses (altitude, météo, etc.). </li>
+        <li><strong>Difficulté : </strong>Très difficile, avec des montées et descentes soutenues, souvent sur des
+          terrains accidentés, voire un peu exposés (rochers, névés, sentiers étroits). </li>
+        <li><strong>Temps de marche : </strong>8 heures ou plus par jour.</li>
+        <li><strong>Dénivelé positif : </strong>Jusqu’à 1500 mètres ou un peu plus.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section Instagram -->
+  <section class="section-main container-fluid py-5">
+    <div class="row g-2 align-items-center">
+
+      <!-- Bloc Instagram -->
+      <div class="col-12 col-lg-4 text-center  d-flex flex-column justify-content-center">
+        <!-- Lien vers le compte Instagram -->
+        <a href="https://www.instagram.com/montagnart.ch/" target="_blank"
+          style="color: #cf0001; text-decoration: none; ">
+          <i class="fab fa-instagram mb-3" style="font-size: 2rem;"></i>
+          <p class="mb-2 fw-bold">SUIVEZ MES AVENTURES</p>
+          @montagnart.ch
+        </a>
         <div class="gap-50" style="width:100%; height:50px;"></div>
       </div>
-    </footer>
 
-    <!-- Lien vers Bootstrap JS et dépendances -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Script pour le retour en haut
-      document
-        .querySelector(".back-to-top")
-        .addEventListener("click", function(e) {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    </script>
-  </body>
+      <!-- Images des réels -->
+      <div class="col-6 col-lg-2">
+        <a href="https://www.instagram.com/reel/DDHYJe4I0NA/" target="_blank">
+          <img src="img-instagram/reel-1.png" class="img-fluid w-100" />
+        </a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <a href="https://www.instagram.com/reel/DAJr-tSu1XQ/" target="_blank">
+          <img src="img-instagram/reel-2.png" class="img-fluid w-100" />
+        </a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <a href="https://www.instagram.com/reel/C864YCwISI8/" target="_blank">
+          <img src="img-instagram/reel-3.png" class="img-fluid w-100" />
+        </a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <a href="https://www.instagram.com/reel/C7zHPAJIs8-/" target="_blank">
+          <img src="img-instagram/reel-4.png" class="img-fluid w-100" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <!-- Ligne 1 : Liens et bouton retour -->
+      <div class="row text-center text-md-start">
+        <div class="col-12 col-md-6 mb-md-0">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="rando.html">RANDONNEES</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="trek.html">TREKS</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="portfolio.html">GALERIE</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="shop.html">CREATIONS</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="about.html">A PROPOS</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="contact.html">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
+        </div>
+      </div>
+      <!-- Ligne 2 : Copyright et réseaux sociaux -->
+      <div class="row text-center text-md-start mt-3">
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <p style="font-size: 80%;">
+            &copy; 2025 Montagn'Art · Tous droits réservés ·
+            <a href="CG.html">Conditions Générales</a>
+          </p>
+        </div>
+        <div class="col-12 col-md-6 text-md-end social-icons">
+          <a href="https://www.instagram.com/montagnart.ch/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/people/Montagnartch/61553699202260/" target="_blank"><i
+              class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+
+      <div class="gap-50" style="width:100%; height:50px;"></div>
+    </div>
+  </footer>
+
+  <!-- Lien vers Bootstrap JS et dépendances -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Script pour le retour en haut
+    document
+      .querySelector(".back-to-top")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+  </script>
+</body>
+
 </html>

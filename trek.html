@@ -15,37 +15,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <style>
-      header {
-        background-color: #ffe4d4;
-        color: #cf0001;
-      }
-      header .navbar {
-        /*position: absolute; /* Fixation en haut */
-        top: 0; /* Place tout en haut */
-        left: 0;
-        right: 0;
-        z-index: 10; /* Priorité par rapport à l'image de fond */
-        padding: 10px 20px; /* Marges internes */
-      }
-      header .navbar-nav a {
-        color: #cf0001; /* Couleur par défaut des liens */
-        text-decoration: none; /* Supprime le soulignement */
-        transition: color 0.3s ease; /* Ajoute une transition pour un effet fluide */
-      }
-      header .navbar-nav a:hover {
-        color: #f3af87; /* Couleur des liens au survol */
-      }
-      .navbar-toggler {
-        border: none !important;
-      }
-      .navbar-toggler:focus {
-        box-shadow: none !important;
-      }
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(207,0,1,1)' stroke-width='2' d='M4 7h22M4 15h22'/%3E%3C/svg%3E") !important;
-        color: #cf0001;
-      }
-    </style>
+    
+    .hero-block {
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+.hero-text {
+  position: relative;
+  color: #ffe4d4;
+  padding: 1rem;
+}
+
+
+.trek-card {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.trek-card .image-block {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+
+.trek-card:hover .image-block {
+  transform: scale(1.05);
+}
+
+.trek-card .text {
+  color: #ffe4d4;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); 
+  top:66%;
+}
+</style>
     <title>Montagn'Art</title>
 
     <link
@@ -67,7 +84,7 @@
   <body>
     <!-- Header -->
     <header>
-      <nav class="navbar navbar-expand-lg container">
+      <nav class="navbar navbar-default navbar-expand-lg container">
         <a href="/" class="navbar-brand">
           <img src="img/montagnart-logo-couleur.png" alt="Montagn'Art" />
         </a>
@@ -113,34 +130,29 @@
     </header>
 
  <!-- Carnet de trek -->
- <section class="container-fluid g-0">
-  <div class="image-block img-fluid" style="background-image: url('sorties/printemps_26/MontagnArt-Carnet_Trek03.jpg'); background-repeat: no-repeat; background-position: center; height: 450px;">
-    <div class="text" style = "color: #cf0001;">
-          <div class="text-center">  
-            <h1>Carnet de trek</h1>
-            <h3>2 jours d'évasion artistique autour du lac de Mauvoisin</h3>
-          </div>         
-    </div>
+  <section class="section-main g-0">
+<div class="image-block hero-block" style="background-image: url('sorties/printemps_26/MontagnArt-Carnet_Trek03.jpg');">
+  <div class="hero-text">
+    <h1>Carnet de trek</h1>
+    <h3>2 jours d'évasion artistique autour du lac de Mauvoisin</h3>
+  </div>
 </div>
+
 <div class="container-fluid">
-  <div class="container my-5">
+  <div class="container mt-5">
     <!-- General -->
     <div class="row align-items-center">
-      <div class="col-md-6 text-container">
+      <div class="col-md-6 mb-5 text-container">
         <p> Ce trek est une invitation à ralentir et à capturer la beauté des paysages à travers l’aquarelle, carnet en main. Offrez-vous une parenthèse hors du temps au cœur des Alpes valaisannes. Ce sera un carnet de voyage vivant, où chaque participant pourra s’initier ou se perfectionner à l’aquarelle. Jeux de lumière sur l’eau, nuances des roches, reflets des sommets enneigés : autant de sources d’inspiration pour laisser libre cours à votre créativité. La nuitée se fera dans la Cabane de Chanrion, perchée à 2’460 mètres d’altitude. Vous pourrez profiter de quelques-uns de mes tableaux qui y seront exposés.
 </p>
-</br>
 <p>
   Accessible et ressourçant, ce séjour mêle marche, créativité et déconnexion. Une expérience unique pour explorer, ressentir et créer au cœur des Alpes.
 </p>
-</br>
-<div class="text-center">
+
+<div class="text-center mb-3 mt-3">
 <a
-          class="btn center btn-red"
+          class="btn-red"
           href="https://forms.gle/j9StMzDKkU5qEJv78"
-          role="button"
-          style="--bs-btn-border-color: #cf0001; --bs-btn-hover-bg: #cf0001; --bs-btn-hover-color: #ffe4d4;
-          margin-right:30px;"
         >
           Inscription</a
         >
@@ -148,25 +160,24 @@
     </div>
      
       <div class="col-md-6 image-container">
-        <img class="image-block img-fluid" src="sorties/printemps_26/MontagnArt-carnet-trek.webp" />
+        <img class="image-block img-fluid" style="height: 50vh;" src="sorties/printemps_26/MontagnArt-carnet-trek.webp" />
       </div>
     </div>
-    <div class="gap-50" style="width:100%; height:20px;"></div>
+    
     
       <!--Info generales -->
     <div class="row">
-      <div class="col-md-6 text-container">
-        </br>
-     <p> Lieu de RDV: Mauvoisin (VS)</p>
-     <p>Dates: du samedi 4 au dimanche 5 juillet 2025</p>
-        <p>Nuitée: Cabane Chanrion</p>
-        <p>Prix: de 300 à 450 CHF - selon inscrits</p> 
+      <div class="col-md-6 text-container mt-5">
+     <p> <strong>Lieu de RDV:</strong> Mauvoisin (VS)</p>
+     <p><strong>Dates:</strong> du samedi 4 au dimanche 5 juillet 2025</p>
+        <p><strong>Nuitée:</strong> Cabane Chanrion</p>
+        <p><strong>Prix:</strong> de 300 à 450 CHF - selon inscrits</p> 
         <p>Ce prix comprend, l’accompagnement dans un cadre sécurisé avec une accompagnatrice en montagne - artiste, la demi-pension en cabane.
  </p>
       </div>
 <!-- Jour 1 & 2 -->
 <div class="col-md-6 text-container">
-  <div class="row">
+  <div class="row mt-4">
     <div class="col-md-6 text-container" style="width:50%;">
 <p><strong>Jour 1</strong></p>
         <p>Distance: 11km</p>
@@ -189,12 +200,10 @@
 
 
 <!-- Section de présentation -->
-<section class="py-5">
+<section class="section-main py-5">
   <div class="container">
     <!--<h4 class="text-center">Les treks pour la saison estivale 2026 arrivent ! </h4>-->
-    <div class="gap-50" style="width:100%; height:20px;"></div>
-    <h2 class="text-center">Revoir les treks passés </h2>
-    <div class="gap-50" style="width:100%; height:20px;"></div>
+    <h2 class="text-center mb-4">Revoir les treks passés </h2>
     <p class="text-center">
       Une de ces randonnées vous donne envie ? N'hésitez pas à me contacter pour organiser ensemble une sortie sur mesure !
     </p>
@@ -202,76 +211,41 @@
 </section>
 
 <!-- 3 articles -->
-<section class="container-fluid p-0">
+<section class="section-main container-fluid p-0">
   <div class="row g-0">
-    <div
-          class="col-12 col-md-4"
-          style="height: 500px; flex-direction: column;"
-        >
-          <a href="sorties/Trek_4vallees/Trek_4vallees.html">
-            <div
-              class="image-block"
-              style="background-image: url('sorties/Trek_4vallees/MontagnArt-trek-4vallee.jpg'); height: 100%;"
-            >
-              <div
-                class="text"
-                style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-              >
-                <!--style="color: white">-->
-                <h2 class="text-center">
+
+    <div class="col-12 col-md-4 trek-card">
+  <a href="sorties/Trek_4vallees/Trek_4vallees.html">
+    <div class="image-block" style="background-image:url('sorties/Trek_4vallees/MontagnArt-trek-4vallee.jpg')">
+      <div class="text"><h2 class="text-center">
                   Traversée des 4 vallées
                 </h2>
-                <h5 class="text-center">du 29 au 31 août 2025</h5>
-              </div>
-            </div>
-          </a>
-        </div>
+                <h5 class="text-center">du 29 au 31 août 2025</h5></div>
+    </div>
+  </a>
+</div>
 
-     <div
-      class="col-12 col-md-4"
-      style="height: 500px; flex-direction: column;"
-    >
-      <a href="sorties/Trek_Appenzell/Trek_Appenzell.html">
-        <div
-          class="image-block"
-          style="background-image: url('sorties/Trek_Appenzell/Screenshot\ 2025-07-31\ at\ 23.11.55.png'); height: 100%;"
-        >
-          <div
-            class="text"
-            style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-          >
-            <!--style="color: white">-->
-            <h2 class="text-center">
+<div class="col-12 col-md-4 trek-card">
+  <a href="sorties/Trek_Appenzell/Trek_Appenzell.html">
+    <div class="image-block" style="background-image:url('sorties/Trek_Appenzell/Screenshot\ 2025-07-31\ at\ 23.11.55.png')">
+      <div class="text"><h2 class="text-center">
               Trek en Appenzell
             </h2>
-            <h5 class="text-center">du 29 au 31 mai 2025</h5>
-          </div>
-        </div>
-      </a>
+            <h5 class="text-center">du 29 au 31 mai 2025</h5></div>
     </div>
+  </a>
+</div>
 
-    <div
-      class="col-12 col-md-4"
-      style="height: 500px; flex-direction: column;"
-    >
-      <a href="sorties/First/First.html">
-        <div
-          class="image-block"
-          style="background-image: url('sorties/First/First.png'); height: 100%;"
-        >
-          <div
-            class="text"
-            style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); top:66%;"
-          >
-            <h2 class="text-center">
-              Trek dans l'Oberland Bernois
+<div class="col-12 col-md-4 trek-card">
+  <a href="sorties/First/First.html">
+    <div class="image-block" style="background-image:url('sorties/First/First.png')">
+      <div class="text"><h2 class="text-center">
+             Trek dans l'Oberland Bernois
             </h2>
-            <h5 class="text-center">Juin 2024</h5>
-          </div>
-        </div>
-      </a>
+            <h5 class="text-center">Juin 2024</h5></div>
     </div>
-  
+  </a>
+</div>
 
   </div>
 </section>

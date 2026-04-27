@@ -1,472 +1,554 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CHY79CGXQ2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-CHY79CGXQ2');
-</script>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHY79CGXQ2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Montagn'Art</title>
+    gtag('config', 'G-CHY79CGXQ2');
+  </script>
 
-    <link
-    rel="icon"
-    type="image/png"
-    href="/img/montagnart-favicon-site.png"
-  />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Montagn'Art</title>
 
-    <link rel='shortcut icon' type='image/png' href='/img/montagnart-favicon-site.png' />
+  <link rel="icon" type="image/png" href="/img/montagnart-favicon-site.png" />
 
-    <!-- Lien vers Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <style>
-      header {
-        position: relative;
-        background-image: url("Mes produits/Mes_produits.png"); /* Remplace par le chemin de ton image */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        color: white;
-        height: 500px; /* Ajuste la hauteur selon ton besoin */
-        display: flex;
-        align-items: top;
-        justify-content: space-between;
-        padding: 0 20px;
-      }
-      .header-overlay {
-        /* Filtre sombre sur l'image */
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.2); /* Noir semi-transparent */
-      }
-      header .navbar {
-        position: absolute; /* Fixation en haut */
-        top: 0; /* Place tout en haut */
-        left: 0;
-        right: 0;
-        z-index: 10; /* Priorité par rapport à l'image de fond */
-        padding: 10px 20px; /* Marges internes */
-      }
-      header .navbar-brand img {
-        width: 50px;
-        height: auto;
-      }
-      header .navbar-nav a {
-        color: #ffe4d4; /* Couleur par défaut des liens */
-        text-decoration: none; /* Supprime le soulignement */
-        transition: color 0.3s ease; /* Ajoute une transition pour un effet fluide */
-      }
-      header .overlay-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        color: #ffe4d4;
-        font-size: 3.5rem;
-        /*font-weight: bold;*/
-        /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);*/
-      }
+  <link rel='shortcut icon' type='image/png' href='/img/montagnart-favicon-site.png' />
 
-      .navbar-toggler {
-        border: none;
-      }
-      .navbar-toggler:focus {
-        box-shadow: none;
-      }
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22'/%3E%3C/svg%3E");
-      }
-      .dropdown-menu-end {
-        right: 0; /* Aligne le menu déroulant à droite */
-      }
+  <!-- Lien vers Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
 
-      .container-image {
-        /*display: flex;*/
-        justify-content: space-between; /* Sépare le texte et l'image */
-        align-items: center; /* Aligne verticalement le texte et l'image */
-        padding: 20px;
-        background-color: #ffe4d4;
-        color: #cf0001;
-      }
-      .text {
-        /*flex: 1; /* Prend toute la place disponible à gauche */
-        padding-right: 50px;
-        padding-left: 50px;
-      }
-      .image {
-        /*flex: 1; /* Prend la même largeur que le texte à droite */
-        max-width: 100%; /* S'assure que l'image ne dépasse pas son conteneur */
-      }
-      .image img {
-        padding: 5%;
-        /*width: 100%; /* L'image prendra toute la largeur de son conteneur */
-        height: auto; /* Conserve les proportions de l'image */
-      }
+/* LIGHTBOX */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
 
-      /* Style du bouton */
-      .contact-btn {
-        display: inline-block;
-        padding: 10px 20px;
-        margin-top: 20px;
-        text-decoration: underline; /* Souligné par défaut */
-        color: #cf0001; /* Couleur du texte */
-        border: none; /* 2px solid #cf0001; /* Bordure du bouton */
-        border-radius: 5px;
-        transition: all 0.3s ease; /* Effet de transition lors du hover */
-      }
+.lightbox img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 10px;
+}
 
-      /* Changement de couleur lors du survol */
-      .contact-btn:hover {
-        /*background-color: #f3af87; /* Fond du bouton au survol */
-        color: #f3af87; /* Couleur du texte au survol */
-        /*text-decoration: none; /* Enlever le souligné au survol */
-      }
+.lightbox .close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
 
-      .text-container {
-        display: flex;
-        flex-direction: column; /* Aligne les paragraphes en colonne */
-        justify-content: center; /* Centrage vertical des paragraphes */
-        padding: 20px;
-        font-size: 1rem;
-        line-height: 1.6;
-      }
-      .image-container {
-        display: flex;
-        justify-content: center; /* Centrer horizontalement */
-        align-items: center; /* Centrer verticalement */
-      }
-      .image-container img {
-        width: 75%; /* Adapte la taille de l'image à la colonne */
-        height: auto;
-        border-radius: 10px; /* Optionnel : arrondi des coins de l'image */
-      }
+.clickable-img {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
 
-      body a {
-        text-decoration: none; /* Supprime le soulignement par défaut */
-        color: inherit; /* Prend la couleur du texte autour */
-      }
-      body a:hover {
-        color: #f3af87; /* Change la couleur lors du survol (exemple : couleur #b67271) */
-      }
+.clickable-img:hover {
+  transform: scale(1.05);
+}
 
-      #FAQ a {
+
+
+
+.header-shop {
+  background-image: url("Mes produits/Mes_produits.png");
+  background-position: center;
+  height: 70vh;
+  background-size: cover;
+  position: relative;
+} 
+
+.header-shop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+}
+
+.small-img {
+  width: 100%;
+  height: 200px;       /* hauteur fixe */
+  object-fit: contain; /* PAS de crop */
+  background-color: var(--color-bg-main); /* ou ton beige */
+  border-radius: 8px;
+
+  transition: transform 0.3s ease;
+}
+
+.small-img:hover {
+  transform: scale(1.5);
+}
+
+.product-card {
+  background-color: var(--color-bg-main);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* effet hover */
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transform: scale(1.5);
+}
+
+/* image */
+.product-image {
+  background-color: var(--color-bg-main);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+}
+
+.product-image img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain; /* IMPORTANT → pas de crop */
+}
+
+/* texte */
+.product-info {
+  padding: 15px;
+}
+
+.product-info h6 {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.price {
   color: #cf0001;
-  transition: color 0.3s ease; /* Animation pour un effet fluide */
+  font-weight: 600;
 }
-#FAQ a:hover {
-  color: #f3af87; /* Change la couleur au survol */
-  text-decoration: none; /* Assure que le soulignement reste désactivé */
-}
-    </style>
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <!-- Filtre sombre -->
-      <div class="header-overlay"></div>
 
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark container">
-        <!-- Logo -->
-        <a href="/" class="navbar-brand">
-          <img src="img/montagnart-logo-blanc.png" alt="Montagn'Art" style="width: 75px;"/>
-        </a>
+  </style>
+</head>
 
-        <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
-        <button
-          class="navbar-toggler ms-auto"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<body>
+  <!-- Header -->
+  <header class="header-img header-shop ">
 
-        <!-- Menu de navigation -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="rando.html" class="nav-link">RANDONNEES</a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-img navbar-expand-lg container">
+      <!-- Logo -->
+      <a href="/" class="navbar-brand">
+        <img src="img/montagnart-logo-blanc.png" alt="Montagn'Art" style="width: 75px;" loading="lazy" />
+      </a>
+
+      <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu de navigation -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="rando.html" class="nav-link">RANDONNEES</a>
+          </li>
+          <li class="nav-item">
+            <a href="trek.html" class="nav-link">TREKS</a>
+          </li>
+          <li class="nav-item">
+            <a href="portfolio.html" class="nav-link">GALERIE</a>
+          </li>
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link">CREATIONS</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">A PROPOS</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+
+  <!-- Section Présentation -->
+  <section class="section-main container-fluid py-5">
+    <div class="container text-center">
+      <h2>Je vous propose quelques produits imprimés à partir de mes créations !</h2>
+      <p>
+        Si vous êtes interessés, contactez-moi par mail : <a
+          href="mailto:contact@montagn-art.ch">contact@montagn-art.ch</a> ou par <a
+          href="https://wa.me/41762061997?text=Bonjour%20je%20souhaite%20plus%20d'informations"> WhatsApp au +41 76 206
+          19 97 </a></p>
+      <p>
+        Envoi uniquement en Suisse, 2 CHF de frais d’envoi vous seront facturés par commande.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- Section marques-page -->
+  <section class="section-main">
+    <div class="container">
+      <h4 class="text-left mb-5">Les marque-pages</h4>
+      <p class="text-center">
+        5 marque-pages avec des illustrations peintes à l'aquarelle par mes soins. Ils sont imprimés sur un
+        papier-carton texturé papier aquarelle.
+      </p>
+      <p class="text-center">
+        <strong> Mon logo blanc n’est pas imprimé ! Il est présent uniquement pour des raisons de protection.
+        </strong>
+      </p>
+      <p class="text-center">
+        Dimensions : 51 x 152 mm
+      </p>
+      <p class="text-center">
+        Prix : 3 CHF pièce
+      </p>
+    </div>
+
+<div class="container">
+      <div class="row">
+       
+ <div class="col-6 col-md-4 col-lg-3">
+    <div class="product-card">
+    <div class="product-image">
+      <img src="Mes produits/Marque_page_cerf.png" alt="Marque-page cerf" loading="lazy" class="clickable-img">
+    </div>
+    <div class="product-info text-center">
+      <h6>Le cerf</h6>
+      <p class="price">3 CHF</p>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-3">
+    <div class="product-card">
+    <div class="product-image">
+      <img src="Mes produits/Marque_page_heron.png" alt="Marque-page héron" loading="lazy" class="clickable-img">
+    </div>
+    <div class="product-info text-center">
+      <h6>Le héron</h6>
+      <p class="price">3 CHF</p>
+    </div>
+    </div>   
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-3">
+    <div class="product-card">
+    <div class="product-image">
+      <img src="Mes produits/Marque_page_montagne.png" alt="Marque-page chalet" loading="lazy" class="clickable-img">
+    </div>
+    <div class="product-info text-center">
+      <h6>Le chalet</h6>
+      <p class="price">3 CHF</p>
+    </div>
+    </div>   
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-3">
+    <div class="product-card">
+    <div class="product-image">
+      <img src="Mes produits/Marque_page_pecheur.png" alt="Marque-page pêcheur" loading="lazy" class="clickable-img">
+    </div>
+    <div class="product-info text-center">
+      <h6>Le pêcheur</h6>
+      <p class="price">3 CHF</p>
+    </div>
+    </div>   
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-3">
+    <div class="product-card">
+    <div class="product-image">
+      <img src="Mes produits/Marque_page_vigne.png" alt="Marque-page vigne" loading="lazy" class="clickable-img">
+    </div>
+    <div class="product-info text-center">
+      <h6>La vigne</h6>
+      <p class="price">3 CHF</p>
+    </div>
+    </div>   
+    </div>
+
+  </div>
+</div>
+  </section>
+
+
+  <!-- Section cartes -->
+  <section class="section-main">
+    <div class="container">
+      <h4 class="text-left mb-5">Les cartes de correspondance</h4>
+      <p class="text-center">
+        Les tirages des cartes de correspondance sont faits à partir d’aquarelles ou de peintures acryliques que j’ai
+        réalisées. Elles sont imprimées sur du papier texturé lin et livrées avec une simple enveloppe blanche.
+      </p>
+      <p class="text-center">
+        <strong> Mon logo blanc n’est pas imprimé ! Il est présent uniquement pour des raisons de protection.
+        </strong>
+      </p>
+      <p class="text-center">
+        Dimensions : 14 x 10 cm
+      </p>
+      <p class="text-center">
+        Prix : 4.50 CHF pièce ou 20 CHF le lot de 5
+      </p>
+    </div>
+    <div class="container">
+      <div class="row text-center">
+
+<div class="col-6 col-md-4 col-lg-3">
+    <div class="product-card">
+    <div class="product-image">
+      <img src="Mes produits/Carte_Aigle_royal.png" alt="Carte aigle" loading="lazy" class="clickable-img">
+    </div>
+    <div class="product-info text-center">
+      <h6>L'aigle</h6>
+      <p class="price">4.50 CHF</p>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-3">
+    <div class="product-card">
+    <div class="product-image">
+      <img src="Mes produits/Carte_Bouquetin.png" alt="Carte bouquetin" loading="lazy" class="clickable-img">
+    </div>
+    <div class="product-info text-center">
+      <h6>Le bouquetin</h6>
+      <p class="price">4.50 CHF</p>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-3">
+    <div class="product-card">
+    <div class="product-image">
+      <img src="Mes produits/Carte_Cerf.png" alt="Carte cerf" loading="lazy" class="clickable-img">
+    </div>
+    <div class="product-info text-center">
+      <h6>Le cerf</h6>
+      <p class="price">4.50 CHF</p>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-3">
+    <div class="product-card">
+    <div class="product-image">
+      <img src="Mes produits/Carte_Gypaete_barbu.png" alt="Carte gypaete" loading="lazy" class="clickable-img">
+    </div>
+    <div class="product-info text-center">
+      <h6>Le gypaete</h6>
+      <p class="price">4.50 CHF</p>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-3">
+    <div class="product-card">
+    <div class="product-image">
+      <img src="Mes produits/Carte_paysage_enneige.png" alt="Carte chalet" loading="lazy" class="clickable-img">
+    </div>
+    <div class="product-info text-center">
+      <h6>Le chalet</h6>
+      <p class="price">4.50 CHF</p>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-3">
+    <div class="product-card">
+    <div class="product-image">
+      <img src="Mes produits/Carte_Dent_Blanche.png" alt="Carte Dent Blanche" loading="lazy" class="clickable-img">
+    </div>
+    <div class="product-info text-center">
+      <h6>La Dent Blanche</h6>
+      <p class="price">4.50 CHF</p>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-3">
+    <div class="product-card">
+    <div class="product-image">
+      <img src="Mes produits/Carte_Pointe_Dufour.png" alt="Carte Pointe Dufour" loading="lazy" class="clickable-img">
+    </div>
+    <div class="product-info text-center">
+      <h6>La Pointe Dufour</h6>
+      <p class="price">4.50 CHF</p>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-lg-3">
+    <div class="product-card">
+    <div class="product-image">
+      <img src="Mes produits/Carte_Combin_de_Corbassiere.png" alt="Carte Combin de Corbassiere" loading="lazy" class="clickable-img">
+    </div>
+    <div class="product-info text-center">
+      <h6>Le Combin de Corbassiere</h6>
+      <p class="price">4.50 CHF</p>
+    </div>
+    </div>
+    </div>
+        
+      </div>
+    </div>
+  </section>
+
+<!-- section commande -->
+  <section class="section-main container-fluid g-0">
+    <div class="image-block img-fluid"
+      style="background-image: url('img/Montagn-art_Inscription_newsletter.png'); background-repeat:no-repeat; background-position: center; height: 300px;">
+      <div class="text mt-3 text-center" style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
+        <h2 class="mb-4"> Intéressé à commander ? </h2>
+        <h5 class="mb-3">Contactez-moi</h5> 
+        <a class="btn-white me-3"
+          href="mailto:contact@montagn-art.ch"> Par mail</a> 
+          <a class="btn-white"
+          href="https://wa.me/41762061997?text=Bonjour%20je%20souhaite%20plus%20d'informations"> Par WhatsApp</a>
+      <h5 class="mt-3 mb-3">
+        Envoi uniquement en Suisse, 2 CHF de frais d’envoi vous seront facturés par commande.
+      </h5>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section marché -->
+  <section class="section-main py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Colonne gauche -->
+        <div class="col-md-6">
+          <div class="row align-items-center mb-4">
+            <div class="col-md-3 text-center">
+              <img src="Clip-art/MontagnArt-Date_calendrier.png" class="img-fluid" loading="lazy">
+            </div>
+            <div class="col-md-9">
+              <h3>Prochain marché où vous pourrez retrouver Montagn’Art</h3>
+              <h5>
+                Samedi 25 avril de 9h à 17h au Marché aux Plantes, Route de l'Intyamon 18, 1669 Neirivue (FR).
+              </h5>
+            </div>
+          </div>
+        </div>
+        <!-- Colonne droite -->
+        <div class="col-md-6 text-center">
+          <img src="Mes produits/Exposition_Chanrion.png" class="img-fluid small-img w-50" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <!-- Ligne 1 : Liens et bouton retour -->
+      <div class="row text-center text-md-start">
+        <div class="col-12 col-md-6 mb-md-0">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="rando.html">RANDONNEES</a>
             </li>
-            <li class="nav-item">
-              <a href="trek.html" class="nav-link">TREKS</a>
+            <li class="list-inline-item">
+              <a href="trek.html">TREKS</a>
             </li>
-            <li class="nav-item">
-              <a href="portfolio.html" class="nav-link">GALERIE</a>
+            <li class="list-inline-item">
+              <a href="portfolio.html">GALERIE</a>
             </li>
-            <li class="nav-item">
-              <a href="shop.html" class="nav-link">CREATIONS</a>
+            <li class="list-inline-item">
+              <a href="shop.html">CREATIONS</a>
             </li>
-            <li class="nav-item">
-              <a href="about.html" class="nav-link">A PROPOS</a>
+            <li class="list-inline-item">
+              <a href="about.html">A PROPOS</a>
             </li>
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link">CONTACT</a>
+            <li class="list-inline-item">
+              <a href="contact.html">CONTACT</a>
             </li>
           </ul>
         </div>
-      </nav>
-
-      <!-- Overlay Text -->
-      <!--<div class="overlay-text">
-        À propos
-        <h6>Qui se cache derrière Montagn'Art ?</h6>
-      </div>-->
-    </header>
-
-    <!-- Section Présentation -->
-    <section class="container-fluid">
-      <div class="container my-5 text-center">
-            <div class="gap-50" style="width:100%; height:30px;"></div>
-            <h2>Je vous propose quelques produits imprimés à partir de mes créations !</h2>
-            <div class="gap-50" style="width:100%; height:30px;"></div>
-            <p>
-              Si vous êtes interessés, contactez-moi par mail : <a href="mailto:contact@montagn-art.ch">contact@montagn-art.ch</a> ou par <a
-   href="https://wa.me/41762061997?text=Bonjour%20je%20souhaite%20plus%20d'informations"> WhatsApp au +41 76 206 19 97 </a></p>
-              <p>
-                Envoi uniquement en Suisse, 2 CHF de frais d’envoi vous seront facturé par commande.
-<!--Pour l’envoi de chaque commande, il y aura 2 CHF de frais d’envois supplémentaires. Envoi uniquement en Suisse.-->
-            </p>
-      </div>
-    </section>
-
-
- <!-- Section marques-page -->
-    <section class="py-5" id="FAQ">
-      <div class="container">
-        <h2 class="text-left">Les marques-page</h2>
-        <div class="gap-50" style="width:100%; height:40px;"></div>
-        <p class="text-center">
-          5 marque-page avec des illustrations peintes à l'aquarelle par mes soins. Ils sont imprimés sur un papier-carton texturé papier aquarelle.
-</p><p class="text-center">
-  <strong>  Mon logo blanc n’est pas imprimé ! Il est présent uniquement pour des raisons de protection.
-</strong></p><p class="text-center">
-          Dimensions : 51 x 152 mm
-</p><p class="text-center">
-          Prix : 3 CHF pièce
-        </p>
-      </div>
-    </section>
-    <div class="container">
-  <div class="row text-center">
-    <div class="col">
-      <img src="Mes produits/Marque_page_cerf.png" class="img-fluid small-img">
-      <p>Le cerf</p>
-    </div>
-    <div class="col">
-      <img src="Mes produits/Marque_page_heron.png" class="img-fluid small-img">
-      <p>Le héron</p>
-    </div>
-    <div class="col">
-      <img src="Mes produits/Marque_page_montagne.png" class="img-fluid small-img">
-      <p>Le chalet</p>
-    </div>
-    <div class="col">
-      <img src="Mes produits/Marque_page_pecheur.png" class="img-fluid small-img">
-      <p>Le pêcheur</p>
-    </div>
-    <div class="col">
-      <img src="Mes produits/Marque_page_vigne.png" class="img-fluid small-img">
-      <p>La vigne</p>
-    </div>
-  </div>
-</div>
-
-
-    <!-- Section cartes -->
-    <section class="py-5" id="FAQ">
-      <div class="container">
-        <h2 class="text-left">Les cartes de correspondance</h2>
-        <div class="gap-50" style="width:100%; height:40px;"></div>
-        <p class="text-center">
-          Les tirages des cartes de correspondance sont faits à partir d’aquarelles ou de peintures acryliques que j’ai réalisées. Elles sont imprimées sur du papier texturé lin et livrées avec une simple enveloppe blanche.
-</p><p class="text-center">
-  <strong>  Mon logo blanc n’est pas imprimé ! Il est présent uniquement pour des raisons de protection.
-</strong></p><p class="text-center">
-          Dimensions : 14 x 10 cm
-</p><p class="text-center">
-          Prix : 4.50 CHF pièce ou 20 CHF le lot de 5
-        </p>
-      </div>
-    </section>
-     <div class="container">
-  <div class="row text-center">
-    <div class="col">
-      <img src="Mes produits/Carte_Aigle_royal.png" class="img-fluid small-img">
-      <p>L'aigle</p>
-    </div>
-    <div class="col">
-      <img src="Mes produits/Carte_Bouquetin.png" class="img-fluid small-img">
-      <p>Le bouquetin</p>
-    </div>
-    <div class="col">
-      <img src="Mes produits/Carte_Cerf.png" class="img-fluid small-img">
-      <p>Le cerf</p>
-    </div>
-    <div class="col">
-      <img src="Mes produits/Carte_Gypaete_barbu.png" class="img-fluid small-img">
-      <p>Le gypaete</p>
-    </div>
-  </div>
-   <div class="gap-50" style="width:100%; height:40px;"></div>
-  <div class="row text-center">
-    <div class="col">
-      <img src="Mes produits/Carte_paysage_enneige.png" class="img-fluid small-img">
-      <p>Le chalet</p>
-    </div>
-    <div class="col">
-      <img src="Mes produits/Carte_Dent_Blanche.png" class="img-fluid small-img">
-      <p>La Dent Blanche</p>
-    </div>
-    <div class="col">
-      <img src="Mes produits/Carte_Pointe_Dufour.png" class="img-fluid small-img">
-      <p>La Pointe Dufour</p>
-    </div>
-    <div class="col">
-      <img src="Mes produits/Carte_Combin_de_Corbassiere.png" class="img-fluid small-img">
-      <p>Le Combin de Corbassiere</p>
-    </div>
-  </div>
-</div>
-
-<div class="gap-50" style="width:100%; height:50px;"></div>
-
-    <!-- Section marchés --
-     <div class="container">
-  <div class="row align-items-center mb-4">
-    <div class="col-md-2 text-center">
-      <img src="Clip-art/MontagnArt-Date_calendrier.png" class="img-fluid" alt="Concept 1">
-    </div>
-    <div class="col-md-10">
-      <h2 class="text-left">Prochain marché où vous pourrez retrouver Montagn’Art </h2>
-      <h4>
-        Samedi 25 avril de 9h à 17h au Marché aux Plantes, Route de l'Intyamon 18, 1669 Neirivue (FR).
-      </h4>
-    </div>
-  </div>
-</div>
-
-<!-- Section marchés --
-<div class="container">
-  <div class="row justify-content-center">
-<img src="Mes produits/Exposition_Chanrion.png" class="img-fluid small-img w-25">
-</div>
-</div>-->
-
-
-<div class="container">
-  <div class="row align-items-center">
-    
-    <!-- Colonne gauche -->
-    <div class="col-md-6">
-      <div class="row align-items-center mb-4">
-        <div class="col-md-3 text-center">
-          <img src="Clip-art/MontagnArt-Date_calendrier.png" class="img-fluid">
-        </div>
-        <div class="col-md-9">
-          <h3>Prochain marché où vous pourrez retrouver Montagn’Art</h3>
-          <h5>
-            Samedi 25 avril de 9h à 17h au Marché aux Plantes, Route de l'Intyamon 18, 1669 Neirivue (FR).
-          </h5>
+        <div class="col-12 col-md-6 text-md-end">
+          <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
         </div>
       </div>
-    </div>
+      <!-- Ligne 2 : Copyright et réseaux sociaux -->
+      <div class="row text-center text-md-start mt-3">
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <p style="font-size: 80%;">
+            &copy; 2025 Montagn'Art · Tous droits réservés ·
+            <a href="CG.html">Conditions Générales</a>
+          </p>
+        </div>
+        <div class="col-12 col-md-6 text-md-end social-icons">
+          <a href="https://www.instagram.com/montagnart.ch/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/people/Montagnartch/61553699202260/" target="_blank"><i
+              class="fab fa-facebook"></i></a>
+        </div>
+      </div>
 
-    <!-- Colonne droite -->
-    <div class="col-md-6 text-center">
-      <img src="Mes produits/Exposition_Chanrion.png" class="img-fluid small-img w-50">
+      <div class="gap-50" style="width:100%; height:50px;"></div>
     </div>
+  </footer>
 
-  </div>
+  <!-- Lien vers Bootstrap JS et dépendances -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Script pour le retour en haut
+    document
+      .querySelector(".back-to-top")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+  </script>
+
+<!-- Ajouter Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
 </div>
 
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".lightbox .close");
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <!-- Ligne 1 : Liens et bouton retour -->
-        <div class="row text-center text-md-start">
-          <div class="col-12 col-md-6 mb-md-0">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="rando.html">RANDONNEES</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="trek.html">TREKS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="portfolio.html">GALERIE</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="shop.html">CREATIONS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="about.html">A PROPOS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="contact.html">CONTACT</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-12 col-md-6 text-md-end">
-            <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
-          </div>
-        </div>
-        <!-- Ligne 2 : Copyright et réseaux sociaux -->
-        <div class="row text-center text-md-start mt-3">
-          <div class="col-12 col-md-6 mb-3 mb-md-0">
-            <p style="font-size: 80%;">
-              &copy; 2025 Montagn'Art · Tous droits réservés ·
-              <a href="CG.html">Conditions Générales</a>
-            </p>
-          </div>
-          <div class="col-12 col-md-6 text-md-end social-icons">
-            <a href="https://www.instagram.com/montagnart.ch/" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a
-              href="https://www.facebook.com/people/Montagnartch/61553699202260/"
-              target="_blank"
-              ><i class="fab fa-facebook"></i
-            ></a>
-          </div>
-        </div>
+  document.querySelectorAll(".clickable-img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+    });
+  });
 
-        <div class="gap-50" style="width:100%; height:50px;"></div>
-      </div>
-    </footer>
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
 
-    <!-- Lien vers Bootstrap JS et dépendances -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Script pour le retour en haut
-      document
-        .querySelector(".back-to-top")
-        .addEventListener("click", function(e) {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    </script>
-  </body>
+  // fermer en cliquant en dehors de l'image
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+</script>
+</body>
+
 </html>

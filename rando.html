@@ -1,467 +1,382 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CHY79CGXQ2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-CHY79CGXQ2');
-</script>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHY79CGXQ2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      header {
-        background-color: #ffe4d4;
-        color: #cf0001;
-      }
-      header .navbar {
-        /*position: absolute; /* Fixation en haut */
-        top: 0; /* Place tout en haut */
-        left: 0;
-        right: 0;
-        z-index: 10; /* Priorité par rapport à l'image de fond */
-        padding: 10px 20px; /* Marges internes */
-      }
-      header .navbar-nav a {
-        color: #cf0001; /* Couleur par défaut des liens */
-        text-decoration: none; /* Supprime le soulignement */
-        transition: color 0.3s ease; /* Ajoute une transition pour un effet fluide */
-      }
-      header .navbar-nav a:hover {
-        color: #f3af87; /* Couleur des liens au survol */
-      }
-      .navbar-toggler {
-        border: none !important;
-      }
-      .navbar-toggler:focus {
-        box-shadow: none !important;
-      }
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(207,0,1,1)' stroke-width='2' d='M4 7h22M4 15h22'/%3E%3C/svg%3E") !important;
-        color: #cf0001;
-      }
-    </style>
-    <title>Montagn'Art</title>
+    gtag('config', 'G-CHY79CGXQ2');
+  </script>
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="/img/montagnart-favicon-site.png"
-    />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
 
-    <!-- Lien vers Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <nav class="navbar navbar-expand-lg container">
-        <a href="/" class="navbar-brand">
-          <img src="img/montagnart-logo-couleur.png" alt="Montagn'Art" />
-        </a>
+  <title>Montagn'Art</title>
 
-        <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
-        <button
-          class="navbar-toggler ms-auto"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          color="#cf0001"
-        >
+  <link rel="icon" type="image/png" href="/img/montagnart-favicon-site.png" />
+
+  <!-- Lien vers Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    .concept-card {
+      display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: var(--spacing);
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .concept-icon {
+      width: 150px;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+  .concept-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+  </style>
+
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header-simple">
+    <nav class="navbar navbar-default navbar-expand-lg container">
+      <a href="index.html" class="navbar-brand">
+        <img src="img/montagnart-logo-couleur.png" alt="Montagn'Art" />
+      </a>
+
+      <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <!--style="border: none;"-->
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="rando.html" class="nav-link">RANDONNEES</a>
-            </li>
-            <li class="nav-item">
-              <a href="trek.html" class="nav-link">TREKS</a>
-            </li>
-            <li class="nav-item">
-              <a href="portfolio.html" class="nav-link">GALERIE</a>
-            </li>
-            <li class="nav-item">
-              <a href="shop.html" class="nav-link">CREATIONS</a>
-            </li>
-            <li class="nav-item">
-              <a href="about.html" class="nav-link">A PROPOS</a>
-            </li>
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link">CONTACT</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="rando.html" class="nav-link">RANDONNEES</a>
+          </li>
+          <li class="nav-item">
+            <a href="trek.html" class="nav-link">TREKS</a>
+          </li>
+          <li class="nav-item">
+            <a href="portfolio.html" class="nav-link">GALERIE</a>
+          </li>
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link">CREATIONS</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">A PROPOS</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-<!-- Carousel -->
-<section class="py-5">
-  <div>
-    <h2 class="text-center">Prochaines randonnées</h2>
-    <br />
-    <div class="gap-50" style="width:100%; height:10px;"></div>
-  </div>
-  <div
-    id="carouselExampleIndicators"
-    class="carousel slide"
-    data-bs-ride="carousel"
-  >
-    <div
-      class="carousel-indicators"
-      style="carousel-control-color: #cf0001;"
-    >
-      <button
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide-to="0"
-        class="active"
-        aria-current="true"
-        aria-label="Slide 1"
-      ></button>
-      <button
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide-to="1"
-        aria-label="Slide 2"
-      ></button>
-      <button
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide-to="2"
-        aria-label="Slide 3"
-      ></button>
-      <!--<button
+  <!-- Carousel -->
+  <section class="section-main py-5">
+    <div>
+      <h2 class="text-center mb-4">Prochaines randonnées</h2>
+    </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators" style="carousel-control-color: #cf0001 important!;">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+        <!--<button
         type="button"
         data-bs-target="#carouselExampleIndicators"
         data-bs-slide-to="3"
         aria-label="Slide 4"
       ></button>-->
-    </div>
-    <div class="carousel-inner">
-      
-          <!-- Slide 1 -->
-      <div class="carousel-item active">
-        <div class="row align-items-center">
-          <div
-            class="col-md py-2 carousel-img text-center"
-            style="max-height: 900px;"
-          >
-            <img src="sorties/printemps_26/MontagnArt_Rando_aquarelle_PetitMont.png" />
-          </div>
-          <div class="col-md py-2 mx-2 carousel-text">
-            <h4>Aquarelle au Petit-Mont </h4>
-                  <p>Une journée de marche et de création dans un cadre saisissant au pied des parois calcaires emblématiques de la région de la Gruyère ! Nous emprunterons les sentiers dans la vallée du Petit Mont, c’est dans ce lieu inspirant que nous prendrons nos pinceaux en main pour saisir la lumière, les textures et l’atmosphère unique des alpages. Tout au long du parcours, je vous guiderai pas à pas dans la réalisation de vos aquarelles, pour réaliser des œuvres uniques.</p>
-                  <br />
-      
-                  <p><strong>Date: samedi 27 juin 2026</strong></p>
-                  <p>Lieu de rendez-vous: Charmey (FR)</p>
-                  <p>Horaire: 9h30 à 15h</p>
-      
-                  <p>Parcours: 6km avec 330m de dénivelé +/- </p>
-      
-                  <p>Prix: 60 CHF - Prix famille sur demande </p>
-          
-            <div class="text-center">
-              <a
-              class="btn btn-red"
-              href="https://forms.gle/bt9U4aD5mQkwCvqQ9"
-              role="button"
-              style="--bs-btn-border-color: #cf0001; --bs-btn-hover-bg: #cf0001; --bs-btn-hover-color: #ffe4d4;
-              margin-right:30px;"
-            >
-            Inscription</a
-            >
-            </div>
-      <div class="gap-50" style="width:100%; height:20px;"></div>
       </div>
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row align-items-center g-4">
+            <div class="col-md-6 py-2 ms-5 carousel-img">
+              <img src="sorties/printemps_26/MontagnArt_Rando_aquarelle_PetitMont.png"
+                alt="Randonnée aquarelle Petit Mont" />
             </div>
-          </div>
+            <div class="col-md py-2 me-5 carousel-text">
+              <h4 class="mb-3">Aquarelle au Petit-Mont </h4>
+              <p>Une journée de marche et de création dans un cadre saisissant au pied des parois calcaires
+                emblématiques de la région de la Gruyère ! Nous emprunterons les sentiers dans la vallée du Petit Mont,
+                c’est dans ce lieu inspirant que nous prendrons nos pinceaux en main pour saisir la lumière, les
+                textures et l’atmosphère unique des alpages. Tout au long du parcours, je vous guiderai pas à pas dans
+                la réalisation de vos aquarelles, pour réaliser des œuvres uniques.</p>
 
-          <!-- Slide 2 -->
-      <div class="carousel-item">
-        <div class="row align-items-center">
-          <div
-            class="col-md py-2 carousel-img text-center"
-            style="max-height: 900px;"
-          >
-            <img src="sorties/printemps_26/MontagnArt_Rando_aquarelle_Zinal.png" />
-          </div>
-          <div class="col-md py-2 mx-2 carousel-text">
-            <h4>Peindre en nature </h4>
-    <p>Entre montagne et création, venez partager une journée d’aquarelle en pleine nature ! </p><p>
-    Depuis le fond du val de Zinal, nous monterons à la cabane du Petit Mountet, le paysage glaciaire de la région se dévoilera sous nos yeux. Inspirant et captivant, nous laisserons libre cours à notre créativité pour représenter ce paysage.</p>
-    <br />
+              <div class="mt-3">
+                <p><strong>Date :</strong> samedi 27 juin 2026</p>
+                <p><strong>Lieu :</strong> Charmey (FR)</p>
+                <p><strong>Horaire :</strong> 9h30 - 15h</p>
+                <p><strong>Parcours :</strong> 6km avec 330m de dénivelé +/-</p>
+                <p><strong>Prix :</strong> 60 CHF - Prix famille sur demande</p>
+              </div>
 
-    <p><strong>Date: dimanche 19 juillet 2026</strong></p>
-            <p>Lieu de rendez-vous: Zinal (VS)</p>
-            <p>Horaire: 9h30 à 15h</p>
-
-            <p>Parcours: 10km avec 500m de dénivelé +/- </p>
-
-            <p>Prix: 60 CHF - Prix famille sur demande </p>
-
-            <div class="text-center">
-              <a
-              class="btn btn-red"
-              href="https://forms.gle/bt9U4aD5mQkwCvqQ9"
-              role="button"
-              style="--bs-btn-border-color: #cf0001; --bs-btn-hover-bg: #cf0001; --bs-btn-hover-color: #ffe4d4;
-              margin-right:30px;"
-            >
-            Inscription</a
-            >
+              <div class="text-center mt-4 mb-4">
+                <a class="btn-red" href="https://forms.gle/bt9U4aD5mQkwCvqQ9">
+                  Inscription</a>
+              </div>
             </div>
-
-        <div class="gap-50" style="width:100%; height:20px;"></div>
           </div>
         </div>
-      </div>
 
-      <!-- Slide 3 -->
-      <div class="carousel-item">
-        <div class="row align-items-center">
-          <div
-            class="col-md py-2 carousel-img text-center"
-            style="max-height: 900px;"
-          >
-            <img src="sorties/printemps_26/MontagnArt-les-grands-oiseaux2.jpg" />
-          </div>
-          <div class="col-md py-2 mx-2 carousel-text">
-            <h4>Les grands oiseaux de nos contrées </h4>
-    <p>Levez les yeux, les aigles ne sont plus seuls dans notre ciel. Découvrez quelques oiseaux aux envergures impressionnantes qui habitent en Suisse. Longtemps craints et persécutés, certains de ces oiseaux ont connu l’extinction. Pourquoi les considérait-on comme des présages de malheur? Comment ont-ils disparu… puis parfois fait leur retour dans les Alpes ?</p>
-    <p>Cette sortie vous invite à changer de regard sur ces espèces impressionnantes et pourtant méconnues.</p>
-    <br />
-
-    <p><strong>Date: samedi 19 septembre 2026 </strong></p>
-            <p>Lieu de rendez-vous: Jaun (FR)</p>
-            <p>Horaire: 9h30 à 14h</p>
-
-            <p>Parcours: 4km avec 380m de dénivelé +/- </p>
-
-            <p>Prix: 50 CHF - Prix famille sur demande </p>
-
-            <div class="text-center">
-              <a
-              class="btn btn-red"
-              href= "https://forms.gle/HcgcBUUJ2bAvZ7qHA"
-              role="button"
-              style="--bs-btn-border-color: #cf0001; --bs-btn-hover-bg: #cf0001; --bs-btn-hover-color: #ffe4d4;
-              margin-right:30px;"
-            >
-            Inscription</a
-            >
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row align-items-center">
+            <div class="col-md py-2 ms-5 carousel-img">
+              <img src="sorties/printemps_26/MontagnArt_Rando_aquarelle_Zinal.png" alt="Randonnée aquarelle Zinal" />
             </div>
+            <div class="col-md py-2 me-5 carousel-text">
+              <h4 class="mb-3">Peindre en nature </h4>
+              <p>Entre montagne et création, venez partager une journée d’aquarelle en pleine nature ! </p>
+              <p>
+                Depuis le fond du val de Zinal, nous monterons à la cabane du Petit Mountet, le paysage glaciaire de la
+                région se dévoilera sous nos yeux. Inspirant et captivant, nous laisserons libre cours à notre
+                créativité pour représenter ce paysage.</p>
 
-        <div class="gap-50" style="width:100%; height:20px;"></div>
+              <div class="mt-3">
+                <p><strong>Date :</strong> dimanche 19 juillet 2026</p>
+                <p><strong>Lieu :</strong> Zinal (VS)</p>
+                <p><strong>Horaire :</strong> 9h30 - 15h</p>
+                <p><strong>Parcours :</strong> 10km avec 500m de dénivelé +/-</p>
+                <p><strong>Prix :</strong> 60 CHF - Prix famille sur demande</p>
+              </div>
+
+              <div class="text-center mt-4 mb-4">
+                <a class="btn-red" href="https://forms.gle/bt9U4aD5mQkwCvqQ9">
+                  Inscription</a>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="row align-items-center">
+            <div class="col-md py-2 ms-5 carousel-img">
+              <img src="sorties/printemps_26/MontagnArt-les-grands-oiseaux2.jpg"
+                alt="Les grands oiseaux de nos contrées" />
+            </div>
+            <div class="col-md py-2 me-5 carousel-text">
+              <h4 class="mb-3">Les grands oiseaux de nos contrées </h4>
+              <p>Levez les yeux, les aigles ne sont plus seuls dans notre ciel. Découvrez quelques oiseaux aux
+                envergures impressionnantes qui habitent en Suisse. Longtemps craints et persécutés, certains de ces
+                oiseaux ont connu l’extinction. Pourquoi les considérait-on comme des présages de malheur? Comment
+                ont-ils disparu… puis parfois fait leur retour dans les Alpes ?</p>
+              <p>Cette sortie vous invite à changer de regard sur ces espèces impressionnantes et pourtant méconnues.
+              </p>
+
+              <div class="mt-3">
+                <p><strong>Date :</strong> samedi 19 septembre 2026</p>
+                <p><strong>Lieu :</strong> Jaun (FR)</p>
+                <p><strong>Horaire :</strong> 9h30 - 14h</p>
+                <p><strong>Parcours :</strong> 4km avec 380m de dénivelé +/-</p>
+                <p><strong>Prix :</strong> 50 CHF - Prix famille sur demande</p>
+              </div>
+
+              <div class="text-center mt-4 mb-4">
+                <a class="btn-red" href="https://forms.gle/HcgcBUUJ2bAvZ7qHA">
+                  Inscription</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </div>
-      
-
+      <!-- Flèches de navigation -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
     </div>
-    <!-- Flèches de navigation -->
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </button>
-  </div>
-</section>  
+  </section>
 
-<!-- Section concepts phares -->
-  <section class="container-fluid">
-    <div class="container my-5">
+  <!-- Section concepts phares -->
+  <section class="section-main container-fluid py-5">
+    <div class="container">
       <div class="row">
         <h2>Concepts de Randonnée</h2>
-       <!--- <div class="gap-50" style="width:100%; height:20px;"></div>
-        <p>Chaque randonnée est une œuvre d'art unique, où la nature, l'effort et la découverte se rencontrent pour offrir une expérience. </p>-->
-        <div class="gap-50" style="width:100%; height:20px;"></div>
-        <p> Les concepts Montagn'Art sont conçus pour répondre aux attentes de chacun, que vous soyez un randonneur débutant, une famille, une entreprise ou un marcheur aguerri. Chaque aventure est pensée pour éveiller vos sens, vous connecter à la montagne et vous faire vivre des moments d’évasion.
-          </p>
-          <div class="gap-50" style="width:100%; height:20px;"></div>
 
-          <!--<div class="row px-5">
-          <div class="col-12 col-md-8 py-8" style="flex-direction: column;">
-          <h4 id="Nature_Decouverte">Atelier Nature et Découverte</h4>
-         <p> Plongez au cœur des paysages montagneux et laissez-vous guider à travers des sentiers. <strong>Les Ateliers Nature et Découverte</strong> sont conçues pour ceux qui souhaitent en apprendre plus sur la nature tout en prenant le temps d'apprécier la beauté de ce qui nous entoure. Je vous ferai découvrir des lieux magiques, loin de l’agitation du monde, où chaque pas devient une invitation à la contemplation.</p>
-          <div class="gap-50" style="width:100%; height:20px;"></div>
+        <p class="mt-4 mb-4"> Les concepts Montagn'Art sont conçus pour répondre aux attentes de chacun, que vous soyez
+          un randonneur débutant, une famille, une entreprise ou un marcheur aguerri. Chaque aventure est pensée pour
+          éveiller vos sens, vous connecter à la montagne et vous faire vivre des moments d’évasion.
+        </p>
+
+        <!-- Concept 1 -->
+        <div class="concept-card mb-4">
+          <div>
+            <h4 id="Nature_Decouverte">Atelier Nature et Découverte</h4>
+            <p>
+              Plongez au cœur des paysages montagneux et laissez-vous guider à travers des sentiers. <strong>Les
+                Ateliers Nature et Découverte</strong> sont conçues pour ceux qui souhaitent en apprendre plus sur la
+              nature tout en prenant le temps d'apprécier la beauté de ce qui nous entoure. Je vous ferai découvrir des
+              lieux magiques, loin de l’agitation du monde, où chaque pas devient une invitation à la contemplation.
+            </p>
+          </div>
+          <img src="Clip-art/MontagnArt-Jumelle.png" class="concept-icon">
         </div>
-        <div class="col-12 col-md-8 py-8" style="flex-direction: column;">
-          <img class="image-block img-fluid" src="img/Clip-art/MontagnArt-Jumelle.png" />
+
+        <!-- Concept 2 -->
+         <div class="concept-card mb-4">
+          <div>
+            <h4 id="Artistiques">Atelier Artistique</h4>
+            <p>Pour les amateurs d’art ou ceux qui désirent débuter, je vous propose des activités alliant marche et
+              dessin. <strong>Les Ateliers Artistiques</strong> sont une immersion dans la montagne avec des moments
+              créatifs en plein air. Aquarelle, croquis ou dessin, chaque participant peut exprimer son ressenti face
+              aux paysages et à l’environnement naturel. C’est une invitation à se reconnecter à sa propre créativité,
+              en pleine nature.</p>
+          </div>
+          <img src="Clip-art/MontagnArt_palette.png" class="concept-icon">
         </div>
-      </div>-->
 
-      <!-- Concept 1 -->
-  <div class="row align-items-center mb-4">
-    <div class="col-md-10">
-      <h4 id="Nature_Decouverte">Atelier Nature et Découverte</h4>
-      <p>
-        Plongez au cœur des paysages montagneux et laissez-vous guider à travers des sentiers. <strong>Les Ateliers Nature et Découverte</strong> sont conçues pour ceux qui souhaitent en apprendre plus sur la nature tout en prenant le temps d'apprécier la beauté de ce qui nous entoure. Je vous ferai découvrir des lieux magiques, loin de l’agitation du monde, où chaque pas devient une invitation à la contemplation.
-      </p>
-    </div>
-    <div class="col-md-2 text-center">
-      <img src="Clip-art/MontagnArt-Jumelle.png" class="img-fluid">
-    </div>
-  </div>
+        <!-- Concept 3 -->
+         <div class="concept-card mb-4">
+          <div>
+            <h4 id="Thematique">Atelier Thématique</h4>
+            <p>La montagne ne se résume pas seulement à ses paysages à couper le souffle, mais cache aussi un patrimoine
+              riche et vivant. <strong>Les Ateliers Thématiques</strong> vous permettent de partir à la rencontre de ce
+              patrimoine vivant et de découvrir des savoir-faire ancestraux qui font la richesse de la Suisse. Si la
+              fabrication du fromage, le patrimoine, la viticulture ou la formation des Alpes vous intriguent, ces
+              activités vous permettront de combler votre curiosité. Vous aurez l‘occasion d’apprendre sur le terrain
+              sur différents sujets. Chaque randonnée devient une véritable immersion dans la culture et les savoirs des
+              montagnes.</p>
+          </div>
+          <img src="Clip-art/MontagnArt_Tavillon.png" class="concept-icon">
+        </div>
 
-    <!-- Concept 2 -->
-  <div class="row align-items-center mb-4">
-    <div class="col-md-10">
-      <h4 id="Artistiques">Atelier Artistique</h4>
-      <p>Pour les amateurs d’art ou ceux qui désirent débuter, je vous propose des activités alliant marche et dessin. <strong>Les Ateliers Artistiques</strong> sont une immersion dans la montagne avec des moments créatifs en plein air. Aquarelle, croquis ou dessin, chaque participant peut exprimer son ressenti face aux paysages et à l’environnement naturel. C’est une invitation à se reconnecter à sa propre créativité, en pleine nature.</p>
-    </div>
-    <div class="col-md-2 text-center">
-      <img src="Clip-art/MontagnArt_palette.png" class="img-fluid">
-    </div>
-  </div>
-        
-<!-- Concept 3 -->
-<div class="row align-items-center mb-4">
-    <div class="col-md-10">
-      <h4 id="Thematique">Atelier Thématique</h4>
-      <p>La montagne ne se résume pas seulement à ses paysages à couper le souffle, mais cache aussi un patrimoine riche et vivant. <strong>Les Ateliers Thématiques</strong> vous permettent de partir à la rencontre de ce patrimoine vivant et de découvrir des savoir-faire ancestraux qui font la richesse de la Suisse. Si la fabrication du fromage, le patrimoine, la viticulture ou la formation des Alpes vous intriguent, ces activités vous permettront de combler votre curiosité. Vous aurez l‘occasion d’apprendre sur le terrain sur différents sujets.  Chaque randonnée devient une véritable immersion dans la culture et les savoirs des montagnes.</p>
- </div>
-    <div class="col-md-2 text-center">
-      <img src="Clip-art/MontagnArt_Tavillon.png" class="img-fluid">
-    </div>
-  </div>
+        <!-- Concept 4 -->
+         <div class="concept-card mb-4">
+          <div>
+            <h4 id="Trek">Randonnée de Plusieurs Jours - Immersion Totale en Montagne</h4>
+            <p><strong>Les randonnées de plusieurs jours</strong> sont l’occasion de vivre une véritable aventure en
+              pleine nature, loin des sentiers battus. Ces expéditions prolongées vous offrent une immersion complète
+              dans l’univers montagnard, où chaque jour vous permet de découvrir de nouveaux paysages, de vivre des
+              moments de partage, de convivialité et de renforcer votre lien avec la nature.</p>
+          </div>
+          <img src="Clip-art/MontagnArt-Sac_Randonnee.png" style="width: 100px;" class="concept-icon">
+        </div>
 
-<!-- Concept 4 -->
-<div class="row align-items-center mb-4">
-    <div class="col-md-10">
-      <h4 id="Trek">Randonnée de Plusieurs Jours - Immersion Totale en Montagne</h4>
-      <p><strong>Les randonnées de plusieurs jours</strong> sont l’occasion de vivre une véritable aventure en pleine nature, loin des sentiers battus. Ces expéditions prolongées vous offrent une immersion complète dans l’univers montagnard, où chaque jour vous permet de découvrir de nouveaux paysages, de vivre des moments de partage, de convivialité et de renforcer votre lien avec la nature.</p>
+        <!-- Concept 5 -->
+         <div class="concept-card mb-4">
+          <div>
+           <h4 id="Creatif">Atelier Créatif </h4>
+            <p>Dans un cadre apaisant, venez construire des créations pour favoriser la biodiversité autour de vous.
+              Mettez votre imagination à l’œuvre dans des activités ludiques et écologiques, idéales pour les familles,
+              les amis ou les groupes en quête de moments authentiques dans la nature.
+            </p>
+          </div>
+          <img src="Clip-art/MontagnArt_cabane_insecte.png" style="width: 100px;" class="concept-icon">
+        </div>
+
+        <!-- Concept 6 -->
+          <div class="concept-card mb-4">
+          <div>
+            <h4 id="Carte">Randonnée à la Carte</h4>
+             <p>Montagn’Art propose des activités pour tous, que vous soyez entreprise, école, famille ou privé. En
+              fonction de votre niveau, de vos envies et de vos attentes, nous vous proposons des formules adaptées. Que
+              vous soyez un marcheur aguerri ou un amateur de nature désireux de profiter d’une randonnée tranquille et
+              accessible, le parcours sera conçu pour vous permettre de vivre pleinement cette aventure tout en
+              respectant vos capacités. </p>
+          </div>
+          <img src="Clip-art/MontagnArt-panneau_Randonnee.png" class="concept-icon">
+        </div>
+
       </div>
-    <div class="col-md-2 text-center">
-      <img src="Clip-art/MontagnArt-Sac_Randonnee.png" class="img-fluid w-75">
-    </div>
-  </div>
-    
-      <!-- Concept 5 -->
-<div class="row align-items-center mb-4">
-    <div class="col-md-10">
-      <h4 id="Creatif">Atelier Créatif </h4>
-      <p>Dans un cadre apaisant, venez construire des créations pour favoriser la biodiversité autour de vous. Mettez votre imagination à l’œuvre dans des activités ludiques et écologiques, idéales pour les familles, les amis ou les groupes en quête de moments authentiques dans la nature.
-    </p>
-  </div>
-    <div class="col-md-2 text-center">
-      <img src="Clip-art/MontagnArt_cabane_insecte.png" class="img-fluid w-50">
-    </div>
-  </div>
-    
-      <!-- Concept 6 -->
-<div class="row align-items-center mb-4">
-    <div class="col-md-10">
-      <h4 id="Carte">Randonnée à la Carte</h4>
-      <p>Montagn’Art propose des activités pour tous, que vous soyez entreprise, école, famille ou privé. En fonction de votre niveau, de vos envies et de vos attentes, nous vous proposons des formules adaptées. Que vous soyez un marcheur aguerri ou un amateur de nature désireux de profiter d’une randonnée tranquille et accessible, le parcours sera conçu pour vous permettre de vivre pleinement cette aventure tout en respectant vos capacités. </p>
-      <p>
-        Vous avez une envie particulière ? N'hésitez pas à me faire part de vos souhaits. Je me ferais un
-          plaisir de vous proposer une sortie adaptée à vos besoins !</p>
-  </div>
-    <div class="col-md-2 text-center">
-      <img src="Clip-art/MontagnArt-panneau_Randonnee.png" class="img-fluid">
-    </div>
-  </div>
-    
-    </div>
   </section>
 
 
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <!-- Ligne 1 : Liens et bouton retour -->
-        <div class="row text-center text-md-start">
-          <div class="col-12 col-md-6 mb-md-0">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="rando.html">RANDONNEES</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="trek.html">TREKS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="portfolio.html">GALERIE</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="shop.html">CREATIONS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="about.html">A PROPOS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="contact.html">CONTACT</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-12 col-md-6 text-md-end">
-            <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
-          </div>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <!-- Ligne 1 : Liens et bouton retour -->
+      <div class="row text-center text-md-start">
+        <div class="col-12 col-md-6 mb-md-0">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="rando.html">RANDONNEES</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="trek.html">TREKS</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="portfolio.html">GALERIE</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="shop.html">CREATIONS</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="about.html">A PROPOS</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="contact.html">CONTACT</a>
+            </li>
+          </ul>
         </div>
-        <!-- Ligne 2 : Copyright et réseaux sociaux -->
-        <div class="row text-center text-md-start mt-3">
-          <div class="col-12 col-md-6 mb-3 mb-md-0">
-            <p style="font-size: 80%;">
-              &copy; 2025 Montagn'Art · Tous droits réservés ·
-              <a href="CG.html">Conditions Générales</a>
-            </p>
-          </div>
-          <div class="col-12 col-md-6 text-md-end social-icons">
-            <a href="https://www.instagram.com/montagnart.ch/" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a
-              href="https://www.facebook.com/people/Montagnartch/61553699202260/"
-              target="_blank"
-              ><i class="fab fa-facebook"></i
-            ></a>
-          </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
         </div>
-
-        <div class="gap-50" style="width:100%; height:50px;"></div>
       </div>
-    </footer>
+      <!-- Ligne 2 : Copyright et réseaux sociaux -->
+      <div class="row text-center text-md-start mt-3">
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <p style="font-size: 80%;">
+            &copy; 2025 Montagn'Art · Tous droits réservés ·
+            <a href="CG.html">Conditions Générales</a>
+          </p>
+        </div>
+        <div class="col-12 col-md-6 text-md-end social-icons">
+          <a href="https://www.instagram.com/montagnart.ch/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/people/Montagnartch/61553699202260/" target="_blank"><i
+              class="fab fa-facebook"></i></a>
+        </div>
+      </div>
 
-    <!-- Lien vers Bootstrap JS et dépendances -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Script pour le retour en haut
-      document
-        .querySelector(".back-to-top")
-        .addEventListener("click", function(e) {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    </script>
-  </body>
+      <div class="gap-50" style="width:100%; height:50px;"></div>
+    </div>
+  </footer>
+
+  <!-- Lien vers Bootstrap JS et dépendances -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Script pour le retour en haut
+    document
+      .querySelector(".back-to-top")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+  </script>
+</body>
+
 </html>
