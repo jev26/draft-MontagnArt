@@ -669,6 +669,8 @@ img {
  <script>
 let cart = [];
 
+const SHIPPING_FEE = 2;
+
 function addToCart(name, price, type) {
   cart.push({ name, price, type });
   updateCart();
@@ -696,9 +698,10 @@ function updateCart() {
   // 👉 calcul autres produits normal
   let totalAutres = autres.reduce((sum, item) => sum + item.price, 0);
 
-  total = totalCartes + totalAutres;
+  // 👉 ajout frais d’envoi
+  total = totalCartes + totalAutres + SHIPPING_FEE;
 
-  // 🔥 affichage
+  // 🔥 affichage des produits
   cart.forEach((item, index) => {
     const li = document.createElement("li");
     li.innerHTML = `
@@ -708,12 +711,17 @@ function updateCart() {
     list.appendChild(li);
   });
 
-  // 👉 afficher info promo
+  // 👉 info promo cartes
   if (lots > 0) {
     const promo = document.createElement("li");
     promo.innerHTML = `<strong>Promo: ${lots} lot(s) de 5 cartes → ${lots * 20} CHF</strong>`;
     list.appendChild(promo);
   }
+
+  // 👉 frais d’envoi affichés
+  const shippingEl = document.createElement("li");
+  shippingEl.innerHTML = `<strong>Frais d'envoi: ${SHIPPING_FEE.toFixed(2)} CHF</strong>`;
+  list.appendChild(shippingEl);
 
   totalEl.textContent = total.toFixed(2);
 
@@ -732,6 +740,7 @@ function updateWhatsAppLink(total) {
     message += `- ${item.name} (${item.price} CHF)%0A`;
   });
 
+  message += `%0AFrais d'envoi: ${SHIPPING_FEE.toFixed(2)} CHF%0A`;
   message += `%0ATotal: ${total.toFixed(2)} CHF`;
 
   const link = `https://wa.me/41762061997?text=${message}`;
