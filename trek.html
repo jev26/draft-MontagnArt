@@ -1,320 +1,331 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CHY79CGXQ2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-CHY79CGXQ2');
-</script>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHY79CGXQ2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-    
+    gtag('config', 'G-CHY79CGXQ2');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
     .hero-block {
-  height: 350px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+      height: 350px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-}
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.25);
+    }
 
-.hero-text {
-  position: relative;
-  color: #ffe4d4;
-  padding: 1rem;
-}
+    .hero-text {
+      position: relative;
+      color: #ffe4d4;
+      padding: 1rem;
+    }
 
 
-.trek-card {
-  position: relative;
-  height: 500px;
-  overflow: hidden;
-}
+    .trek-card {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+    }
 
-.trek-card .image-block {
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.4s ease;
-}
+    .trek-card .image-block {
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.4s ease;
+    }
 
-.trek-card:hover .image-block {
-  transform: scale(1.05);
-}
+    .trek-card:hover .image-block {
+      transform: scale(1.05);
+    }
 
-.trek-card .text {
-  color: #ffe4d4;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); 
-  top:66%;
-}
-</style>
-    <title>Montagn'Art</title>
+    .trek-card .text {
+      color: #ffe4d4;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+      top: 66%;
+    }
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="/img/montagnart-favicon-site.png"
-    />
+    .trek-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-    <!-- Lien vers Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <nav class="navbar navbar-default navbar-expand-lg container">
-        <a href="/" class="navbar-brand">
-          <img src="img/montagnart-logo-couleur.png" alt="Montagn'Art" />
-        </a>
+    @media (max-width: 768px) {
+      .image-container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
+  </style>
+  <title>Montagn'Art</title>
 
-        <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
-        <button
-          class="navbar-toggler ms-auto"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          color="#cf0001"
-        >
+  <link rel="icon" type="image/png" href="/img/montagnart-favicon-site.png" />
+
+  <!-- Lien vers Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-default navbar-expand-lg container">
+      <a href="/" class="navbar-brand">
+        <img src="img/montagnart-logo-couleur.png" alt="Montagn'Art" />
+      </a>
+
+      <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" color="#cf0001">
         <!--style="border: none;"-->
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="rando.html" class="nav-link">RANDONNEES</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="rando.html" class="nav-link">RANDONNEES</a>
+          </li>
+          <li class="nav-item">
+            <a href="trek.html" class="nav-link">TREKS</a>
+          </li>
+          <li class="nav-item">
+            <a href="portfolio.html" class="nav-link">GALERIE</a>
+          </li>
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link">CREATIONS</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">A PROPOS</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Carnet de trek -->
+  <section class="section-main g-0">
+    <div class="hero-block" style="background-image: url('sorties/printemps_26/MontagnArt-Carnet_Trek03.jpg');"
+      loading="lazy">
+      <div class="hero-overlay"></div>
+      <div class="hero-text">
+        <h1>Carnet de trek</h1>
+        <h3>2 jours d'évasion artistique autour du lac de Mauvoisin</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section explication trek -->
+  <section class="section-main py-5">
+    <div class="container">
+      <!-- General -->
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-6 order-2 order-lg-1">
+          <p> Ce trek est une invitation à ralentir et à capturer la beauté des paysages à travers l’aquarelle, carnet
+            en main. Offrez-vous une parenthèse hors du temps au cœur des Alpes valaisannes. Ce sera un carnet de
+            voyage vivant, où chaque participant pourra s’initier ou se perfectionner à l’aquarelle. Jeux de lumière
+            sur l’eau, nuances des roches, reflets des sommets enneigés : autant de sources d’inspiration pour laisser
+            libre cours à votre créativité. La nuitée se fera dans la Cabane de Chanrion, perchée à 2’460 mètres
+            d’altitude. Vous pourrez profiter de quelques-uns de mes tableaux qui y seront exposés.
+          </p>
+          <p>
+            Accessible et ressourçant, ce séjour mêle marche, créativité et déconnexion. Une expérience unique pour
+            explorer, ressentir et créer au cœur des Alpes.
+          </p>
+
+          <div class="text-center mt-3">
+            <a class="btn-red" href="https://forms.gle/j9StMzDKkU5qEJv78">
+              Inscription</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6 order-1 order-lg-2 p-0">
+          <img class="img-fluid w-100 trek-img" src="sorties/printemps_26/MontagnArt-carnet-trek.webp"
+            alt="Carnet trek" />
+        </div>
+      </div>
+
+
+      <!--Info generales -->
+      <div class="row g-4">
+        <div class="col-md-6 text-container mt-5">
+          <p> <strong>Lieu de RDV:</strong> Mauvoisin (VS)</p>
+          <p><strong>Dates:</strong> du samedi 4 au dimanche 5 juillet 2025</p>
+          <p><strong>Nuitée:</strong> Cabane Chanrion</p>
+          <p><strong>Prix:</strong> de 300 à 450 CHF - selon inscrits</p>
+          <p>Ce prix comprend, l’accompagnement dans un cadre sécurisé avec une accompagnatrice en montagne - artiste,
+            la demi-pension en cabane.
+          </p>
+        </div>
+        <!-- Jour 1 & 2 -->
+        <div class="col-md-6 text-container">
+          <div class="row g-3">
+            <div class="col-6 text-container">
+              <p><strong>Jour 1</strong></p>
+              <p>Distance: 11km</p>
+              <p>Dénivelé: +900m / -300m</p>
+            </div>
+            <div class="col-6 text-container">
+              <p><strong>Jour 2</strong></p>
+              <p>Distance: 11km</p>
+              <p>Dénivelé: +200m / -800m </p>
+            </div>
+          </div>
+
+          <div class="col-12 p-0">
+            <img class="img-fluid w-100 trek-img" src="sorties/printemps_26/MontagnArt-Carnet_Trek02.jpg"
+              alt="Carnet trek jour 2" />
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section de présentation -->
+  <section class="section-main py-5">
+    <div class="container">
+      <!--<h4 class="text-center">Les treks pour la saison estivale 2026 arrivent ! </h4>-->
+      <h2 class="text-center mb-4">Revoir les treks passés </h2>
+      <p class="text-center">
+        Une de ces randonnées vous donne envie ? N'hésitez pas à me contacter pour organiser ensemble une sortie sur
+        mesure !
+      </p>
+    </div>
+  </section>
+
+  <!-- 3 articles -->
+  <section class="section-main container-fluid p-0">
+    <div class="row g-0">
+
+      <div class="col-12 col-md-4 trek-card">
+        <a href="sorties/Trek_4vallees/Trek_4vallees.html">
+          <div class="image-block" style="background-image:url('sorties/Trek_4vallees/MontagnArt-trek-4vallee.jpg')">
+            <div class="text">
+              <h2 class="text-center">
+                Traversée des 4 vallées
+              </h2>
+              <h5 class="text-center">du 29 au 31 août 2025</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-12 col-md-4 trek-card">
+        <a href="sorties/Trek_Appenzell/Trek_Appenzell.html">
+          <div class="image-block"
+            style="background-image:url('sorties/Trek_Appenzell/Screenshot\ 2025-07-31\ at\ 23.11.55.png')">
+            <div class="text">
+              <h2 class="text-center">
+                Trek en Appenzell
+              </h2>
+              <h5 class="text-center">du 29 au 31 mai 2025</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-12 col-md-4 trek-card">
+        <a href="sorties/First/First.html">
+          <div class="image-block" style="background-image:url('sorties/First/First.png')">
+            <div class="text">
+              <h2 class="text-center">
+                Trek dans l'Oberland Bernois
+              </h2>
+              <h5 class="text-center">Juin 2024</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <!-- Ligne 1 : Liens et bouton retour -->
+      <div class="row text-center text-md-start">
+        <div class="col-12 col-md-6 mb-md-0">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="rando.html">RANDONNEES</a>
             </li>
-            <li class="nav-item">
-              <a href="trek.html" class="nav-link">TREKS</a>
+            <li class="list-inline-item">
+              <a href="trek.html">TREKS</a>
             </li>
-            <li class="nav-item">
-              <a href="portfolio.html" class="nav-link">GALERIE</a>
+            <li class="list-inline-item">
+              <a href="portfolio.html">GALERIE</a>
             </li>
-            <li class="nav-item">
-              <a href="shop.html" class="nav-link">CREATIONS</a>
+            <li class="list-inline-item">
+              <a href="shop.html">CREATIONS</a>
             </li>
-            <li class="nav-item">
-              <a href="about.html" class="nav-link">A PROPOS</a>
+            <li class="list-inline-item">
+              <a href="about.html">A PROPOS</a>
             </li>
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link">CONTACT</a>
+            <li class="list-inline-item">
+              <a href="contact.html">CONTACT</a>
             </li>
           </ul>
         </div>
-      </nav>
-    </header>
-
- <!-- Carnet de trek -->
-  <section class="section-main g-0">
-<div class="image-block hero-block" style="background-image: url('sorties/printemps_26/MontagnArt-Carnet_Trek03.jpg');" loading="lazy">
-  <div class="hero-text">
-    <h1>Carnet de trek</h1>
-    <h3>2 jours d'évasion artistique autour du lac de Mauvoisin</h3>
-  </div>
-</div>
-
-<div class="container-fluid">
-  <div class="container mt-5">
-    <!-- General -->
-    <div class="row align-items-center">
-      <div class="col-md-6 mb-5 text-container">
-        <p> Ce trek est une invitation à ralentir et à capturer la beauté des paysages à travers l’aquarelle, carnet en main. Offrez-vous une parenthèse hors du temps au cœur des Alpes valaisannes. Ce sera un carnet de voyage vivant, où chaque participant pourra s’initier ou se perfectionner à l’aquarelle. Jeux de lumière sur l’eau, nuances des roches, reflets des sommets enneigés : autant de sources d’inspiration pour laisser libre cours à votre créativité. La nuitée se fera dans la Cabane de Chanrion, perchée à 2’460 mètres d’altitude. Vous pourrez profiter de quelques-uns de mes tableaux qui y seront exposés.
-</p>
-<p>
-  Accessible et ressourçant, ce séjour mêle marche, créativité et déconnexion. Une expérience unique pour explorer, ressentir et créer au cœur des Alpes.
-</p>
-
-<div class="text-center mb-3 mt-3">
-<a
-          class="btn-red"
-          href="https://forms.gle/j9StMzDKkU5qEJv78"
-        >
-          Inscription</a
-        >
-    </div>
-    </div>
-     
-      <div class="col-md-6 image-container">
-        <img class="image-block img-fluid" style="height: 50vh;" src="sorties/printemps_26/MontagnArt-carnet-trek.webp" />
-      </div>
-    </div>
-    
-    
-      <!--Info generales -->
-    <div class="row">
-      <div class="col-md-6 text-container mt-5">
-     <p> <strong>Lieu de RDV:</strong> Mauvoisin (VS)</p>
-     <p><strong>Dates:</strong> du samedi 4 au dimanche 5 juillet 2025</p>
-        <p><strong>Nuitée:</strong> Cabane Chanrion</p>
-        <p><strong>Prix:</strong> de 300 à 450 CHF - selon inscrits</p> 
-        <p>Ce prix comprend, l’accompagnement dans un cadre sécurisé avec une accompagnatrice en montagne - artiste, la demi-pension en cabane.
- </p>
-      </div>
-<!-- Jour 1 & 2 -->
-<div class="col-md-6 text-container">
-  <div class="row mt-4">
-    <div class="col-md-6 text-container" style="width:50%;">
-<p><strong>Jour 1</strong></p>
-        <p>Distance: 11km</p>
-        <p>Dénivelé: +900m / -300m</p>
-  </div>
-  <div class="col-md-6 text-container" style="width:50%;">
-    <p><strong>Jour 2</strong></p>
-        <p>Distance: 11km</p>
-        <p>Dénivelé: +200m / -800m </p>
+        <div class="col-12 col-md-6 text-md-end">
+          <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
         </div>
-  </div>    
-  <div class="col-md-12 image-container">
-        <img class="image-block img-fluid" src="sorties/printemps_26/MontagnArt-Carnet_Trek02.jpg" />
       </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-
-<!-- Section de présentation -->
-<section class="section-main py-5">
-  <div class="container">
-    <!--<h4 class="text-center">Les treks pour la saison estivale 2026 arrivent ! </h4>-->
-    <h2 class="text-center mb-4">Revoir les treks passés </h2>
-    <p class="text-center">
-      Une de ces randonnées vous donne envie ? N'hésitez pas à me contacter pour organiser ensemble une sortie sur mesure !
-    </p>
-  </div>
-</section>
-
-<!-- 3 articles -->
-<section class="section-main container-fluid p-0">
-  <div class="row g-0">
-
-    <div class="col-12 col-md-4 trek-card">
-  <a href="sorties/Trek_4vallees/Trek_4vallees.html">
-    <div class="image-block" style="background-image:url('sorties/Trek_4vallees/MontagnArt-trek-4vallee.jpg')">
-      <div class="text"><h2 class="text-center">
-                  Traversée des 4 vallées
-                </h2>
-                <h5 class="text-center">du 29 au 31 août 2025</h5></div>
-    </div>
-  </a>
-</div>
-
-<div class="col-12 col-md-4 trek-card">
-  <a href="sorties/Trek_Appenzell/Trek_Appenzell.html">
-    <div class="image-block" style="background-image:url('sorties/Trek_Appenzell/Screenshot\ 2025-07-31\ at\ 23.11.55.png')">
-      <div class="text"><h2 class="text-center">
-              Trek en Appenzell
-            </h2>
-            <h5 class="text-center">du 29 au 31 mai 2025</h5></div>
-    </div>
-  </a>
-</div>
-
-<div class="col-12 col-md-4 trek-card">
-  <a href="sorties/First/First.html">
-    <div class="image-block" style="background-image:url('sorties/First/First.png')">
-      <div class="text"><h2 class="text-center">
-             Trek dans l'Oberland Bernois
-            </h2>
-            <h5 class="text-center">Juin 2024</h5></div>
-    </div>
-  </a>
-</div>
-
-  </div>
-</section>
-
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <!-- Ligne 1 : Liens et bouton retour -->
-        <div class="row text-center text-md-start">
-          <div class="col-12 col-md-6 mb-md-0">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="rando.html">RANDONNEES</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="trek.html">TREKS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="portfolio.html">GALERIE</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="shop.html">CREATIONS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="about.html">A PROPOS</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="contact.html">CONTACT</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-12 col-md-6 text-md-end">
-            <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
-          </div>
+      <!-- Ligne 2 : Copyright et réseaux sociaux -->
+      <div class="row text-center text-md-start mt-3">
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <p style="font-size: 80%;">
+            &copy; 2025 Montagn'Art · Tous droits réservés ·
+            <a href="CG.html">Conditions Générales</a>
+          </p>
         </div>
-        <!-- Ligne 2 : Copyright et réseaux sociaux -->
-        <div class="row text-center text-md-start mt-3">
-          <div class="col-12 col-md-6 mb-3 mb-md-0">
-            <p style="font-size: 80%;">
-              &copy; 2025 Montagn'Art · Tous droits réservés ·
-              <a href="CG.html">Conditions Générales</a>
-            </p>
-          </div>
-          <div class="col-12 col-md-6 text-md-end social-icons">
-            <a href="https://www.instagram.com/montagnart.ch/" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a
-              href="https://www.facebook.com/people/Montagnartch/61553699202260/"
-              target="_blank"
-              ><i class="fab fa-facebook"></i
-            ></a>
-          </div>
+        <div class="col-12 col-md-6 text-md-end social-icons">
+          <a href="https://www.instagram.com/montagnart.ch/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/people/Montagnartch/61553699202260/" target="_blank"><i
+              class="fab fa-facebook"></i></a>
         </div>
-
-        <div class="gap-50" style="width:100%; height:50px;"></div>
       </div>
-    </footer>
 
-    <!-- Lien vers Bootstrap JS et dépendances -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Script pour le retour en haut
-      document
-        .querySelector(".back-to-top")
-        .addEventListener("click", function(e) {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    </script>
-  </body>
+      <div class="gap-50" style="width:100%; height:50px;"></div>
+    </div>
+  </footer>
+
+  <!-- Lien vers Bootstrap JS et dépendances -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Script pour le retour en haut
+    document
+      .querySelector(".back-to-top")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+  </script>
+</body>
+
 </html>

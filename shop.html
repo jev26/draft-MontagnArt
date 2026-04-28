@@ -28,6 +28,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
 
+    h2, h3, h4 {
+  letter-spacing: 0.5px;
+}
+
+p {
+  line-height: 1.6;
+}
+
 /* LIGHTBOX */
 .lightbox {
   display: none;
@@ -82,6 +90,7 @@
 }
 
 .small-img {
+  max-width: 250px;
   width: 100%;
   height: 200px;       /* hauteur fixe */
   object-fit: contain; /* PAS de crop */
@@ -95,7 +104,8 @@
   background-color: var(--color-bg-main);
   border-radius: 12px;
   overflow: hidden;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+  /*border: 1px solid rgba(0,0,0,0.05);*/
 }
 
 /* image */
@@ -120,11 +130,13 @@
 .product-info h6 {
   margin-bottom: 5px;
   font-weight: 500;
+  font-size: 0.95rem;
 }
 
 .price {
   color: #cf0001;
   font-weight: 600;
+  font-size: 0.95rem;
 }
 
 /* Hover seulement desktop */
@@ -139,9 +151,20 @@
   }
 }
 
+@media (max-width: 576px) {
+  .product-info {
+    padding: 10px;
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
+}
+
+#cart-box {
+  font-size: 0.85rem;
+  backdrop-filter: blur(6px);
 }
 
 @media (max-width: 576px) {
@@ -188,6 +211,86 @@ img {
     padding-right: 15px;
   }
 }
+
+.contact-hero {
+  background-image: url("img/Montagn-art_Me contacter.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+}
+
+/* overlay sombre */
+.contact-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+}
+
+/* contenu AU-DESSUS de l'overlay */
+.contact-overlay {
+  position: relative;
+  z-index: 2;
+
+  color: #ffe4d4;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  padding: 10px;
+}
+
+/* IMPORTANT : rend les boutons cliquables */
+.contact-overlay a {
+  position: relative;
+  z-index: 3;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .contact-hero {
+    min-height: auto;
+    padding: 40px 15px;
+  }
+
+  .contact-overlay h2 {
+    font-size: 1.4rem;
+  }
+
+  .contact-overlay h5 {
+    font-size: 1rem;
+  }
+
+  .contact-overlay .btn-white {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    width: auto !important;   /* écrase le w-100 sur mobile */
+  }
+
+  .contact-overlay .d-flex {
+    align-items: center;
+  }
+}
+
+.btn-contact {
+  padding: 10px 18px;
+  font-size: 1rem;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .btn-contact {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-radius: 20px;
+  }
+}
+
 
   </style>
 </head>
@@ -527,23 +630,24 @@ img {
 
 <!-- section commande -->
   <section class="section-main container-fluid g-0">
-    <div class="image-block img-fluid"
-      style="background-image: url('img/Montagn-art_Me\ contacter.png'); background-repeat:no-repeat; background-position: center; height: 300px;">
+    <div class="contact-hero">
+      <div class="contact-overlay">
       <div class="text mt-3 text-center" style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
         <h2 class="mt-4 mb-4"> Intéressé à commander ? </h2>
         <h5 class="mb-3">Contactez-moi</h5> 
 
-         <div class="d-flex flex-column flex-md-row justify-content-center gap-2">
-        <a class="btn-white w-100 w-md-auto"
+         <div class="d-flex flex-column flex-md-row justify-content-center gap-2 mt-3">
+        <a class="btn-white btn-contact"
           href="mailto:contact@montagn-art.ch"> 📧 Par mail</a> 
         
-          <a class="btn-white w-100 w-md-auto"
+          <a class="btn-white btn-contact"
           href="https://wa.me/41762061997?text=Bonjour%20je%20souhaite%20plus%20d'informations"> 💬 Par WhatsApp</a>
       </div>
-          <h5 class="mt-3 mb-5">
+          <h5 class="mt-3">
         Envoi uniquement en Suisse, 2 CHF de frais d’envoi vous seront facturés par commande.
       </h5>
       </div>
+    </div>
     </div>
   </section>
 
@@ -567,7 +671,7 @@ img {
         </div>
         <!-- Colonne droite -->
         <div class="col-md-6 text-center">
-          <img src="Mes produits/Exposition_Chanrion.png" class="img-fluid small-img w-50" loading="lazy">
+          <img src="Mes produits/Exposition_Chanrion.png" class="img-fluid w-75" loading="lazy">
         </div>
       </div>
     </div>

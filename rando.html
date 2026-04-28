@@ -42,6 +42,24 @@
       height: auto;
     }
 
+    /* 🔥 MOBILE: image passe SOUS le texte */
+@media (max-width: 768px) {
+  .concept-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .concept-icon {
+    order: 2;   /* image après */
+    width: 120px;
+    margin-top: 10px;
+  }
+
+  .concept-card > div {
+    order: 1;   /* texte avant */
+  }
+}
+
     
   </style>
 
