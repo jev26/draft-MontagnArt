@@ -90,7 +90,7 @@ header {
 }
 
 .header-contact {
-  background-image: url("img/MontagnArt_Contact.png");
+  background-image: url("img/MontagnArt_Contact.webp");
   background-position: center;
   height: 70vh;
 }
@@ -416,3 +416,4 @@ footer .social-icons a {
 button {
   cursor: pointer;
 }
+

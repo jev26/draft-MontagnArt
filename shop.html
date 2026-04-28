@@ -91,41 +91,25 @@
   transition: transform 0.3s ease;
 }
 
-.small-img:hover {
-  transform: scale(1.5);
-}
-
 .product-card {
   background-color: var(--color-bg-main);
   border-radius: 12px;
   overflow: hidden;
-  transition: all 0.3s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* effet hover */
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transform: scale(1.5);
+  transition: all 0.2s ease;
 }
 
 /* image */
 .product-image {
-  background-color: var(--color-bg-main);
   padding: 15px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 220px;
 }
 
 .product-image img {
   max-height: 100%;
-  max-width: 100%;
-  object-fit: contain; /* IMPORTANT → pas de crop */
+  object-fit: contain;
 }
 
 /* texte */
@@ -141,6 +125,68 @@
 .price {
   color: #cf0001;
   font-weight: 600;
+}
+
+/* Hover seulement desktop */
+@media (hover: hover) {
+  .product-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+
+  .small-img:hover {
+    transform: scale(1.1);
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 576px) {
+  #cart-box {
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-shop {
+    height: 40vh;
+  }
+}
+
+.btn-responsive {
+  width: 100%;
+}
+
+.btn-dark {
+  background-color: var(--color-bg-main);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  transition: transform 0.15s ease;
+}
+
+.btn-dark:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-dark:active {
+  transform: scale(0.95);
+}
+
+@media (min-width: 768px) {
+  .btn-responsive {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
   </style>
@@ -227,7 +273,7 @@
     </div>
 
 <div class="container">
-      <div class="row">
+      <div class="row g-3">
        
  <div class="col-6 col-md-4 col-lg-3">
     <div class="product-card">
@@ -237,6 +283,10 @@
     <div class="product-info text-center">
       <h6>Le cerf</h6>
       <p class="price">3 CHF</p>
+      <button class="btn btn-dark btn-responsive mt-2 py-2"
+          onclick="addToCart('Marque page - Le cerf', 3, 'marque-page')">
+    Ajouter
+  </button>
     </div>
     </div>
     </div>
@@ -249,6 +299,10 @@
     <div class="product-info text-center">
       <h6>Le héron</h6>
       <p class="price">3 CHF</p>
+      <button class="btn btn-dark btn-responsive mt-2 py-2"
+          onclick="addToCart('Marque page - héron', 3, 'marque-page')">
+    Ajouter
+  </button>
     </div>
     </div>   
     </div>
@@ -261,6 +315,10 @@
     <div class="product-info text-center">
       <h6>Le chalet</h6>
       <p class="price">3 CHF</p>
+      <button class="btn btn-dark btn-responsive mt-2 py-2"
+          onclick="addToCart('Marque page - chalet', 3, 'marque-page')">
+    Ajouter
+  </button>
     </div>
     </div>   
     </div>
@@ -273,6 +331,10 @@
     <div class="product-info text-center">
       <h6>Le pêcheur</h6>
       <p class="price">3 CHF</p>
+      <button class="btn btn-dark btn-responsive mt-2 py-2"
+          onclick="addToCart('Marque page - pêcheur', 3, 'marque-page')">
+    Ajouter
+  </button>
     </div>
     </div>   
     </div>
@@ -285,6 +347,10 @@
     <div class="product-info text-center">
       <h6>La vigne</h6>
       <p class="price">3 CHF</p>
+      <button class="btn btn-dark btn-responsive mt-2 py-2"
+          onclick="addToCart('Marque page - vigne', 3, 'marque-page')">
+    Ajouter
+  </button>
     </div>
     </div>   
     </div>
@@ -314,7 +380,7 @@
       </p>
     </div>
     <div class="container">
-      <div class="row text-center">
+      <div class="row g-3 text-center">
 
 <div class="col-6 col-md-4 col-lg-3">
     <div class="product-card">
@@ -324,6 +390,10 @@
     <div class="product-info text-center">
       <h6>L'aigle</h6>
       <p class="price">4.50 CHF</p>
+      <button class="btn btn-dark btn-responsive mt-2 py-2"
+          onclick="addToCart('Carte - aigle',  4.5, 'carte')">
+    Ajouter
+  </button>
     </div>
     </div>
     </div>
@@ -336,6 +406,10 @@
     <div class="product-info text-center">
       <h6>Le bouquetin</h6>
       <p class="price">4.50 CHF</p>
+      <button class="btn btn-dark btn-responsive mt-2 py-2"
+          onclick="addToCart('Carte - bouquetin',  4.5, 'carte')">
+    Ajouter
+  </button>
     </div>
     </div>
     </div>
@@ -348,6 +422,10 @@
     <div class="product-info text-center">
       <h6>Le cerf</h6>
       <p class="price">4.50 CHF</p>
+      <button class="btn btn-dark btn-responsive mt-2 py-2"
+          onclick="addToCart('Carte - cerf',  4.5, 'carte')">
+    Ajouter
+  </button>
     </div>
     </div>
     </div>
@@ -360,6 +438,10 @@
     <div class="product-info text-center">
       <h6>Le gypaete</h6>
       <p class="price">4.50 CHF</p>
+      <button class="btn btn-dark btn-responsive mt-2 py-2"
+          onclick="addToCart('Carte - gypaete',  4.5, 'carte')">
+    Ajouter
+  </button>
     </div>
     </div>
     </div>
@@ -372,6 +454,10 @@
     <div class="product-info text-center">
       <h6>Le chalet</h6>
       <p class="price">4.50 CHF</p>
+      <button class="btn btn-dark btn-responsive mt-2 py-2"
+          onclick="addToCart('Carte - chalet',  4.5, 'carte')">
+    Ajouter
+  </button>
     </div>
     </div>
     </div>
@@ -379,11 +465,15 @@
     <div class="col-6 col-md-4 col-lg-3">
     <div class="product-card">
     <div class="product-image">
-      <img src="Mes produits/Carte_Dent_Blanche.png" alt="Carte Dent Blanche" loading="lazy" class="clickable-img">
+      <img src="Mes produits/Carte_Dent_Blanche.webp" alt="Carte Dent Blanche" loading="lazy" class="clickable-img">
     </div>
     <div class="product-info text-center">
       <h6>La Dent Blanche</h6>
       <p class="price">4.50 CHF</p>
+      <button class="btn btn-dark btn-responsive mt-2 py-2"
+          onclick="addToCart('Carte - Dent Blanche',  4.5, 'carte')">
+    Ajouter
+  </button>
     </div>
     </div>
     </div>
@@ -396,6 +486,10 @@
     <div class="product-info text-center">
       <h6>La Pointe Dufour</h6>
       <p class="price">4.50 CHF</p>
+      <button class="btn btn-dark btn-responsive mt-2 py-2"
+          onclick="addToCart('Carte - Pointe Dufour',  4.5, 'carte')">
+    Ajouter
+  </button>
     </div>
     </div>
     </div>
@@ -408,6 +502,10 @@
     <div class="product-info text-center">
       <h6>Le Combin de Corbassiere</h6>
       <p class="price">4.50 CHF</p>
+      <button class="btn btn-dark btn-responsive mt-2 py-2"
+          onclick="addToCart('Carte - Combin Corbassiere', 4.5, 'carte')">
+    Ajouter
+  </button>
     </div>
     </div>
     </div>
@@ -416,18 +514,33 @@
     </div>
   </section>
 
+  <!-- panier -->
+  <div id="cart-box" class="position-fixed bottom-0 end-0 m-3 p-3 bg-white shadow rounded" style="width:250px; z-index:999;">
+  <h6>🛒 Panier</h6>
+  <ul id="cart-items" class="list-unstyled small mb-2"></ul>
+  <p class="fw-bold mb-2">Total: <span id="cart-total">0</span> CHF</p>
+
+  <a id="whatsapp-order" class="btn btn-success w-100 btn-sm" target="_blank">
+    Commander
+  </a>
+</div>
+
 <!-- section commande -->
   <section class="section-main container-fluid g-0">
     <div class="image-block img-fluid"
       style="background-image: url('img/Montagn-art_Me\ contacter.png'); background-repeat:no-repeat; background-position: center; height: 300px;">
       <div class="text mt-3 text-center" style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
-        <h2 class="mb-4"> Intéressé à commander ? </h2>
+        <h2 class="mt-4 mb-4"> Intéressé à commander ? </h2>
         <h5 class="mb-3">Contactez-moi</h5> 
-        <a class="btn-white me-3"
-          href="mailto:contact@montagn-art.ch"> Par mail</a> 
-          <a class="btn-white"
-          href="https://wa.me/41762061997?text=Bonjour%20je%20souhaite%20plus%20d'informations"> Par WhatsApp</a>
-      <h5 class="mt-3 mb-3">
+
+         <div class="d-flex flex-column flex-md-row justify-content-center gap-2">
+        <a class="btn-white w-100 w-md-auto"
+          href="mailto:contact@montagn-art.ch"> 📧 Par mail</a> 
+        
+          <a class="btn-white w-100 w-md-auto"
+          href="https://wa.me/41762061997?text=Bonjour%20je%20souhaite%20plus%20d'informations"> 💬 Par WhatsApp</a>
+      </div>
+          <h5 class="mt-3 mb-5">
         Envoi uniquement en Suisse, 2 CHF de frais d’envoi vous seront facturés par commande.
       </h5>
       </div>
@@ -550,6 +663,80 @@
       lightbox.style.display = "none";
     }
   });
+</script>
+
+<!-- script panier -->
+ <script>
+let cart = [];
+
+function addToCart(name, price, type) {
+  cart.push({ name, price, type });
+  updateCart();
+}
+
+function updateCart() {
+  const list = document.getElementById("cart-items");
+  const totalEl = document.getElementById("cart-total");
+
+  list.innerHTML = "";
+
+  let total = 0;
+
+  // 🔥 séparer les cartes et le reste
+  let cartes = cart.filter(item => item.type === "carte");
+  let autres = cart.filter(item => item.type !== "carte");
+
+  // 👉 calcul cartes avec promo
+  let nbCartes = cartes.length;
+  let lots = Math.floor(nbCartes / 5);
+  let reste = nbCartes % 5;
+
+  let totalCartes = (lots * 20) + (reste * 4.5);
+
+  // 👉 calcul autres produits normal
+  let totalAutres = autres.reduce((sum, item) => sum + item.price, 0);
+
+  total = totalCartes + totalAutres;
+
+  // 🔥 affichage
+  cart.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      ${item.name} - ${item.price} CHF
+      <button onclick="removeItem(${index})">❌</button>
+    `;
+    list.appendChild(li);
+  });
+
+  // 👉 afficher info promo
+  if (lots > 0) {
+    const promo = document.createElement("li");
+    promo.innerHTML = `<strong>Promo: ${lots} lot(s) de 5 cartes → ${lots * 20} CHF</strong>`;
+    list.appendChild(promo);
+  }
+
+  totalEl.textContent = total.toFixed(2);
+
+  updateWhatsAppLink(total);
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  updateCart();
+}
+
+function updateWhatsAppLink(total) {
+  let message = "Bonjour, je souhaite commander :%0A";
+
+  cart.forEach(item => {
+    message += `- ${item.name} (${item.price} CHF)%0A`;
+  });
+
+  message += `%0ATotal: ${total.toFixed(2)} CHF`;
+
+  const link = `https://wa.me/41762061997?text=${message}`;
+  document.getElementById("whatsapp-order").href = link;
+}
 </script>
 </body>
 
