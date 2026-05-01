@@ -27,271 +27,274 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    h2,
+    h3,
+    h4 {
+      letter-spacing: 0.5px;
+    }
 
-    h2, h3, h4 {
-  letter-spacing: 0.5px;
-}
+    p {
+      line-height: 1.6;
+    }
 
-p {
-  line-height: 1.6;
-}
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
 
-/* LIGHTBOX */
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.9);
-  justify-content: center;
-  align-items: center;
-}
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 10px;
+    }
 
-.lightbox img {
-  max-width: 90%;
-  max-height: 85%;
-  border-radius: 10px;
-}
+    .lightbox .close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+    }
 
-.lightbox .close {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-}
+    .clickable-img {
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
 
-.clickable-img {
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.clickable-img:hover {
-  transform: scale(1.05);
-}
-
-
-
-
-.header-shop {
-  background-image: url("img/Montagn-art_creations.webp");
-  background-position: center;
-  height: 70vh;
-  background-size: cover;
-  position: relative;
-} 
-
-.header-shop::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.2);
-}
-
-.small-img {
-  max-width: 250px;
-  width: 100%;
-  height: 200px;       /* hauteur fixe */
-  object-fit: contain; /* PAS de crop */
-  background-color: var(--color-bg-main); /* ou ton beige */
-  border-radius: 8px;
-
-  transition: transform 0.3s ease;
-}
-
-.product-card {
-  background-color: var(--color-bg-main);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: all 0.25s ease;
-  /*border: 1px solid rgba(0,0,0,0.05);*/
-}
-
-/* image */
-.product-image {
-  padding: 15px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.product-image img {
-  max-height: 100%;
-  object-fit: contain;
-}
-
-/* texte */
-.product-info {
-  padding: 15px;
-}
-
-.product-info h6 {
-  margin-bottom: 5px;
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.price {
-  color: #cf0001;
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-/* Hover seulement desktop */
-@media (hover: hover) {
-  .product-card:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  }
-
-  .small-img:hover {
-    transform: scale(1.1);
-  }
-}
-
-@media (max-width: 576px) {
-  .product-info {
-    padding: 10px;
-  }
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-#cart-box {
-  font-size: 0.85rem;
-  backdrop-filter: blur(6px);
-}
-
-@media (max-width: 576px) {
-  #cart-box {
-    width: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .header-shop {
-    height: 40vh;
-  }
-}
-
-.btn-responsive {
-  width: 100%;
-}
-
-.btn-dark {
-  background-color: var(--color-bg-main);
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
-  transition: transform 0.15s ease;
-}
-
-.btn-dark:hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  border: 1px solid var(--color-primary);
-}
-
-.btn-dark:active {
-  transform: scale(0.95);
-}
-
-@media (min-width: 768px) {
-  .btn-responsive {
-    width: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-
-.contact-hero {
-  background-image: url("img/Montagn-art_Me contacter.webp");
-  background-size: cover;
-  background-position: center;
-  min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 20px;
-}
-
-/* overlay sombre */
-.contact-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: 1;
-}
-
-/* contenu AU-DESSUS de l'overlay */
-.contact-overlay {
-  position: relative;
-  z-index: 2;
-
-  color: #ffe4d4;
-  text-align: center;
-  max-width: 800px;
-  width: 100%;
-  padding: 10px;
-}
-
-/* IMPORTANT : rend les boutons cliquables */
-.contact-overlay a {
-  position: relative;
-  z-index: 3;
-}
-
-/* mobile */
-@media (max-width: 768px) {
-  .contact-hero {
-    min-height: auto;
-    padding: 40px 15px;
-  }
-
-  .contact-overlay h2 {
-    font-size: 1.4rem;
-  }
-
-  .contact-overlay h5 {
-    font-size: 1rem;
-  }
-
-  .contact-overlay .btn-white {
-    padding: 8px 14px;
-    font-size: 0.9rem;
-    width: auto !important;   /* écrase le w-100 sur mobile */
-  }
-
-  .contact-overlay .d-flex {
-    align-items: center;
-  }
-}
-
-.btn-contact {
-  padding: 10px 18px;
-  font-size: 1rem;
-}
-
-/* mobile */
-@media (max-width: 768px) {
-  .btn-contact {
-    padding: 6px 12px;
-    font-size: 0.85rem;
-    border-radius: 20px;
-  }
-}
+    .clickable-img:hover {
+      transform: scale(1.05);
+    }
 
 
+
+
+    .header-shop {
+      background-image: url("img/Montagn-art_creations.webp");
+      background-position: center;
+      height: 70vh;
+      background-size: cover;
+      position: relative;
+    }
+
+    .header-shop::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .small-img {
+      max-width: 250px;
+      width: 100%;
+      height: 200px;
+      /* hauteur fixe */
+      object-fit: contain;
+      /* PAS de crop */
+      background-color: var(--color-bg-main);
+      /* ou ton beige */
+      border-radius: 8px;
+
+      transition: transform 0.3s ease;
+    }
+
+    .product-card {
+      background-color: var(--color-bg-main);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      /*border: 1px solid rgba(0,0,0,0.05);*/
+    }
+
+    /* image */
+    .product-image {
+      padding: 15px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-image img {
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    /* texte */
+    .product-info {
+      padding: 15px;
+    }
+
+    .product-info h6 {
+      margin-bottom: 5px;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .price {
+      color: #cf0001;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* Hover seulement desktop */
+    @media (hover: hover) {
+      .product-card:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .small-img:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .product-info {
+        padding: 10px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    #cart-box {
+      font-size: 0.85rem;
+      backdrop-filter: blur(6px);
+    }
+
+    @media (max-width: 576px) {
+      #cart-box {
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-shop {
+        height: 40vh;
+      }
+    }
+
+    .btn-responsive {
+      width: 100%;
+    }
+
+    .btn-dark {
+      background-color: var(--color-bg-main);
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+      transition: transform 0.15s ease;
+    }
+
+    .btn-dark:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border: 1px solid var(--color-primary);
+    }
+
+    .btn-dark:active {
+      transform: scale(0.95);
+    }
+
+    @media (min-width: 768px) {
+      .btn-responsive {
+        width: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+
+    .contact-hero {
+      background-image: url("img/Montagn-art_Me contacter.webp");
+      background-size: cover;
+      background-position: center;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 20px;
+    }
+
+    /* overlay sombre */
+    .contact-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: 1;
+    }
+
+    /* contenu AU-DESSUS de l'overlay */
+    .contact-overlay {
+      position: relative;
+      z-index: 2;
+
+      color: #ffe4d4;
+      text-align: center;
+      max-width: 800px;
+      width: 100%;
+      padding: 10px;
+    }
+
+    /* IMPORTANT : rend les boutons cliquables */
+    .contact-overlay a {
+      position: relative;
+      z-index: 3;
+    }
+
+    /* mobile */
+    @media (max-width: 768px) {
+      .contact-hero {
+        min-height: auto;
+        padding: 40px 15px;
+      }
+
+      .contact-overlay h2 {
+        font-size: 1.4rem;
+      }
+
+      .contact-overlay h5 {
+        font-size: 1rem;
+      }
+
+      .contact-overlay .btn-white {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+        width: auto !important;
+        /* écrase le w-100 sur mobile */
+      }
+
+      .contact-overlay .d-flex {
+        align-items: center;
+      }
+    }
+
+    .btn-contact {
+      padding: 10px 18px;
+      font-size: 1rem;
+    }
+
+    /* mobile */
+    @media (max-width: 768px) {
+      .btn-contact {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+        border-radius: 20px;
+      }
+    }
   </style>
 </head>
 
@@ -375,91 +378,95 @@ img {
       </p>
     </div>
 
-<div class="container">
-      <div class="row g-3">
-       
- <div class="col-6 col-md-4 col-lg-3">
-    <div class="product-card">
-    <div class="product-image">
-      <img src="Mes produits/Marque_page_cerf.webp" alt="Marque-page cerf" loading="lazy" class="clickable-img">
-    </div>
-    <div class="product-info text-center">
-      <h6>Le cerf</h6>
-      <p class="price">3 CHF</p>
-      <button class="btn btn-dark btn-responsive mt-2 py-2"
-          onclick="addToCart('Marque page - Le cerf', 3, 'marque-page')">
-    Ajouter
-  </button>
-    </div>
-    </div>
-    </div>
+    <div class="container">
+      <div class="row g-3 mb-3">
 
-    <div class="col-6 col-md-4 col-lg-3">
-    <div class="product-card">
-    <div class="product-image">
-      <img src="Mes produits/Marque_page_heron.webp" alt="Marque-page héron" loading="lazy" class="clickable-img">
-    </div>
-    <div class="product-info text-center">
-      <h6>Le héron</h6>
-      <p class="price">3 CHF</p>
-      <button class="btn btn-dark btn-responsive mt-2 py-2"
-          onclick="addToCart('Marque page - héron', 3, 'marque-page')">
-    Ajouter
-  </button>
-    </div>
-    </div>   
-    </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Mes produits/Marque_page_cerf.webp" alt="Marque-page cerf" loading="lazy" class="clickable-img">
+            </div>
+            <div class="product-info text-center">
+              <h6>Le cerf</h6>
+              <p class="price">3 CHF</p>
+              <button class="btn btn-dark btn-responsive mt-2 py-2"
+                onclick="addToCart('Marque page - Le cerf', 3, 'marque-page')">
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </div>
 
-    <div class="col-6 col-md-4 col-lg-3">
-    <div class="product-card">
-    <div class="product-image">
-      <img src="Mes produits/Marque_page_montagne.webp" alt="Marque-page chalet" loading="lazy" class="clickable-img">
-    </div>
-    <div class="product-info text-center">
-      <h6>Le chalet</h6>
-      <p class="price">3 CHF</p>
-      <button class="btn btn-dark btn-responsive mt-2 py-2"
-          onclick="addToCart('Marque page - chalet', 3, 'marque-page')">
-    Ajouter
-  </button>
-    </div>
-    </div>   
-    </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Mes produits/Marque_page_heron.webp" alt="Marque-page héron" loading="lazy"
+                class="clickable-img">
+            </div>
+            <div class="product-info text-center">
+              <h6>Le héron</h6>
+              <p class="price">3 CHF</p>
+              <button class="btn btn-dark btn-responsive mt-2 py-2"
+                onclick="addToCart('Marque page - héron', 3, 'marque-page')">
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </div>
 
-    <div class="col-6 col-md-4 col-lg-3">
-    <div class="product-card">
-    <div class="product-image">
-      <img src="Mes produits/Marque_page_pecheur.webp" alt="Marque-page pêcheur" loading="lazy" class="clickable-img">
-    </div>
-    <div class="product-info text-center">
-      <h6>Le pêcheur</h6>
-      <p class="price">3 CHF</p>
-      <button class="btn btn-dark btn-responsive mt-2 py-2"
-          onclick="addToCart('Marque page - pêcheur', 3, 'marque-page')">
-    Ajouter
-  </button>
-    </div>
-    </div>   
-    </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Mes produits/Marque_page_montagne.webp" alt="Marque-page chalet" loading="lazy"
+                class="clickable-img">
+            </div>
+            <div class="product-info text-center">
+              <h6>Le chalet</h6>
+              <p class="price">3 CHF</p>
+              <button class="btn btn-dark btn-responsive mt-2 py-2"
+                onclick="addToCart('Marque page - chalet', 3, 'marque-page')">
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </div>
 
-    <div class="col-6 col-md-4 col-lg-3">
-    <div class="product-card">
-    <div class="product-image">
-      <img src="Mes produits/Marque_page_vigne.webp" alt="Marque-page vigne" loading="lazy" class="clickable-img">
-    </div>
-    <div class="product-info text-center">
-      <h6>La vigne</h6>
-      <p class="price">3 CHF</p>
-      <button class="btn btn-dark btn-responsive mt-2 py-2"
-          onclick="addToCart('Marque page - vigne', 3, 'marque-page')">
-    Ajouter
-  </button>
-    </div>
-    </div>   
-    </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Mes produits/Marque_page_pecheur.webp" alt="Marque-page pêcheur" loading="lazy"
+                class="clickable-img">
+            </div>
+            <div class="product-info text-center">
+              <h6>Le pêcheur</h6>
+              <p class="price">3 CHF</p>
+              <button class="btn btn-dark btn-responsive mt-2 py-2"
+                onclick="addToCart('Marque page - pêcheur', 3, 'marque-page')">
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </div>
 
-  </div>
-</div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Mes produits/Marque_page_vigne.webp" alt="Marque-page vigne" loading="lazy"
+                class="clickable-img">
+            </div>
+            <div class="product-info text-center">
+              <h6>La vigne</h6>
+              <p class="price">3 CHF</p>
+              <button class="btn btn-dark btn-responsive mt-2 py-2"
+                onclick="addToCart('Marque page - vigne', 3, 'marque-page')">
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
 
 
@@ -483,171 +490,173 @@ img {
       </p>
     </div>
     <div class="container">
-      <div class="row g-3 text-center">
+      <div class="row g-3 text-center mb-3">
 
-<div class="col-6 col-md-4 col-lg-3">
-    <div class="product-card">
-    <div class="product-image">
-      <img src="Mes produits/Carte_Aigle_royal.webp" alt="Carte aigle" loading="lazy" class="clickable-img">
-    </div>
-    <div class="product-info text-center">
-      <h6>L'aigle</h6>
-      <p class="price">4.50 CHF</p>
-      <button class="btn btn-dark btn-responsive mt-2 py-2"
-          onclick="addToCart('Carte - aigle',  4.5, 'carte')">
-    Ajouter
-  </button>
-    </div>
-    </div>
-    </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Mes produits/Carte_Aigle_royal.webp" alt="Carte aigle" loading="lazy" class="clickable-img">
+            </div>
+            <div class="product-info text-center">
+              <h6>L'aigle</h6>
+              <p class="price">4.50 CHF</p>
+              <button class="btn btn-dark btn-responsive mt-2 py-2" onclick="addToCart('Carte - aigle',  4.5, 'carte')">
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </div>
 
-    <div class="col-6 col-md-4 col-lg-3">
-    <div class="product-card">
-    <div class="product-image">
-      <img src="Mes produits/Carte_Bouquetin.webp" alt="Carte bouquetin" loading="lazy" class="clickable-img">
-    </div>
-    <div class="product-info text-center">
-      <h6>Le bouquetin</h6>
-      <p class="price">4.50 CHF</p>
-      <button class="btn btn-dark btn-responsive mt-2 py-2"
-          onclick="addToCart('Carte - bouquetin',  4.5, 'carte')">
-    Ajouter
-  </button>
-    </div>
-    </div>
-    </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Mes produits/Carte_Bouquetin.webp" alt="Carte bouquetin" loading="lazy" class="clickable-img">
+            </div>
+            <div class="product-info text-center">
+              <h6>Le bouquetin</h6>
+              <p class="price">4.50 CHF</p>
+              <button class="btn btn-dark btn-responsive mt-2 py-2"
+                onclick="addToCart('Carte - bouquetin',  4.5, 'carte')">
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </div>
 
-    <div class="col-6 col-md-4 col-lg-3">
-    <div class="product-card">
-    <div class="product-image">
-      <img src="Mes produits/Carte_Cerf.webp" alt="Carte cerf" loading="lazy" class="clickable-img">
-    </div>
-    <div class="product-info text-center">
-      <h6>Le cerf</h6>
-      <p class="price">4.50 CHF</p>
-      <button class="btn btn-dark btn-responsive mt-2 py-2"
-          onclick="addToCart('Carte - cerf',  4.5, 'carte')">
-    Ajouter
-  </button>
-    </div>
-    </div>
-    </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Mes produits/Carte_Cerf.webp" alt="Carte cerf" loading="lazy" class="clickable-img">
+            </div>
+            <div class="product-info text-center">
+              <h6>Le cerf</h6>
+              <p class="price">4.50 CHF</p>
+              <button class="btn btn-dark btn-responsive mt-2 py-2" onclick="addToCart('Carte - cerf',  4.5, 'carte')">
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </div>
 
-    <div class="col-6 col-md-4 col-lg-3">
-    <div class="product-card">
-    <div class="product-image">
-      <img src="Mes produits/Carte_Gypaete_barbu.webp" alt="Carte gypaete" loading="lazy" class="clickable-img">
-    </div>
-    <div class="product-info text-center">
-      <h6>Le gypaete</h6>
-      <p class="price">4.50 CHF</p>
-      <button class="btn btn-dark btn-responsive mt-2 py-2"
-          onclick="addToCart('Carte - gypaete',  4.5, 'carte')">
-    Ajouter
-  </button>
-    </div>
-    </div>
-    </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Mes produits/Carte_Gypaete_barbu.webp" alt="Carte gypaete" loading="lazy" class="clickable-img">
+            </div>
+            <div class="product-info text-center">
+              <h6>Le gypaete</h6>
+              <p class="price">4.50 CHF</p>
+              <button class="btn btn-dark btn-responsive mt-2 py-2"
+                onclick="addToCart('Carte - gypaete',  4.5, 'carte')">
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </div>
 
-    <div class="col-6 col-md-4 col-lg-3">
-    <div class="product-card">
-    <div class="product-image">
-      <img src="Mes produits/Carte_paysage_enneige.webp" alt="Carte chalet" loading="lazy" class="clickable-img">
-    </div>
-    <div class="product-info text-center">
-      <h6>Le chalet</h6>
-      <p class="price">4.50 CHF</p>
-      <button class="btn btn-dark btn-responsive mt-2 py-2"
-          onclick="addToCart('Carte - chalet',  4.5, 'carte')">
-    Ajouter
-  </button>
-    </div>
-    </div>
-    </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Mes produits/Carte_paysage_enneige.webp" alt="Carte chalet" loading="lazy"
+                class="clickable-img">
+            </div>
+            <div class="product-info text-center">
+              <h6>Le chalet</h6>
+              <p class="price">4.50 CHF</p>
+              <button class="btn btn-dark btn-responsive mt-2 py-2"
+                onclick="addToCart('Carte - chalet',  4.5, 'carte')">
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </div>
 
-    <div class="col-6 col-md-4 col-lg-3">
-    <div class="product-card">
-    <div class="product-image">
-      <img src="Mes produits/Carte_Dent_Blanche.webp" alt="Carte Dent Blanche" loading="lazy" class="clickable-img">
-    </div>
-    <div class="product-info text-center">
-      <h6>La Dent Blanche</h6>
-      <p class="price">4.50 CHF</p>
-      <button class="btn btn-dark btn-responsive mt-2 py-2"
-          onclick="addToCart('Carte - Dent Blanche',  4.5, 'carte')">
-    Ajouter
-  </button>
-    </div>
-    </div>
-    </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Mes produits/Carte_Dent_Blanche.webp" alt="Carte Dent Blanche" loading="lazy"
+                class="clickable-img">
+            </div>
+            <div class="product-info text-center">
+              <h6>La Dent Blanche</h6>
+              <p class="price">4.50 CHF</p>
+              <button class="btn btn-dark btn-responsive mt-2 py-2"
+                onclick="addToCart('Carte - Dent Blanche',  4.5, 'carte')">
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </div>
 
-    <div class="col-6 col-md-4 col-lg-3">
-    <div class="product-card">
-    <div class="product-image">
-      <img src="Mes produits/Carte_Pointe_Dufour.webp" alt="Carte Pointe Dufour" loading="lazy" class="clickable-img">
-    </div>
-    <div class="product-info text-center">
-      <h6>La Pointe Dufour</h6>
-      <p class="price">4.50 CHF</p>
-      <button class="btn btn-dark btn-responsive mt-2 py-2"
-          onclick="addToCart('Carte - Pointe Dufour',  4.5, 'carte')">
-    Ajouter
-  </button>
-    </div>
-    </div>
-    </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Mes produits/Carte_Pointe_Dufour.webp" alt="Carte Pointe Dufour" loading="lazy"
+                class="clickable-img">
+            </div>
+            <div class="product-info text-center">
+              <h6>La Pointe Dufour</h6>
+              <p class="price">4.50 CHF</p>
+              <button class="btn btn-dark btn-responsive mt-2 py-2"
+                onclick="addToCart('Carte - Pointe Dufour',  4.5, 'carte')">
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </div>
 
-    <div class="col-6 col-md-4 col-lg-3">
-    <div class="product-card">
-    <div class="product-image">
-      <img src="Mes produits/Carte_Combin_de_Corbassiere.webp" alt="Carte Combin de Corbassiere" loading="lazy" class="clickable-img">
-    </div>
-    <div class="product-info text-center">
-      <h6>Le Combin de Corbassiere</h6>
-      <p class="price">4.50 CHF</p>
-      <button class="btn btn-dark btn-responsive mt-2 py-2"
-          onclick="addToCart('Carte - Combin Corbassiere', 4.5, 'carte')">
-    Ajouter
-  </button>
-    </div>
-    </div>
-    </div>
-        
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="Mes produits/Carte_Combin_de_Corbassiere.webp" alt="Carte Combin de Corbassiere" loading="lazy"
+                class="clickable-img">
+            </div>
+            <div class="product-info text-center">
+              <h6>Le Combin de Corbassiere</h6>
+              <p class="price">4.50 CHF</p>
+              <button class="btn btn-dark btn-responsive mt-2 py-2"
+                onclick="addToCart('Carte - Combin Corbassiere', 4.5, 'carte')">
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- panier -->
-  <div id="cart-box" class="position-fixed bottom-0 end-0 m-3 p-3 bg-white shadow rounded" style="width:250px; z-index:999;">
-  <h6>🛒 Panier</h6>
-  <ul id="cart-items" class="list-unstyled small mb-2"></ul>
-  <p class="fw-bold mb-2">Total: <span id="cart-total">0</span> CHF</p>
+  <div id="cart-box" class="position-fixed bottom-0 end-0 m-3 p-3 bg-white shadow rounded"
+    style="width:250px; z-index:999;">
+    <h6>🛒 Panier</h6>
+    <ul id="cart-items" class="list-unstyled small mb-2"></ul>
+    <p class="fw-bold mb-2">Total: <span id="cart-total">0</span> CHF</p>
 
-  <a id="whatsapp-order" class="btn btn-success w-100 btn-sm" target="_blank">
-    Commander
-  </a>
-</div>
+    <a id="whatsapp-order" class="btn btn-success w-100 btn-sm" target="_blank">
+      Commander
+    </a>
+  </div>
 
-<!-- section commande -->
+  <!-- section commande -->
   <section class="section-main container-fluid g-0">
     <div class="contact-hero">
       <div class="contact-overlay">
-      <div class="text mt-3 text-center" style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
-        <h2 class="mt-4 mb-4"> Intéressé à commander ? </h2>
-        <h5 class="mb-3">Contactez-moi</h5> 
+        <div class="text mt-3 text-center" style="color: #ffe4d4; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);">
+          <h2 class="mt-4 mb-4"> Intéressé à commander ? </h2>
+          <h5 class="mb-3">Contactez-moi</h5>
 
-         <div class="d-flex flex-column flex-md-row justify-content-center gap-2 mt-3">
-        <a class="btn-white btn-contact"
-          href="mailto:contact@montagn-art.ch"> 📧 Par mail</a> 
-        
-          <a class="btn-white btn-contact"
-          href="https://wa.me/41762061997?text=Bonjour%20je%20souhaite%20plus%20d'informations"> 💬 Par WhatsApp</a>
-      </div>
+          <div class="d-flex flex-column flex-md-row justify-content-center gap-2 mt-3">
+            <a class="btn-white btn-contact" href="mailto:contact@montagn-art.ch"> 📧 Par mail</a>
+
+            <a class="btn-white btn-contact"
+              href="https://wa.me/41762061997?text=Bonjour%20je%20souhaite%20plus%20d'informations"> 💬 Par WhatsApp</a>
+          </div>
           <h5 class="mt-3">
-        Envoi uniquement en Suisse, 2 CHF de frais d’envoi vous seront facturés par commande.
-      </h5>
+            Envoi uniquement en Suisse, 2 CHF de frais d’envoi vous seront facturés par commande.
+          </h5>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 
@@ -670,8 +679,9 @@ img {
           </div>
         </div>
         <!-- Colonne droite -->
-        <div class="col-md-6 text-center">
-          <img src="Mes produits/Exposition_Chanrion.webp" class="img-fluid w-75" loading="lazy">
+        <div class="col-md-6 d-flex justify-content-center align-items-center mt-4 mt-md-0">
+          <img src="Mes produits/Exposition_Chanrion.webp" class="img-fluid w-75" loading="lazy"
+            alt="Exposition Montagn'Art">
         </div>
       </div>
     </div>
@@ -739,118 +749,118 @@ img {
       });
   </script>
 
-<!-- Ajouter Lightbox -->
-<div id="lightbox" class="lightbox">
-  <span class="close">&times;</span>
-  <img class="lightbox-content" id="lightbox-img">
-</div>
+  <!-- Ajouter Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
 
-<script>
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-  const closeBtn = document.querySelector(".lightbox .close");
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox .close");
 
-  document.querySelectorAll(".clickable-img").forEach(img => {
-    img.addEventListener("click", () => {
-      lightbox.style.display = "flex";
-      lightboxImg.src = img.src;
+    document.querySelectorAll(".clickable-img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+      });
     });
-  });
 
-  closeBtn.addEventListener("click", () => {
-    lightbox.style.display = "none";
-  });
-
-  // fermer en cliquant en dehors de l'image
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
+    closeBtn.addEventListener("click", () => {
       lightbox.style.display = "none";
+    });
+
+    // fermer en cliquant en dehors de l'image
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    });
+  </script>
+
+  <!-- script panier -->
+  <script>
+    let cart = [];
+
+    const SHIPPING_FEE = 2;
+
+    function addToCart(name, price, type) {
+      cart.push({ name, price, type });
+      updateCart();
     }
-  });
-</script>
 
-<!-- script panier -->
- <script>
-let cart = [];
+    function updateCart() {
+      const list = document.getElementById("cart-items");
+      const totalEl = document.getElementById("cart-total");
 
-const SHIPPING_FEE = 2;
+      list.innerHTML = "";
 
-function addToCart(name, price, type) {
-  cart.push({ name, price, type });
-  updateCart();
-}
+      let total = 0;
 
-function updateCart() {
-  const list = document.getElementById("cart-items");
-  const totalEl = document.getElementById("cart-total");
+      // 🔥 séparer les cartes et le reste
+      let cartes = cart.filter(item => item.type === "carte");
+      let autres = cart.filter(item => item.type !== "carte");
 
-  list.innerHTML = "";
+      // 👉 calcul cartes avec promo
+      let nbCartes = cartes.length;
+      let lots = Math.floor(nbCartes / 5);
+      let reste = nbCartes % 5;
 
-  let total = 0;
+      let totalCartes = (lots * 20) + (reste * 4.5);
 
-  // 🔥 séparer les cartes et le reste
-  let cartes = cart.filter(item => item.type === "carte");
-  let autres = cart.filter(item => item.type !== "carte");
+      // 👉 calcul autres produits normal
+      let totalAutres = autres.reduce((sum, item) => sum + item.price, 0);
 
-  // 👉 calcul cartes avec promo
-  let nbCartes = cartes.length;
-  let lots = Math.floor(nbCartes / 5);
-  let reste = nbCartes % 5;
+      // 👉 ajout frais d’envoi
+      total = totalCartes + totalAutres + SHIPPING_FEE;
 
-  let totalCartes = (lots * 20) + (reste * 4.5);
-
-  // 👉 calcul autres produits normal
-  let totalAutres = autres.reduce((sum, item) => sum + item.price, 0);
-
-  // 👉 ajout frais d’envoi
-  total = totalCartes + totalAutres + SHIPPING_FEE;
-
-  // 🔥 affichage des produits
-  cart.forEach((item, index) => {
-    const li = document.createElement("li");
-    li.innerHTML = `
+      // 🔥 affichage des produits
+      cart.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
       ${item.name} - ${item.price} CHF
       <button onclick="removeItem(${index})">❌</button>
     `;
-    list.appendChild(li);
-  });
+        list.appendChild(li);
+      });
 
-  // 👉 info promo cartes
-  if (lots > 0) {
-    const promo = document.createElement("li");
-    promo.innerHTML = `<strong>Promo: ${lots} lot(s) de 5 cartes → ${lots * 20} CHF</strong>`;
-    list.appendChild(promo);
-  }
+      // 👉 info promo cartes
+      if (lots > 0) {
+        const promo = document.createElement("li");
+        promo.innerHTML = `<strong>Promo: ${lots} lot(s) de 5 cartes → ${lots * 20} CHF</strong>`;
+        list.appendChild(promo);
+      }
 
-  // 👉 frais d’envoi affichés
-  const shippingEl = document.createElement("li");
-  shippingEl.innerHTML = `<strong>Frais d'envoi: ${SHIPPING_FEE.toFixed(2)} CHF</strong>`;
-  list.appendChild(shippingEl);
+      // 👉 frais d’envoi affichés
+      const shippingEl = document.createElement("li");
+      shippingEl.innerHTML = `<strong>Frais d'envoi: ${SHIPPING_FEE.toFixed(2)} CHF</strong>`;
+      list.appendChild(shippingEl);
 
-  totalEl.textContent = total.toFixed(2);
+      totalEl.textContent = total.toFixed(2);
 
-  updateWhatsAppLink(total);
-}
+      updateWhatsAppLink(total);
+    }
 
-function removeItem(index) {
-  cart.splice(index, 1);
-  updateCart();
-}
+    function removeItem(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
 
-function updateWhatsAppLink(total) {
-  let message = "Bonjour, je souhaite commander :%0A";
+    function updateWhatsAppLink(total) {
+      let message = "Bonjour, je souhaite commander :%0A";
 
-  cart.forEach(item => {
-    message += `- ${item.name} (${item.price} CHF)%0A`;
-  });
+      cart.forEach(item => {
+        message += `- ${item.name} (${item.price} CHF)%0A`;
+      });
 
-  message += `%0AFrais d'envoi: ${SHIPPING_FEE.toFixed(2)} CHF%0A`;
-  message += `%0ATotal: ${total.toFixed(2)} CHF`;
+      message += `%0AFrais d'envoi: ${SHIPPING_FEE.toFixed(2)} CHF%0A`;
+      message += `%0ATotal: ${total.toFixed(2)} CHF`;
 
-  const link = `https://wa.me/41762061997?text=${message}`;
-  document.getElementById("whatsapp-order").href = link;
-}
-</script>
+      const link = `https://wa.me/41762061997?text=${message}`;
+      document.getElementById("whatsapp-order").href = link;
+    }
+  </script>
 </body>
 
 </html>

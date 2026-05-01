@@ -17,23 +17,22 @@
   <meta name="description" content="Randonnées et treks en Suisse avec Montagn'Art">
   <link rel="stylesheet" href="styles.css" />
   <style>
-
     .gallery-item {
-  height: 400px;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
 
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
-}
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
 
-@media (max-width: 768px) {
-  .gallery-item {
-    height: 300px;
-  }
-}
+    @media (max-width: 768px) {
+      .gallery-item {
+        height: 300px;
+      }
+    }
 
     .gallery-item .image-block {
       height: 100%;
@@ -51,35 +50,79 @@
     }
 
     .image-block {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: transform 0.4s ease;
-}
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: transform 0.4s ease;
+    }
 
-.gallery-item:hover .image-block {
-  transform: scale(1.05);
-}
+    .gallery-item:hover .image-block {
+      transform: scale(1.05);
+    }
 
-.filter-btn.active {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
+    .filter-btn.active {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
 
-.gallery-item.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+    .gallery-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-.gallery-item h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
+    .gallery-item h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
 
-.gallery-item h5 {
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
+    .gallery-item h5 {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    /* Container boutons filtres */
+    .filter-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Boutons filtres */
+    .filter-btn {
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-size: 0.95rem;
+      transition: all 0.25s ease;
+      min-width: fit-content;
+    }
+
+    /* Hover desktop */
+    .filter-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Etat actif */
+    .filter-btn.active {
+      background-color: var(--color-primary);
+      color: white;
+      border-color: var(--color-primary);
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+
+      .filter-container {
+        gap: 8px;
+        padding: 0 12px;
+      }
+
+      .filter-btn {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+      }
+
+    }
   </style>
   <title>Montagn'Art</title>
 
@@ -144,11 +187,15 @@
   <section class="section-main container-fluid p-0">
 
     <div class="container text-center mb-4">
-  <button class="btn-red btn-outline-dark filter-btn active me-3" data-filter="all">Tout</button>
-  <button class="btn-red btn-outline-dark filter-btn me-3" data-filter="rando">Randonnées</button>
-  <button class="btn-red btn-outline-dark filter-btn me-3" data-filter="trek">Treks</button>
-  <button class="btn-red btn-outline-dark filter-btn" data-filter="aquarelle">Aquarelle</button>
-</div>
+      <div class="filter-container">
+
+        <button class="btn-red btn-outline-dark filter-btn active" data-filter="all">Tout</button>
+        <button class="btn-red btn-outline-dark filter-btn" data-filter="rando">Randonnées</button>
+        <button class="btn-red btn-outline-dark filter-btn" data-filter="trek">Treks</button>
+        <button class="btn-red btn-outline-dark filter-btn" data-filter="aquarelle">Aquarelle</button>
+
+      </div>
+    </div>
 
     <div class="row g-0">
 
@@ -383,47 +430,47 @@
   </script>
 
   <!-- Script pour filtres -->
-   <script>
-const buttons = document.querySelectorAll(".filter-btn");
-const items = document.querySelectorAll(".gallery-item");
+  <script>
+    const buttons = document.querySelectorAll(".filter-btn");
+    const items = document.querySelectorAll(".gallery-item");
 
-buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
 
-    // active button
-    buttons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
+        // active button
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
 
-    const filter = btn.getAttribute("data-filter");
+        const filter = btn.getAttribute("data-filter");
 
-    items.forEach(item => {
-      const category = item.getAttribute("data-category");
+        items.forEach(item => {
+          const category = item.getAttribute("data-category");
 
-      if (filter === "all" || category.includes(filter)) {
-        item.style.display = "block";
-      } else {
-        item.style.display = "none";
-      }
+          if (filter === "all" || category.includes(filter)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+
+      });
+    });
+  </script>
+
+  <!-- Script pour apparition douce -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
     });
 
-  });
-});
-</script>
-
-<!-- Script pour apparition douce -->
- <script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-});
-
-document.querySelectorAll(".gallery-item").forEach(el => {
-  observer.observe(el);
-});
-</script>
+    document.querySelectorAll(".gallery-item").forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 
 </html>

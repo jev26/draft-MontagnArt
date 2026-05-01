@@ -1,6 +1,7 @@
 /* =========================
    VARIABLES
 ========================= */
+
 :root {
   --color-bg-main: #ffe4d4;
   --color-bg-secondary: #ecc2a9;
@@ -21,7 +22,29 @@
 body {
   background-color: var(--color-bg-main);
   color: var(--color-primary);
+
+  /*font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  line-height: 1.8;*/
 }
+
+/*h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}*/
+
+/*h2::after {
+  content: "";
+  display: block;
+
+  width: 80px;
+  height: 2px;
+
+  background: var(--color-primary);
+
+  margin: 20px auto 0;
+}*/
 
 .section-main {
   background-color: var(--color-bg-main);
@@ -64,17 +87,17 @@ header {
   justify-content: center;
 }
 
+@media (max-width: 768px) {
+  .header-img {
+    height: 200px;
+  }
+}
+
 .header-img::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 768px) {
-  .header-img {
-    height: 200px;
-  }
 }
 
 .header-home {
@@ -192,12 +215,6 @@ a:hover {
   color: var(--color-accent);
   /* Change la couleur lors du survol (exemple : couleur #b67271) */
 }
-
-/*a:focus {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}*/
-/* Rectangle autour du lien quand on clique */
 
 /* =========================
    FOOTER
@@ -328,25 +345,62 @@ footer .social-icons a {
   justify-content: space-between;
 }
 
+.carousel-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .carousel-img img {
-  /*width: 100%;*/
   height: 450px;
+  width: 100%;
+  max-width: 600px;
+
+  aspect-ratio: 4/5;
+
   object-fit: cover;
   border-radius: var(--radius);
 
-  max-height: 450px;
-  width: auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
 .carousel-text {
-  margin-top: 0;
-  /*margin-right: 5%;*/
-  width: 50%;
-  background-color: var(--color-white);
-  /*rgba(255, 228, 212, 1);*/
-  color: var(--color-primary);
-  border-left: 3px solid var(--color-primary);
-  padding: var(--spacing);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.08);
+
+  border: none;
+
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+
+  .carousel-text {
+    width: auto;
+
+    margin-left: 15px;
+    margin-right: 15px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+  }
+
+}
+
+
+
+.carousel-item {
+  padding: 40px 80px;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    padding: 20px;
+  }
 }
 
 /* Style des flèches de navigation */
