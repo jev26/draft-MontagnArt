@@ -1,52 +1,92 @@
-async function loadHeader() {
+// ======================================
+// Charge un composant HTML dans une balise
+// Exemple : header ou footer
+// ======================================
 
-  const header = document.getElementById("header");
+async function loadComponent(id, file) {
+
+  const element = document.getElementById(id);
+
+  if (!element) return null;
+
+  try {
+
+    const response = await fetch(file);
+
+    if (!response.ok) {
+      throw new Error(`Impossible de charger ${file}`);
+    }
+
+    element.innerHTML = await response.text();
+
+    return element;
+
+  } catch (error) {
+
+    console.error(error);
+
+    return null;
+
+  }
+}
+
+// ======================================
+// Initialisation du Header
+// ======================================
+
+async function initHeader() {
+
+  const header = await loadComponent(
+    "header",
+    "components/header.html"
+  );
 
   if (!header) return;
 
-  const response = await fetch("components/header.html");
-  const data = await response.text();
-
-  header.innerHTML = data;
-
-  const navbarClass = header.dataset.navbar;
-  const logo = header.dataset.logo;
-
   document
     .getElementById("main-navbar")
-    ?.classList.add(navbarClass);
+    ?.classList.add(header.dataset.navbar);
 
   document
     .getElementById("navbar-logo")
-    ?.setAttribute("src", logo);
+    ?.setAttribute("src", header.dataset.logo);
 }
 
-async function loadFooter() {
+// ======================================
+// Initialisation du Footer
+// ======================================
 
-  const footer = document.getElementById("footer");
+async function initFooter() {
+
+  const footer = await loadComponent(
+    "footer",
+    "components/footer.html"
+  );
 
   if (!footer) return;
 
-  const response = await fetch("components/footer.html");
-  const data = await response.text();
+  document
+    .querySelector(".back-to-top")
+    ?.addEventListener("click", function (e) {
 
-  footer.innerHTML = data;
+      e.preventDefault();
 
-  const backToTop = document.querySelector(".back-to-top");
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
 
-  backToTop?.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
     });
-  });
+
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
+// ======================================
+// Démarrage de la page
+// ======================================
 
-  await loadHeader();
-  await loadFooter();
+document.addEventListener("DOMContentLoaded", async function () {
+
+  await initHeader();
+  await initFooter();
 
 });

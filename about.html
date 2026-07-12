@@ -12,6 +12,9 @@
     gtag('config', 'G-CHY79CGXQ2');
   </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/layout.js"></script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Montagn'Art</title>
@@ -153,35 +156,6 @@
      <div id="header" data-navbar="navbar-img" data-logo="img/montagnart-logo-blanc.png">
     </div>
 
-    <script>
-      async function loadHeader() {
-
-        const header = document.getElementById("header");
-
-        const response = await fetch("components/header.html");
-
-        const data = await response.text();
-
-        header.innerHTML = data;
-
-        // récupère config page
-        const navbarClass = header.dataset.navbar;
-        const logo = header.dataset.logo;
-
-        // applique classe navbar
-        document
-          .getElementById("main-navbar")
-          .classList.add(navbarClass);
-
-        // applique logo
-        document
-          .getElementById("navbar-logo")
-          .src = logo;
-      }
-
-      loadHeader();
-    </script>
-
     <!-- Overlay Text -->
     <!--<div class="overlay-text">
         À propos
@@ -222,7 +196,7 @@
   </section>
 
   <!-- Section Art -->
-  <section class="section-main">
+  <section class="section-main py-3">
     <div class="image-block center-content"
       style="background-image: url('img/MontagnArt_Qu\ est\ ce.webp'); height: 500px;">
       <div class="container text-center text-md-start" style="color: #ffe4d4;">
@@ -241,7 +215,7 @@
   </section>
 
   <!-- Section Présentation Montagn'Art -->
-  <section class="container-fluid section-main py-5">
+  <section class="container-fluid section-main py-3">
     <div class="container">
       <div class="row">
         <!-- TEXTE -->
@@ -279,7 +253,7 @@
 
 
 
-  <section class="section-main py-5" id="FAQ">
+  <section class="section-main py-3" id="FAQ">
     <div class="container">
       <h2 class="mb-5">FAQ</h2>
 
@@ -491,26 +465,6 @@
 
   <!-- Footer -->
   <div id="footer"></div>
-
-  <script>
-    fetch("components/footer.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("footer").innerHTML = data;
-
-        // bouton retour haut
-        const backToTop = document.querySelector(".back-to-top");
-
-        backToTop?.addEventListener("click", (e) => {
-          e.preventDefault();
-
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
-        });
-      });
-  </script>
 </body>
 
 </html>
