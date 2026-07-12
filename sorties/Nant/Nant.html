@@ -10,6 +10,8 @@
 
   gtag('config', 'G-CHY79CGXQ2');
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../js/layout.js"></script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,35 +41,6 @@
     <header>
     <div id="header" data-navbar="navbar-default" data-logo="../../img/montagnart-logo-couleur.png">
     </div>
-
-    <script>
-      async function loadHeader() {
-
-        const header = document.getElementById("header");
-
-        const response = await fetch("../../components/header.html");
-
-        const data = await response.text();
-
-        header.innerHTML = data;
-
-        // récupère config page
-        const navbarClass = header.dataset.navbar;
-        const logo = header.dataset.logo;
-
-        // applique classe navbar
-        document
-          .getElementById("main-navbar")
-          .classList.add(navbarClass);
-
-        // applique logo
-        document
-          .getElementById("navbar-logo")
-          .src = logo;
-      }
-
-      loadHeader();
-    </script>
   </header>
 
     <!-- Section de présentation -->
@@ -116,25 +89,5 @@ Cette randonnée s’est organisée en collaboration avec <a href="https://etcol
 
     <!-- Footer -->
     <div id="footer"></div>
-
-  <script>
-    fetch("../../components/footer.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("footer").innerHTML = data;
-
-        // bouton retour haut
-        const backToTop = document.querySelector(".back-to-top");
-
-        backToTop?.addEventListener("click", (e) => {
-          e.preventDefault();
-
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
-        });
-      });
-  </script>
   </body>
 </html>

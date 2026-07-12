@@ -38,7 +38,7 @@ async function initHeader() {
 
   const header = await loadComponent(
     "header",
-    "components/header.html"
+    "/components/header.html"
   );
 
   if (!header) return;
@@ -60,7 +60,7 @@ async function initFooter() {
 
   const footer = await loadComponent(
     "footer",
-    "components/footer.html"
+    "/components/footer.html"
   );
 
   if (!footer) return;
