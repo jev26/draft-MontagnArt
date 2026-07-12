@@ -14,10 +14,19 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" type="image/png" href="/img/montagnart-favicon-site.png" />
+
+  <!-- Lien vers Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <link rel="stylesheet" href="styles.css" />
   <style>
     .hero-block {
-      height: 350px;
+      min-height: 280px;
+      height: 45vh;
+      max-height: 500px;
       background-size: cover;
       background-position: center;
       position: relative;
@@ -35,107 +44,28 @@
 
     .hero-text {
       position: relative;
-      color: #ffe4d4;
+      color: var(--color-bg-main);
       padding: 1rem;
     }
 
-
-    .trek-card {
-      position: relative;
-      height: 500px;
-      overflow: hidden;
+    .section-spacing {
+      padding: 90px 0;
     }
-
-    .trek-card .image-block {
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      transition: transform 0.4s ease;
-    }
-
-    .trek-card:hover .image-block {
-      transform: scale(1.05);
-    }
-
-    .trek-card .text {
-      color: #ffe4d4;
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-      top: 66%;
-    }
-
-    .trek-img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    @media (max-width: 768px) {
-
-      .trek-image {
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-top: 20px;
-  }
-
-  .trek-image img {
-    border-radius: 18px;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
-  }
-}
   </style>
   <title>Montagn'Art</title>
 
-  <link rel="icon" type="image/png" href="/img/montagnart-favicon-site.png" />
-
-  <!-- Lien vers Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
   <!-- Header -->
   <header>
-    <nav class="navbar navbar-default navbar-expand-lg container">
-      <a href="/" class="navbar-brand">
-        <img src="img/montagnart-logo-couleur.png" alt="Montagn'Art" />
-      </a>
-
-      <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
-      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" color="#cf0001">
-        <!--style="border: none;"-->
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a href="rando.html" class="nav-link">RANDONNEES</a>
-          </li>
-          <li class="nav-item">
-            <a href="trek.html" class="nav-link">TREKS</a>
-          </li>
-          <li class="nav-item">
-            <a href="portfolio.html" class="nav-link">GALERIE</a>
-          </li>
-          <li class="nav-item">
-            <a href="shop.html" class="nav-link">CREATIONS</a>
-          </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">A PROPOS</a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link">CONTACT</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div id="header" data-navbar="navbar-default" data-logo="img/montagnart-logo-couleur.png">
+    </div>
   </header>
 
   <!-- Carnet de trek -->
-  <section class="section-main g-0">
-    <div class="hero-block" style="background-image: url('sorties/printemps_26/MontagnArt-Carnet_Trek03.webp');"
-      loading="lazy">
+  <section>
+    <div class="hero-block" style="background-image: url('sorties/printemps_26/MontagnArt-Carnet_Trek03.webp');">
       <div class="hero-overlay"></div>
       <div class="hero-text">
         <h1>Carnet de trek</h1>
@@ -145,7 +75,7 @@
   </section>
 
   <!-- Section explication trek -->
-  <section class="section-main py-5">
+  <section class="section-spacing">
     <div class="container">
       <!-- General -->
       <div class="row align-items-center g-4">
@@ -162,15 +92,14 @@
             explorer, ressentir et créer au cœur des Alpes.
           </p>
 
-          <div class="text-center mt-3">
+          <div class="text-center mt-5">
             <a class="btn-red" href="https://forms.gle/j9StMzDKkU5qEJv78">
               Inscription</a>
           </div>
         </div>
 
         <div class="col-12 col-lg-6 order-1 order-lg-2 trek-image">
-          <img class="img-fluid w-100 trek-img" src="sorties/printemps_26/MontagnArt-carnet-trek.webp"
-            alt="Carnet trek" />
+          <img class="img-fluid w-100" src="sorties/printemps_26/MontagnArt-carnet-trek.webp" alt="Carnet trek" />
         </div>
       </div>
 
@@ -202,7 +131,7 @@
           </div>
 
           <div class="col-12 trek-image">
-            <img class="img-fluid w-100 trek-img" src="sorties/printemps_26/MontagnArt-Carnet_Trek02.webp"
+            <img class="img-fluid w-100" src="sorties/printemps_26/MontagnArt-Carnet_Trek02.webp"
               alt="Carnet trek jour 2" />
           </div>
 
@@ -211,13 +140,12 @@
     </div>
   </section>
 
-
   <!-- Section de présentation -->
-  <section class="section-main py-5">
-    <div class="container">
+  <section class="section-spacing">
+    <div class="text-center">
       <!--<h4 class="text-center">Les treks pour la saison estivale 2026 arrivent ! </h4>-->
-      <h2 class="text-center mb-4">Revoir les treks passés </h2>
-      <p class="text-center">
+      <h2 class="mb-4">Revoir les treks passés </h2>
+      <p>
         Une de ces randonnées vous donne envie ? N'hésitez pas à me contacter pour organiser ensemble une sortie sur
         mesure !
       </p>
@@ -225,47 +153,87 @@
   </section>
 
   <!-- 3 articles -->
-  <section class="section-main container-fluid p-0">
+  <section>
     <div class="row g-0">
 
-      <div class="col-12 col-md-4 trek-card">
-        <a href="sorties/Trek_4vallees/Trek_4vallees.html">
-          <div class="image-block" style="background-image:url('sorties/Trek_4vallees/MontagnArt-trek-4vallee.webp')">
-            <div class="text">
-              <h2 class="text-center">
-                Traversée des 4 vallées
-              </h2>
-              <h5 class="text-center">du 29 au 31 août 2025</h5>
+      <article class="col-12 col-md-4 gallery-item" data-category="trek">
+        <a class="media-card" href="sorties/Trek_4vallees/Trek_4vallees.html"
+          aria-label="Voir le trek Traversée des 4 vallées">
+          <div class="media-card-image"
+            style="background-image:url('sorties/Trek_4vallees/MontagnArt-trek-4vallee.webp')">
+            <div class="media-card-content">
+              <h2>Traversée des 4 vallées</h2>
+              <h5>du 29 au 31 août 2025</h5>
             </div>
           </div>
         </a>
-      </div>
+      </article>
 
-      <div class="col-12 col-md-4 trek-card">
-        <a href="sorties/Trek_Appenzell/Trek_Appenzell.html">
-          <div class="image-block"
+      <article class="col-12 col-md-4 gallery-item" data-category="trek">
+        <a class="media-card" href="sorties/Trek_Appenzell/Trek_Appenzell.html"
+          aria-label="Voir le trek en Appenzell">
+          <div class="media-card-image"
             style="background-image:url('sorties/Trek_Appenzell/Screenshot\ 2025-07-31\ at\ 23.11.55.webp')">
-            <div class="text">
-              <h2 class="text-center">
-                Trek en Appenzell
-              </h2>
-              <h5 class="text-center">du 29 au 31 mai 2025</h5>
+            <div class="media-card-content">
+              <h2>Trek en Appenzell</h2>
+              <h5>du 29 au 31 mai 2025</h5>
             </div>
           </div>
         </a>
+      </article>
+
+      <article class="col-12 col-md-4 gallery-item" data-category="trek">
+        <a class="media-card" href="sorties/First/First.html"
+          aria-label="Voir le trek dans l'Oberland Bernois">
+          <div class="media-card-image"
+            style="background-image:url('sorties/First/First.webp')">
+            <div class="media-card-content">
+              <h2>Trek dans l'Oberland Bernois</h2>
+              <h5>Juin 2024</h5>
+            </div>
+          </div>
+        </a>
+      </article>
+
+
+      <div class="col-12 col-md-4">
+        <article class="trek-card">
+          <a href="sorties/Trek_4vallees/Trek_4vallees.html" aria-label="Voir le trek Traversée des 4 vallées">
+            <div class="image-block" style="background-image:url('sorties/Trek_4vallees/MontagnArt-trek-4vallee.webp')">
+              <div class="text">
+                <h2>Traversée des 4 vallées</h2>
+                <h5>du 29 au 31 août 2025</h5>
+              </div>
+            </div>
+          </a>
+        </article>
       </div>
 
-      <div class="col-12 col-md-4 trek-card">
-        <a href="sorties/First/First.html">
-          <div class="image-block" style="background-image:url('sorties/First/First.webp')">
-            <div class="text">
-              <h2 class="text-center">
-                Trek dans l'Oberland Bernois
-              </h2>
-              <h5 class="text-center">Juin 2024</h5>
+      <div class="col-12 col-md-4">
+        <article class="trek-card">
+          <a href="sorties/Trek_Appenzell/Trek_Appenzell.html">
+            <div class="image-block"
+              style="background-image:url('sorties/Trek_Appenzell/Screenshot\ 2025-07-31\ at\ 23.11.55.webp')">
+              <div class="text">
+                <h2>Trek en Appenzell</h2>
+                <h5>du 29 au 31 mai 2025</h5>
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <article class="trek-card">
+          <a href="sorties/First/First.html">
+            <div class="image-block" style="background-image:url('sorties/First/First.webp')">
+              <div class="text">
+                <h2>Trek dans l'Oberland Bernois</h2>
+                <h5>Juin 2024</h5>
+              </div>
+            </div>
+          </a>
+        </article>
       </div>
 
     </div>
@@ -273,66 +241,9 @@
 
 
   <!-- Footer -->
-  <footer>
-    <div class="container">
-      <!-- Ligne 1 : Liens et bouton retour -->
-      <div class="row text-center text-md-start">
-        <div class="col-12 col-md-6 mb-md-0">
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <a href="rando.html">RANDONNEES</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="trek.html">TREKS</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="portfolio.html">GALERIE</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="shop.html">CREATIONS</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="about.html">A PROPOS</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="contact.html">CONTACT</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-6 text-md-end">
-          <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
-        </div>
-      </div>
-      <!-- Ligne 2 : Copyright et réseaux sociaux -->
-      <div class="row text-center text-md-start mt-3">
-        <div class="col-12 col-md-6 mb-3 mb-md-0">
-          <p style="font-size: 80%;">
-            &copy; 2025 Montagn'Art · Tous droits réservés ·
-            <a href="CG.html">Conditions Générales</a>
-          </p>
-        </div>
-        <div class="col-12 col-md-6 text-md-end social-icons">
-          <a href="https://www.instagram.com/montagnart.ch/" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com/people/Montagnartch/61553699202260/" target="_blank"><i
-              class="fab fa-facebook"></i></a>
-        </div>
-      </div>
+  <div id="footer"></div>
 
-      <div class="gap-50" style="width:100%; height:50px;"></div>
-    </div>
-  </footer>
-
-  <!-- Lien vers Bootstrap JS et dépendances -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Script pour le retour en haut
-    document
-      .querySelector(".back-to-top")
-      .addEventListener("click", function (e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-  </script>
+  <script src="js/layout.js"></script>
 </body>
 
 </html>

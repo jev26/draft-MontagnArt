@@ -10,8 +10,11 @@
   --color-accent: #f3af87;
   --color-white: #ffffff;
 
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.1);
+
   --radius: 8px;
-  --transition: all 0.3s ease;
+  --transition: 0.3s ease;
   --spacing: 20px;
 }
 
@@ -22,31 +25,9 @@
 body {
   background-color: var(--color-bg-main);
   color: var(--color-primary);
-
-  /*font-family: 'Inter', sans-serif;
-  font-weight: 300;
-  line-height: 1.8;*/
 }
 
-/*h1, h2, h3, h4 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}*/
-
-/*h2::after {
-  content: "";
-  display: block;
-
-  width: 80px;
-  height: 2px;
-
-  background: var(--color-primary);
-
-  margin: 20px auto 0;
-}*/
-
-.section-main {
+/*.section-main {
   background-color: var(--color-bg-main);
   color: var(--color-primary);
 }
@@ -54,7 +35,7 @@ body {
 .section-secondary {
   background-color: var(--color-bg-secondary);
   color: var(--color-primary);
-}
+}*/
 
 img {
   max-width: 100%;
@@ -72,9 +53,9 @@ header {
 }
 
 .header-simple {
-      background-color: #ffe4d4;
-      color: #cf0001;
-    }
+  background-color: var(--color-bg-main);
+  color: var(--color-primary);
+}
 
 /*Header img*/
 .header-img {
@@ -85,12 +66,6 @@ header {
   align-items: center;
   /* FIX */
   justify-content: center;
-}
-
-@media (max-width: 768px) {
-  .header-img {
-    height: 200px;
-  }
 }
 
 .header-img::after {
@@ -107,7 +82,9 @@ header {
 }
 
 @media (max-width: 768px) {
-  .header-home {
+
+  .header-home,
+  .header-contact {
     height: 50vh;
   }
 }
@@ -127,7 +104,7 @@ header .overlay-text {
 
 /*Navbar*/
 
-header .navbar {
+.navbar {
   /*position: absolute; /* Fixation en haut */
   top: 0;
   /* Place tout en haut */
@@ -139,12 +116,12 @@ header .navbar {
   /* Marges internes */
 }
 
-header .navbar-img {
+.navbar-img {
   position: absolute;
   /* Fixation en haut */
 }
 
-header .navbar-brand img {
+.navbar-brand img {
   width: 70px;
   height: auto;
 }
@@ -193,16 +170,6 @@ header .navbar-brand img {
    LINKS
 ========================= */
 
-body a {
-  text-decoration: none;
-  color: inherit;
-  transition: var(--transition);
-}
-
-body a:hover {
-  color: var(--color-accent);
-}
-
 a {
   text-decoration: none;
   /* Supprime le soulignement par défaut */
@@ -225,24 +192,6 @@ footer {
   color: var(--color-primary);
   padding: 1rem 0;
   font-size: 0.9rem;
-}
-
-footer a {
-  color: var(--color-primary);
-  text-decoration: none;
-  /* Supprime le soulignement */
-  transition: var(--transition);
-}
-
-footer a:hover {
-  color: var(--color-accent);
-  /* Change la couleur au survol */
-  text-decoration: none;
-  /* Assure que le soulignement reste désactivé */
-}
-
-.back-to-top {
-  cursor: pointer;
 }
 
 footer .social-icons a {
@@ -287,12 +236,18 @@ footer .social-icons a {
 /*Image avec texte superposé*/
 .image-block {
   position: relative;
-  width: 100%;
+  /*width: 100%;*/
   height: 400px;
   /* Ajustez la hauteur selon vos besoins */
   background-color: black;
   /*background: url('img/photo_1.png') no-repeat center center;*/
   background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
 
   overflow: hidden;
 
@@ -320,9 +275,16 @@ footer .social-icons a {
 /* Texte centré sur l'image */
 .image-block .text {
   position: absolute;
-  top: 50%;
+  /*top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);*/
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   color: var(--color-white);
   z-index: 1;
 }
@@ -355,19 +317,21 @@ footer .social-icons a {
   object-fit: cover;
   border-radius: var(--radius);
 
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
 .carousel-text {
-  background: rgba(255,255,255,0.92);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
 
   box-shadow:
-    0 10px 40px rgba(0,0,0,0.08);
+    0 10px 40px rgba(0, 0, 0, 0.08);
 
   border: none;
 
   border-radius: 20px;
+
+  padding: 20px;
 }
 
 @media (max-width: 768px) {
@@ -420,7 +384,6 @@ footer .social-icons a {
   border-radius: var(--radius);
   padding: 8px 18px;
   font-weight: 500;
-  transition: var(--transition);
 
   color: var(--color-primary);
   background-color: transparent;
@@ -438,7 +401,6 @@ footer .social-icons a {
   border-radius: var(--radius);
   padding: 8px 18px;
   font-weight: 500;
-  transition: var(--transition);
 
   color: var(--color-bg-main);
   border: 1px solid var(--color-bg-main);
@@ -449,7 +411,133 @@ footer .social-icons a {
   color: var(--color-white);
 }
 
+.btn-red,
+.btn-white {
+  transition: var(--transition);
+}
+
+button:focus,
+a:focus {
+  outline: 2px solid var(--color-accent);
+}
+
 button {
   cursor: pointer;
 }
 
+/* =========================
+   TREK/RANDO CARD
+========================= */
+
+.media-card {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+}
+
+.media-card-image {
+  position: relative;
+  height: 100%;
+
+  background-size: cover;
+  background-position: center;
+
+  transition: transform .4s ease;
+}
+
+.media-card:hover .media-card-image {
+  transform: scale(1.05);
+}
+
+.media-card-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.65),
+    rgba(0,0,0,.15),
+    transparent
+  );
+}
+
+.media-card-content {
+  position: absolute;
+  inset: auto 0 30px 0;
+
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+
+  padding: 1rem;
+
+  color: var(--color-bg-main);
+  text-align: center;
+}
+
+.media-card-content h2,
+.media-card-content h5 {
+  margin: 0;
+}
+
+
+.trek-card {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.trek-card .image-block {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+
+.trek-card:hover .image-block {
+  transform: scale(1.05);
+}
+
+.trek-card .text {
+  position: absolute;
+  inset: auto 0 40px 0;
+
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  align-items: center;
+
+  color: var(--color-bg-main);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, .7);
+
+  padding: 1rem;
+}
+
+.trek-card h2,
+.trek-card h5 {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .trek-card {
+    height: 320px;
+  }
+
+  .trek-image {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+  }
+
+  .trek-image img {
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  }
+}

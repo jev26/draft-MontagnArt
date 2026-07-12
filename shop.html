@@ -303,42 +303,37 @@
   <header class="header-img header-shop ">
 
     <!-- Navbar -->
-    <nav class="navbar navbar-img navbar-expand-lg container">
-      <!-- Logo -->
-      <a href="/" class="navbar-brand">
-        <img src="img/montagnart-logo-blanc.png" alt="Montagn'Art" style="width: 75px;" loading="lazy" />
-      </a>
+     <div id="header" data-navbar="navbar-img" data-logo="img/montagnart-logo-blanc.png">
+    </div>
 
-      <!-- Bouton "hamburger" pour menu déroulant sur mobile -->
-      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <script>
+      async function loadHeader() {
 
-      <!-- Menu de navigation -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a href="rando.html" class="nav-link">RANDONNEES</a>
-          </li>
-          <li class="nav-item">
-            <a href="trek.html" class="nav-link">TREKS</a>
-          </li>
-          <li class="nav-item">
-            <a href="portfolio.html" class="nav-link">GALERIE</a>
-          </li>
-          <li class="nav-item">
-            <a href="shop.html" class="nav-link">CREATIONS</a>
-          </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">A PROPOS</a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link">CONTACT</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+        const header = document.getElementById("header");
+
+        const response = await fetch("components/header.html");
+
+        const data = await response.text();
+
+        header.innerHTML = data;
+
+        // récupère config page
+        const navbarClass = header.dataset.navbar;
+        const logo = header.dataset.logo;
+
+        // applique classe navbar
+        document
+          .getElementById("main-navbar")
+          .classList.add(navbarClass);
+
+        // applique logo
+        document
+          .getElementById("navbar-logo")
+          .src = logo;
+      }
+
+      loadHeader();
+    </script>
 
   </header>
 
@@ -688,64 +683,25 @@
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="container">
-      <!-- Ligne 1 : Liens et bouton retour -->
-      <div class="row text-center text-md-start">
-        <div class="col-12 col-md-6 mb-md-0">
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <a href="rando.html">RANDONNEES</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="trek.html">TREKS</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="portfolio.html">GALERIE</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="shop.html">CREATIONS</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="about.html">A PROPOS</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="contact.html">CONTACT</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-6 text-md-end">
-          <a class="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
-        </div>
-      </div>
-      <!-- Ligne 2 : Copyright et réseaux sociaux -->
-      <div class="row text-center text-md-start mt-3">
-        <div class="col-12 col-md-6 mb-3 mb-md-0">
-          <p style="font-size: 80%;">
-            &copy; 2025 Montagn'Art · Tous droits réservés ·
-            <a href="CG.html">Conditions Générales</a>
-          </p>
-        </div>
-        <div class="col-12 col-md-6 text-md-end social-icons">
-          <a href="https://www.instagram.com/montagnart.ch/" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com/people/Montagnartch/61553699202260/" target="_blank"><i
-              class="fab fa-facebook"></i></a>
-        </div>
-      </div>
+  <div id="footer"></div>
 
-      <div class="gap-50" style="width:100%; height:50px;"></div>
-    </div>
-  </footer>
-
-  <!-- Lien vers Bootstrap JS et dépendances -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Script pour le retour en haut
-    document
-      .querySelector(".back-to-top")
-      .addEventListener("click", function (e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
+    fetch("components/footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+
+        // bouton retour haut
+        const backToTop = document.querySelector(".back-to-top");
+
+        backToTop?.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        });
       });
   </script>
 
