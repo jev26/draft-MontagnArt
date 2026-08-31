@@ -239,7 +239,7 @@ footer .social-icons a {
   /*width: 100%;*/
   height: 400px;
   /* Ajustez la hauteur selon vos besoins */
-  background-color: black;
+  background-color: var(--color-bg-main);
   /*background: url('img/photo_1.png') no-repeat center center;*/
   background-size: cover;
 
@@ -295,6 +295,29 @@ footer .social-icons a {
 
 .hover-scale:hover {
   transform: scale(1.03);
+}
+
+
+.image-painting {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* Ajustez la hauteur selon vos besoins */
+  background-color: var(--color-bg-main);
+  /*background: url('img/photo_1.png') no-repeat center center;*/
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  transition: transform var(--transition);
+}
+
+.image-painting:hover {
+  transform: scale(1.02);
 }
 
 /* =========================

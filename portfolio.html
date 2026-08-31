@@ -36,9 +36,7 @@
       height: 400px;
       position: relative;
       overflow: hidden;
-      cursor: pointer;
 
-      opacity: 0;
       transform: translateY(30px);
       transition: all 0.6s ease;
     }
@@ -51,26 +49,6 @@
 
     .gallery-item .image-block {
       height: 100%;
-    }
-
-    .gallery-item .text {
-      position: absolute;
-      inset: auto 0 30px 0;
-
-      z-index: 2;
-
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-
-      align-items: center;
-
-      padding: 1rem;
-
-      color: #ffe4d4;
-      text-align: center;
-
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, .7);
     }
 
     .gallery-item h2,
@@ -97,16 +75,6 @@
     .gallery-item.visible {
       opacity: 1;
       transform: translateY(0);
-    }
-
-    .gallery-item h2 {
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    .gallery-item h5 {
-      font-size: 0.9rem;
-      opacity: 0.9;
     }
 
     /* Container boutons filtres */
@@ -152,6 +120,94 @@
       }
 
     }
+
+/*Style section de shop*/
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 10px;
+    }
+
+    .lightbox .close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .clickable-img {
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .clickable-img:hover {
+      transform: scale(1.05);
+    }  
+
+    .image-painting {
+    cursor: zoom-in;
+}
+
+.image-painting:hover {
+    transform: scale(1.05);
+}
+
+.clickable-img {
+    cursor: zoom-in;
+}
+
+    /* Hover seulement desktop */
+    @media (hover: hover) {
+      .product-card:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .small-img:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .product-info {
+        padding: 10px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    #cart-box {
+      font-size: 0.85rem;
+      backdrop-filter: blur(6px);
+    }
+
+    @media (max-width: 576px) {
+      #cart-box {
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0;
+      }
+    }
+
   </style>
   <title>Montagn'Art</title>
 
@@ -167,11 +223,16 @@
   <!-- Section de présentation -->
   <section class="section-spacing">
     <div class="container">
-      <h1 class="text-center">Découvrez mes dernières aventures</h1>
+      <h1 class="text-center">Tessy Veillard présente ici quelques-uns de ces travaux.</h1>
       <h5 class="text-center mt-3">
-        Une de ces randonnées vous donne envie ? N'hésitez pas à me contacter pour organiser ensemble une sortie sur
-        mesure !
+        Il est possible de faire une commande personnalisée pour une aquarelle. 
+      </h5> 
+      <h5 class="text-center mt-3">
+        Merci de prendre contact directement par mail :
       </h5>
+      <div class="text-center mt-3 mb-0">
+              <a href="mailto:contact@montagn-art.ch" class="btn-red mt-3 d-inline-block text-center">Me contacter</a>
+            </div>
     </div>
   </section>
 
@@ -181,213 +242,113 @@
     <div class="container text-center mb-5">
       <div class="filter-container">
         <button class="btn-red btn-outline-dark filter-btn active" data-filter="all">Tout</button>
-        <button class="btn-red btn-outline-dark filter-btn" data-filter="rando">Randonnées</button>
-        <button class="btn-red btn-outline-dark filter-btn" data-filter="theme">Thématique</button>
-        <button class="btn-red btn-outline-dark filter-btn" data-filter="aquarelle">Aquarelle</button>
-        <button class="btn-red btn-outline-dark filter-btn" data-filter="trek">Treks</button>
-        <button class="btn-red btn-outline-dark filter-btn" data-filter="creatif">Créatif</button>
+        <button class="btn-red btn-outline-dark filter-btn" data-filter="paysage">Paysage</button>
+        <button class="btn-red btn-outline-dark filter-btn" data-filter="animal">Faune</button>
+        <button class="btn-red btn-outline-dark filter-btn" data-filter="carnet">Carnet de terrain</button>
+        <button class="btn-red btn-outline-dark filter-btn" data-filter="Acrylique">Acrylique</button>
       </div>
-    </div>
+    </div> 
 
     <div class="row g-0">
 
-      <article class="col-12 col-md-4 gallery-item" data-category="rando">
-        <a href="sorties/course_ecole_mai26/course_ecole_mai26.html" aria-label="Voir la Course d'école au Mont Gibloux">
-          <div class="image-block" style="background-image: url('sorties/course_ecole_mai26/Montagn-art_ecole_01.jpg');">
-            <div class="text text-center">
-              <h2>Course d'école au Mont Gibloux</h2>
-              <h5>Vendredi 29 mai 2026</h5>
-            </div>
-          </div>
-        </a>
+      <article class="col-12 col-md-4 gallery-item" data-category="animal">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Bouquetin.jpg');">    
+        </div>
       </article>
 
-       <article class="col-12 col-md-4 gallery-item" data-category="rando theme">
-        <a href="sorties/poyas/poyas.html" aria-label="Voir la Randonnée sur les poyas">
-          <div class="image-block" style="background-image: url('sorties/poyas/MontagnArt_Rando_Poya00.jpg');">
-            <div class="text text-center">
-              <h2>Découverte des Poyas 🐄</h2>
-              <h5>Dimanche 3 mai 2026</h5>
-            </div>
-          </div>
-        </a>
+      <article class="col-12 col-md-4 gallery-item" data-category="paysage">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Cervin.jpg');">
+        </div>
       </article>
 
-            <article class="col-12 col-md-4 gallery-item" data-category="rando theme">
-        <a href="sorties/tavillon_26/tavillon_26.html" aria-label="Voir la Randonnée de l’épicéa au tavillon">
-          <div class="image-block" style="background-image: url('sorties/tavillon_26/Montagn-art_tavillon_03.jpg');">
-            <div class="text text-center">
-              <h2>Randonnée de l’épicéa au tavillon</h2>
-              <h5>Dimanche 29 mars 2026</h5>
-            </div>
-          </div>
-        </a>
+            <article class="col-12 col-md-4 gallery-item" data-category="animal">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Chamois.jpg');">
+        </div>
       </article>
 
-      <article class="col-12 col-md-4 gallery-item" data-category="rando theme faune">
-        <a href="sorties/Rut_Chamois/rut-chamois.html"
-          aria-label="Voir la randonnée Rut du Chamois">
-          <div class="image-block"
-            style="background-image: url('sorties/Rut_Chamois/MontagnArt_Rando_Rut_chamois04.webp');">
-            <div class="text text-center">
-              <h2>Rut du Chamois</h2>
-              <h5>Dimanche 16 novembre 2025</h5>
-            </div>
-          </div>
-        </a>
+      <article class="col-12 col-md-4 gallery-item" data-category="paysage Acrylique">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Cime-Est.jpg');">
+        </div>
       </article>
 
-      <article class="col-12 col-md-4 gallery-item" data-category="rando aquarelle">
-        <a href="sorties/Aquarelle_automnale/aquarelle-automnale.html"
-          aria-label="Voir la randonnée Aquarelle automnale">
-          <div class="image-block"
-            style="background-image: url('sorties/Aquarelle_automnale/MontagnArt_aquarelle_automnale_entete.webp');">
-            <div class="text text-center">
-              <h2>Aquarelle automnale</h2>
-              <h5>Samedi 18 octobre 2025</h5>
-            </div>
-          </div>
-        </a>
+      <article class="col-12 col-md-4 gallery-item" data-category="paysage">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Combin.jpg');">
+        </div>
       </article>
 
-      <article class="col-12 col-md-4 gallery-item" data-category="rando theme faune">
-        <a href="sorties/Brame_cerf/brame-cerf.html" aria-label="Voir la randonnée Brame du cerf">
-          <div class="image-block"
-            style="background-image: url('sorties/Brame_cerf/MontagnArt_brame_cerf_entete2.webp');">
-            <div class="text text-center">
-              <h2>Brame du cerf</h2>
-              <h5>Dimanche 5 octobre 2025</h5>
-            </div>
-          </div>
-        </a>
+      <article class="col-12 col-md-4 gallery-item" data-category="carnet">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Dent-Valerette.jpg');">
+        </div>
       </article>
 
-      <article class="col-12 col-md-4 gallery-item" data-category="rando">
-        <a href="sorties/Automne_Hauts_Champery/automne-hauts-champery.html"
-          aria-label="Voir la randonnée L’automne sur les Hauts de Champéry">
-          <div class="image-block"
-            style="background-image: url('sorties/Automne_Hauts_Champery/Couverture_MontagnArt_Champery.webp');">
-            <div class="text text-center">
-              <h2>L’automne sur les Hauts de Champéry</h2>
-              <h5>Dimanche 14 septembre 2025</h5>
-            </div>
-          </div>
-        </a>
+      <article class="col-12 col-md-4 gallery-item" data-category="carnet">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Euschelpass.jpg');">
+        </div>
       </article>
 
-      <article class="col-12 col-md-4 gallery-item" data-category="rando aquarelle">
-        <a href="sorties/Aquarelle_Moleson/aquarelle-moleson.html"
-          aria-label="Voir la randonnée Aquarelle au pied du Moléson">
-          <div class="image-block"
-            style="background-image: url('sorties/Aquarelle_Moleson/MontagnArt-Aquarelle-Moleson01.webp');">
-            <div class="text text-center">
-              <h2>Aquarelle au pied du Moléson</h2>
-              <h5>Dimanche 24 août 2025</h5>
-            </div>
-          </div>
-        </a>
+      <article class="col-12 col-md-4 gallery-item" data-category="paysage">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Eveque.jpg');">
+        </div>
       </article>
 
-      <article class="col-12 col-md-4 gallery-item" data-category="trek">
-        <a href="sorties/Trek_4vallees/Trek_4vallees.html" aria-label="Voir le trek Traversée des 4 vallées">
-          <div class="image-block" style="background-image: url('sorties/Trek_4vallees/MontagnArt-trek-4vallee.webp');">
-            <div class="text text-center">
-              <h2>Traversée des 4 vallées</h2>
-              <h5>du 29 au 31 août 2025</h5>
-            </div>
-          </div>
-        </a>
+      <article class="col-12 col-md-4 gallery-item" data-category="carnet">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Glacier-Aletsch.jpg');">
+        </div>
       </article>
 
-      <article class="col-12 col-md-4 gallery-item" data-category="rando">
-        <a href="sorties/Nant/Nant.html" aria-label="Voir la randonnée Un petit Vallon plein de trésors">
-          <div class="image-block" style="background-image: url('sorties/Nant/MontagnArt-Randonnée-Pont-Nant01.webp');">
-            <div class="text text-center">
-              <h2>Un petit Vallon plein de trésors</h2>
-              <h5>Samedi 12 juillet 2025</h5>
-            </div>
-          </div>
-        </a>
+      <article class="col-12 col-md-4 gallery-item" data-category="animal">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Gypaète.jpg');">
+        </div>
       </article>
 
-      <article class="col-12 col-md-4 gallery-item" data-category="trek">
-        <a href="sorties/Trek_Appenzell/Trek_Appenzell.html" aria-label="Voir le Trek en Appenzell">
-          <div class="image-block"
-            style="background-image: url('sorties/Trek_Appenzell/Screenshot\ 2025-07-31\ at\ 23.11.55.webp');">
-            <div class="text text-center">
-              <h2>Trek en Appenzell</h2>
-              <h5>du 29 au 31 mai 2025</h5>
-            </div>
-          </div>
-        </a>
+       <article class="col-12 col-md-4 gallery-item" data-category="paysage">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Italie.jpg');">
+        </div>
       </article>
 
-      <article class="col-12 col-md-4 gallery-item" data-category="rando aquarelle">
-        <a href="sorties/Haut_Montreux_pinceau/Montreux_pinceau.html"
-          aria-label="Voir la Randonnée Haut de Montreux au pinceau">
-          <div class="image-block"
-            style="background-image: url('sorties/Haut_Montreux_pinceau/MontagnArt-Haut-de-Montreux-Pinceau05.webp');">
-            <div class="text text-center">
-              <h2>Haut de Montreux au pinceau</h2>
-              <h5>Samedi 3 mai 2025</h5>
-            </div>
-          </div>
-        </a>
+      <article class="col-12 col-md-4 gallery-item" data-category="carnet">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Lac-Bleu.jpg');">
+        </div>
       </article>
 
-      <article class="col-12 col-md-4 gallery-item" data-category="rando theme">
-        <a href="sorties/tavillon/tavillon.html" aria-label="Voir la Randonnée de l’épicéa au tavillon">
-          <div class="image-block" style="background-image: url('sorties/tavillon/tavillon.webp');">
-            <div class="text text-center">
-              <h2>Randonnée de l’épicéa au tavillon</h2>
-              <h5>30 mars 2025</h5>
-            </div>
-          </div>
-        </a>
+      <article class="col-12 col-md-4 gallery-item" data-category="animal">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Lagopede.jpg');">
+        </div>
       </article>
 
-      <article class="col-12 col-md-4 gallery-item" data-category="camp creatif">
-        <a href="sorties/camp_scolaire_25/camp_scolaire_25.html" aria-label="Voir le Camp Scolaire 2025">
-          <div class="image-block" style="background-image: url('sorties/camp_scolaire_25/camp_scolaire.webp');">
-            <div class="text text-center">
-              <h2>Camp Scolaire 2025</h2>
-              <h5>12 au 14 février 2025</h5>
-            </div>
-          </div>
-        </a>
+       <article class="col-12 col-md-4 gallery-item" data-category="paysage Acrylique">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Les-3-Bernoises.jpg');">
+        </div>
       </article>
 
-      <article class="col-12 col-md-4 gallery-item" data-category="rando">
-        <a href="sorties/Val_Bagnes/Val_Bagnes.html" aria-label="Voir la Randonnée Hivernale dans le Val de Bagnes">
-          <div class="image-block" style="background-image: url('sorties/Val_Bagnes/Val_Bagnes.webp');">
-            <div class="text text-center">
-              <h2>Randonnée Hivernale dans le Val de Bagnes</h2>
-              <h5>Dimanches 15 décembre 2024 & 2 février 2025</h5>
-            </div>
-          </div>
-        </a>
+    <article class="col-12 col-md-4 gallery-item" data-category="animal">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Marmottes.jpg');">
+        </div>
       </article>
 
-      <article class="col-12 col-md-4 gallery-item" data-category="trek">
-        <a href="sorties/First/First.html" aria-label="Voir le Trek dans l'Oberland Bernois">
-          <div class="image-block" style="background-image: url('sorties/First/First.webp');">
-            <div class="text text-center">
-              <h2>Trek dans l'Oberland Bernois</h2>
-              <h5>Juin 2024</h5>
-            </div>
-          </div>
-        </a>
+      <article class="col-12 col-md-4 gallery-item" data-category="carnet">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Moléson.jpg');">
+        </div>
       </article>
 
-      <article class="col-12 col-md-4 gallery-item" data-category="rando">
-        <a href="sorties/Gastlosen/Gastlosen.html" aria-label="Voir la Randonnée au pied des Gastlosen">
-          <div class="image-block" style="background-image: url('sorties/Gastlosen/Gastlossen.webp');">
-            <div class="text text-center">
-              <h2>Randonnée au pied des Gastlosen</h2>
-              <h5>Mars 2024</h5>
-            </div>
-          </div>
-        </a>
+      <article class="col-12 col-md-4 gallery-item" data-category="animal Acrylique">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Renard.jpg');">
+        </div>
+      </article>
+
+      <article class="col-12 col-md-4 gallery-item" data-category="paysage">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Ruinette_Mt-Blanc-Cheilon.jpg');">
+        </div>
+      </article>
+
+      <article class="col-12 col-md-4 gallery-item" data-category="carnet">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Seebergsee.jpg');">
+        </div>
+      </article>
+
+      <article class="col-12 col-md-4 gallery-item" data-category="paysage">
+        <div class="image-painting clickable-img" style="background-image: url('Portfolio/Montagn-art_Val-Ferret.jpg');">
+        </div>
       </article>
 
     </div>
@@ -395,6 +356,58 @@
 
   <!-- Footer -->
   <div id="footer"></div>
+
+  <!-- Ajouter Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".lightbox .close");
+
+// Images <img> ET div.image-painting
+document.querySelectorAll(".clickable-img").forEach(element => {
+
+  element.addEventListener("click", () => {
+
+    let imageSrc;
+
+    if (element.tagName === "IMG") {
+      imageSrc = element.src;
+    } else {
+      // récupère l'URL du background-image
+      imageSrc = window.getComputedStyle(element)
+        .backgroundImage
+        .replace(/^url\(["']?/, "")
+        .replace(/["']?\)$/, "");
+    }
+
+    lightboxImg.src = imageSrc;
+    lightbox.style.display = "flex";
+  });
+
+});
+
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+lightbox.addEventListener("click", e => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+  }
+});
+
+// Fermer avec Échap
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") {
+    lightbox.style.display = "none";
+  }
+});
+</script>
  
 </body>
 
